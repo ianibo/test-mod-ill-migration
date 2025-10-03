@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.HostLMSLocation
+
+@Field HostLMSLocation hostLMSLocation
+json g.render(hostLMSLocation, [expand: ['sites']])

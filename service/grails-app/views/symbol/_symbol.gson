@@ -1,0 +1,16 @@
+import groovy.transform.*
+import com.k_int.directory.Symbol
+
+@Field Symbol symbol
+
+// If full is set to "true" in the parameters we do not expand the owner, otherwise we get in an infinite loop
+// As we have most likely come from the directory entry
+final def toExpand = (params.full == "true") ? [
+                                                 'authority'
+                                               ] :
+                                               [
+                                                 'authority', 
+                                                 'owner'
+                                               ];
+
+json g.render(symbol, [expand: toExpand, excludes: [ ]])

@@ -1,0 +1,30 @@
+##
+# This config file connects to the postgres install mapped by the vagrant file in the project root.
+# Use the flag '-Dgrails.env=vagrant-db' when running
+##
+---
+dataSource:
+  dbCreate: none
+  url: "jdbc:postgresql://${db.host:127.0.0.1}:${db.port:54321}/${db.database:okapi_modules}?ApplicationName=mod-rs-vagrant" # Port 54321 forwarded so as not to clash.
+  username: folio_admin
+  password: folio_admin
+  driverClassName: org.postgresql.Driver
+  dialect: com.k_int.hibernate.dialects.postgres.KIPostgres94Dialect
+  schemaHandler: com.k_int.okapi.OkapiSchemaHandler
+  logSql: false
+  properties:
+    jmxEnabled: false
+    maximumPoolSize: ${db.maxpoolsize:10}
+    transactionIsolation: TRANSACTION_READ_COMMITTED
+---
+okapi: 
+  service:
+    host: localhost
+    port: 9130
+---
+server:
+    host: localhost
+    port: 8081
+hibernate:
+  enable_lazy_load_no_trans: true
+ 

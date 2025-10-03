@@ -1,0 +1,6 @@
+import groovy.transform.*
+import com.k_int.directory.AddressLine
+
+@Field AddressLine addressLine
+json g.render(addressLine, [expand: [ 'type' ]])
+

@@ -1,0 +1,14 @@
+import groovy.transform.*
+import com.k_int.ill.PatronRequest;
+
+@Field InstitutionGroup institutionGroup
+
+// If you expand the institutions and users it will get recursive so we do it manually to avoid this
+json g.render(institutionGroup) {
+  institutions g.render(institutionGroup.institutions, [excludes: ['institutionGroups']] )
+  institutionUsers g.render(institutionGroup.institutionUsers, [excludes: ['institutionGroups']] )
+  canDelete (((institutionGroup.institutions == null) ||
+              (institutionGroup.institutions.size() == 0)) &&
+             ((institutionGroup.institutionUsers == null) ||
+              (institutionGroup.institutionUsers.size() == 0)))
+}

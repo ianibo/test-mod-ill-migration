@@ -1,0 +1,5826 @@
+{
+  "id": "${info.app.name}-${info.app.idMeta}",
+  "name": "${info.app.name}",
+  "provides": [
+    {
+      "id": "ill",
+      "version": "${info.app.minorVersion}",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/availableAction/createGraph/{id}",
+          "permissionsRequired": [
+            "ill.availableaction.creategraph.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/availableAction/fromStates/{id}/{actionCode}",
+          "permissionsRequired": [
+            "ill.availableaction.fromstates.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/availableAction/toStates/{id}/{actionCode}",
+          "permissionsRequired": [
+            "ill.availableaction.tostates.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/batch",
+          "permissionsRequired": [
+            "ill.batch.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/batch",
+          "permissionsRequired": [
+            "ill.batch.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/batch/{id}",
+          "permissionsRequired": [
+            "ill.batch.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/batch/{id}",
+          "permissionsRequired": [
+            "ill.batch.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/batch/{id}",
+          "permissionsRequired": [
+            "ill.batch.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/copyrightMessage",
+          "permissionsRequired": [
+            "ill.copyright message.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/copyrightMessage",
+          "permissionsRequired": [
+            "ill.copyright message.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/copyrightMessage/createEditDetails",
+          "permissionsRequired": [
+            "ill.copyright message.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/copyrightMessage/{id}",
+          "permissionsRequired": [
+            "ill.copyright message.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/copyrightMessage/{id}",
+          "permissionsRequired": [
+            "ill.copyright message.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/copyrightMessage/{id}",
+          "permissionsRequired": [
+            "ill.copyright message.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/custprops",
+          "permissionsRequired": [
+            "ill.custprops.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/custprops",
+          "permissionsRequired": [
+            "ill.custprops.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/custprops/{id}",
+          "permissionsRequired": [
+            "ill.custprops.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/custprops/{id}",
+          "permissionsRequired": [
+            "ill.custprops.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/custprops/{id}",
+          "permissionsRequired": [
+            "ill.custprops.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/api/addFriend",
+          "permissionsRequired": [
+            "ill.directoryapi.addfriend.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/api/findSymbol",
+          "permissionsRequired": [
+            "ill.directoryapi.findsymbol.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/api/freshen",
+          "permissionsRequired": [
+            "ill.directoryapi.freshen.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/entry",
+          "permissionsRequired": [
+            "ill.directoryentry.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/entry",
+          "permissionsRequired": [
+            "ill.directoryentry.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/entry/validate",
+          "permissionsRequired": [
+            "ill.directoryentry.validate.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directory/entry/{id}",
+          "permissionsRequired": [
+            "ill.directoryentry.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/entry/{id}",
+          "permissionsRequired": [
+            "ill.directoryentry.show.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directory/entry/{id}",
+          "permissionsRequired": [
+            "ill.directoryentry.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/namingAuthority",
+          "permissionsRequired": [
+            "ill.namingauthority.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/namingAuthority",
+          "permissionsRequired": [
+            "ill.namingauthority.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directory/namingAuthority/{id}",
+          "permissionsRequired": [
+            "ill.namingauthority.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/namingAuthority/{id}",
+          "permissionsRequired": [
+            "ill.namingauthority.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directory/namingAuthority/{id}",
+          "permissionsRequired": [
+            "ill.namingauthority.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/service",
+          "permissionsRequired": [
+            "ill.service.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/service",
+          "permissionsRequired": [
+            "ill.service.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directory/service/{id}",
+          "permissionsRequired": [
+            "ill.service.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/service/{id}",
+          "permissionsRequired": [
+            "ill.service.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directory/service/{id}",
+          "permissionsRequired": [
+            "ill.service.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/serviceAccount",
+          "permissionsRequired": [
+            "ill.serviceaccount.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/serviceAccount",
+          "permissionsRequired": [
+            "ill.serviceaccount.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directory/serviceAccount/{id}",
+          "permissionsRequired": [
+            "ill.serviceaccount.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/serviceAccount/{id}",
+          "permissionsRequired": [
+            "ill.serviceaccount.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directory/serviceAccount/{id}",
+          "permissionsRequired": [
+            "ill.serviceaccount.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/symbol",
+          "permissionsRequired": [
+            "ill.symbol.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directory/symbol",
+          "permissionsRequired": [
+            "ill.symbol.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directory/symbol/{id}",
+          "permissionsRequired": [
+            "ill.symbol.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directory/symbol/{id}",
+          "permissionsRequired": [
+            "ill.symbol.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directory/symbol/{id}",
+          "permissionsRequired": [
+            "ill.symbol.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directoryGroup",
+          "permissionsRequired": [
+            "ill.directorygroup.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directoryGroup",
+          "permissionsRequired": [
+            "ill.directorygroup.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directoryGroup/{id}",
+          "permissionsRequired": [
+            "ill.directorygroup.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directoryGroup/{id}",
+          "permissionsRequired": [
+            "ill.directorygroup.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directoryGroup/{id}",
+          "permissionsRequired": [
+            "ill.directorygroup.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directoryGroups",
+          "permissionsRequired": [
+            "ill.directorygroups.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/directoryGroups",
+          "permissionsRequired": [
+            "ill.directorygroups.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/directoryGroups/{id}",
+          "permissionsRequired": [
+            "ill.directorygroups.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/directoryGroups/{id}",
+          "permissionsRequired": [
+            "ill.directorygroups.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/directoryGroups/{id}",
+          "permissionsRequired": [
+            "ill.directorygroups.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/externalApi/directoryEntry",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/externalApi/iso18626",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/externalApi/statistics",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/externalApi/statusReport",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/fileDefinition",
+          "permissionsRequired": [
+            "ill.filedefinition.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/fileDefinition",
+          "permissionsRequired": [
+            "ill.filedefinition.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/fileDefinition/fileDownload/{id}",
+          "permissionsRequired": [
+            "ill.filedefinition.filedownload.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/fileDefinition/fileUpload",
+          "permissionsRequired": [
+            "ill.filedefinition.fileupload.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/fileDefinition/{id}",
+          "permissionsRequired": [
+            "ill.filedefinition.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/fileDefinition/{id}",
+          "permissionsRequired": [
+            "ill.filedefinition.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/fileDefinition/{id}",
+          "permissionsRequired": [
+            "ill.filedefinition.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSItemLoanPolicy",
+          "permissionsRequired": [
+            "ill.hostlmsitemloanpolicy.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/hostLMSItemLoanPolicy",
+          "permissionsRequired": [
+            "ill.hostlmsitemloanpolicy.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/hostLMSItemLoanPolicy/{id}",
+          "permissionsRequired": [
+            "ill.hostlmsitemloanpolicy.delete.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSItemLoanPolicy/{id}",
+          "permissionsRequired": [
+            "ill.hostlmsitemloanpolicy.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/hostLMSItemLoanPolicy/{id}",
+          "permissionsRequired": [
+            "ill.hostlmsitemloanpolicy.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSLocations",
+          "permissionsRequired": [
+            "ill.hostlmslocations.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/hostLMSLocations",
+          "permissionsRequired": [
+            "ill.hostlmslocations.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/hostLMSLocations/{id}",
+          "permissionsRequired": [
+            "ill.hostlmslocations.delete.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSLocations/{id}",
+          "permissionsRequired": [
+            "ill.hostlmslocations.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/hostLMSLocations/{id}",
+          "permissionsRequired": [
+            "ill.hostlmslocations.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSPatronProfiles",
+          "permissionsRequired": [
+            "ill.hostlmspatronprofiles.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/hostLMSPatronProfiles",
+          "permissionsRequired": [
+            "ill.hostlmspatronprofiles.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/hostLMSPatronProfiles/{id}",
+          "permissionsRequired": [
+            "ill.hostlmspatronprofiles.delete.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/hostLMSPatronProfiles/{id}",
+          "permissionsRequired": [
+            "ill.hostlmspatronprofiles.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/hostLMSPatronProfiles/{id}",
+          "permissionsRequired": [
+            "ill.hostlmspatronprofiles.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/illSmtpMessage",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/illSmtpMessage",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/illSmtpMessage/createEditDetails",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/illSmtpMessage/tokenValues/{id}",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.tokenvalues.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/illSmtpMessage/{id}",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/illSmtpMessage/{id}",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/illSmtpMessage/{id}",
+          "permissionsRequired": [
+            "ill.illsmtpmessage.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institution",
+          "permissionsRequired": [
+            "ill.institution.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/institution",
+          "permissionsRequired": [
+            "ill.institution.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institution/createEditDetails",
+          "permissionsRequired": [
+            "ill.institution.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/institution/{id}",
+          "permissionsRequired": [
+            "ill.institution.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institution/{id}",
+          "permissionsRequired": [
+            "ill.institution.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/institution/{id}",
+          "permissionsRequired": [
+            "ill.institution.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institution/{id}/modifyGroups",
+          "permissionsRequired": [
+            "ill.institution.modifygroups.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institution/{id}/users",
+          "permissionsRequired": [
+            "ill.institution.users.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionGroup",
+          "permissionsRequired": [
+            "ill.institutiongroup.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/institutionGroup",
+          "permissionsRequired": [
+            "ill.institutiongroup.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionGroup/createEditDetails",
+          "permissionsRequired": [
+            "ill.institutiongroup.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/institutionGroup/{id}",
+          "permissionsRequired": [
+            "ill.institutiongroup.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionGroup/{id}",
+          "permissionsRequired": [
+            "ill.institutiongroup.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/institutionGroup/{id}",
+          "permissionsRequired": [
+            "ill.institutiongroup.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionGroup/{id}/modifyInstitutions",
+          "permissionsRequired": [
+            "ill.institutiongroup.modifyinstitutions.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionGroup/{id}/modifyUsers",
+          "permissionsRequired": [
+            "ill.institutiongroup.modifyusers.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser",
+          "permissionsRequired": [
+            "ill.institutionuser.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/institutionUser",
+          "permissionsRequired": [
+            "ill.institutionuser.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/canManage",
+          "permissionsRequired": [
+            "ill.institutionuser.canmanage.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/createEditDetails",
+          "permissionsRequired": [
+            "ill.institutionuser.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/manageInstitution",
+          "permissionsRequired": [
+            "ill.institutionuser.manageinstitution.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/institutionUser/{id}",
+          "permissionsRequired": [
+            "ill.institutionuser.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/{id}",
+          "permissionsRequired": [
+            "ill.institutionuser.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/institutionUser/{id}",
+          "permissionsRequired": [
+            "ill.institutionuser.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/{id}/institutions",
+          "permissionsRequired": [
+            "ill.institutionuser.institutions.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/institutionUser/{id}/modifyGroups",
+          "permissionsRequired": [
+            "ill.institutionuser.modifygroups.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/kiwt/raml",
+          "permissionsRequired": [
+            "ill.kiwt.raml.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/logging",
+          "permissionsRequired": [
+            "ill.logging.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/moduleDescriptor/generate",
+          "permissionsRequired": [
+            "ill.moduledescriptor.generate.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/noticeEvent",
+          "permissionsRequired": [
+            "ill.noticeevent.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/noticeEvent",
+          "permissionsRequired": [
+            "ill.noticeevent.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/noticeEvent/{id}",
+          "permissionsRequired": [
+            "ill.noticeevent.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/noticeEvent/{id}",
+          "permissionsRequired": [
+            "ill.noticeevent.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/noticeEvent/{id}",
+          "permissionsRequired": [
+            "ill.noticeevent.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/noticePolicies",
+          "permissionsRequired": [
+            "ill.noticepolicies.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/noticePolicies",
+          "permissionsRequired": [
+            "ill.noticepolicies.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/noticePolicies/{id}",
+          "permissionsRequired": [
+            "ill.noticepolicies.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/noticePolicies/{id}",
+          "permissionsRequired": [
+            "ill.noticepolicies.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/noticePolicies/{id}",
+          "permissionsRequired": [
+            "ill.noticepolicies.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patron",
+          "permissionsRequired": [
+            "ill.patron.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/patron",
+          "permissionsRequired": [
+            "ill.patron.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/patron/{id}",
+          "permissionsRequired": [
+            "ill.patron.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patron/{id}",
+          "permissionsRequired": [
+            "ill.patron.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/patron/{id}",
+          "permissionsRequired": [
+            "ill.patron.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patron/{id}/canCreateRequest",
+          "permissionsRequired": [
+            "ill.patron.cancreaterequest.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests",
+          "permissionsRequired": [
+            "ill.patronrequests.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/patronrequests",
+          "permissionsRequired": [
+            "ill.patronrequests.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/patronrequests/bulkAction",
+          "permissionsRequired": [
+            "ill.patronrequests.bulkaction.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/generatePickListBatch",
+          "permissionsRequired": [
+            "ill.patronrequests.generatepicklistbatch.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/markBatchAsPrinted",
+          "permissionsRequired": [
+            "ill.patronrequests.markbatchasprinted.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/newRequestDetails",
+          "permissionsRequired": [
+            "ill.patronrequests.newrequestdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/openURL",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}",
+          "permissionsRequired": [
+            "ill.patronrequests.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}",
+          "permissionsRequired": [
+            "ill.patronrequests.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}",
+          "permissionsRequired": [
+            "ill.patronrequests.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/agreeCopyright",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/fetchCopyright",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/manualCloseStates",
+          "permissionsRequired": [
+            "ill.patronrequests.manualclosestates.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/performAction",
+          "permissionsRequired": [
+            "ill.patronrequests.performaction.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/uploadDocument",
+          "permissionsRequired": [
+            "ill.patronrequests.uploaddocument.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/validActions",
+          "permissionsRequired": [
+            "ill.patronrequests.validactions.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/patronrequests/{id}/viewDocument",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/protocol",
+          "permissionsRequired": [
+            "ill.protocol.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/protocol",
+          "permissionsRequired": [
+            "ill.protocol.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/protocol/{id}",
+          "permissionsRequired": [
+            "ill.protocol.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/protocol/{id}",
+          "permissionsRequired": [
+            "ill.protocol.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/protocol/{id}",
+          "permissionsRequired": [
+            "ill.protocol.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/refdata",
+          "permissionsRequired": [
+            "ill.refdata.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/refdata",
+          "permissionsRequired": [
+            "ill.refdata.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/refdata/{id}",
+          "permissionsRequired": [
+            "ill.refdata.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/refdata/{id}",
+          "permissionsRequired": [
+            "ill.refdata.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/refdata/{id}",
+          "permissionsRequired": [
+            "ill.refdata.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/refdata/{id}/{property}",
+          "permissionsRequired": [
+            "ill.refdata.collectionpropertylookup.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/remoteAction",
+          "permissionsRequired": [
+            "ill.remoteaction.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/remoteAction",
+          "permissionsRequired": [
+            "ill.remoteaction.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/remoteAction/{id}",
+          "permissionsRequired": [
+            "ill.remoteaction.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/remoteAction/{id}",
+          "permissionsRequired": [
+            "ill.remoteaction.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/remoteAction/{id}",
+          "permissionsRequired": [
+            "ill.remoteaction.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/remoteAction/{id}/perform",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/report/createUpdate",
+          "permissionsRequired": [
+            "ill.report.createupdate.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/report/execute",
+          "permissionsRequired": [
+            "ill.report.execute.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/report/generatePicklist",
+          "permissionsRequired": [
+            "ill.report.generatepicklist.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/search",
+          "permissionsRequired": [
+            "ill.search.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/search",
+          "permissionsRequired": [
+            "ill.search.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/search/{id}",
+          "permissionsRequired": [
+            "ill.search.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/search/{id}",
+          "permissionsRequired": [
+            "ill.search.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/search/{id}",
+          "permissionsRequired": [
+            "ill.search.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchAttribute",
+          "permissionsRequired": [
+            "ill.searchattribute.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/searchAttribute",
+          "permissionsRequired": [
+            "ill.searchattribute.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/searchAttribute/{id}",
+          "permissionsRequired": [
+            "ill.searchattribute.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchAttribute/{id}",
+          "permissionsRequired": [
+            "ill.searchattribute.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/searchAttribute/{id}",
+          "permissionsRequired": [
+            "ill.searchattribute.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchGroup",
+          "permissionsRequired": [
+            "ill.searchgroup.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/searchGroup",
+          "permissionsRequired": [
+            "ill.searchgroup.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/searchGroup/{id}",
+          "permissionsRequired": [
+            "ill.searchgroup.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchGroup/{id}",
+          "permissionsRequired": [
+            "ill.searchgroup.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/searchGroup/{id}",
+          "permissionsRequired": [
+            "ill.searchgroup.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchTree",
+          "permissionsRequired": [
+            "ill.searchtree.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/searchTree",
+          "permissionsRequired": [
+            "ill.searchtree.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/searchTree/{id}",
+          "permissionsRequired": [
+            "ill.searchtree.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/searchTree/{id}",
+          "permissionsRequired": [
+            "ill.searchtree.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/searchTree/{id}",
+          "permissionsRequired": [
+            "ill.searchtree.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/settings/institutionSetting",
+          "permissionsRequired": [
+            "ill.institutionsetting.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/settings/institutionSetting",
+          "permissionsRequired": [
+            "ill.institutionsetting.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/settings/institutionSetting/{id}",
+          "permissionsRequired": [
+            "ill.institutionsetting.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/settings/institutionSetting/{id}",
+          "permissionsRequired": [
+            "ill.institutionsetting.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/settings/institutionSetting/{id}",
+          "permissionsRequired": [
+            "ill.institutionsetting.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/settings/systemSetting",
+          "permissionsRequired": [
+            "ill.systemsetting.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/settings/systemSetting",
+          "permissionsRequired": [
+            "ill.systemsetting.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/settings/systemSetting/{id}",
+          "permissionsRequired": [
+            "ill.systemsetting.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/settings/systemSetting/{id}",
+          "permissionsRequired": [
+            "ill.systemsetting.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/settings/systemSetting/{id}",
+          "permissionsRequired": [
+            "ill.systemsetting.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery",
+          "permissionsRequired": [
+            "ill.sharedindexquery.passthrough.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery/availability",
+          "permissionsRequired": [
+            "ill.sharedindexquery.availability.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery/byId",
+          "permissionsRequired": [
+            "ill.sharedindexquery.byid.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery/byQuery",
+          "permissionsRequired": [
+            "ill.sharedindexquery.byquery.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery/findMoreSuppliers",
+          "permissionsRequired": [
+            "ill.sharedindexquery.findmoresuppliers.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/sharedIndexQuery/token",
+          "permissionsRequired": [
+            "ill.sharedindexquery.token.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shelvingLocationSites",
+          "permissionsRequired": [
+            "ill.shelvinglocationsite.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/shelvingLocationSites",
+          "permissionsRequired": [
+            "ill.shelvinglocationsite.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/shelvingLocationSites/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocationsite.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shelvingLocationSites/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocationsite.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/shelvingLocationSites/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocationsite.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shelvingLocations",
+          "permissionsRequired": [
+            "ill.shelvinglocations.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/shelvingLocations",
+          "permissionsRequired": [
+            "ill.shelvinglocations.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/shelvingLocations/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocations.delete.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shelvingLocations/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocations.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/shelvingLocations/{id}",
+          "permissionsRequired": [
+            "ill.shelvinglocations.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shipments",
+          "permissionsRequired": [
+            "ill.shipment.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/shipments",
+          "permissionsRequired": [
+            "ill.shipment.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/shipments/{id}",
+          "permissionsRequired": [
+            "ill.shipment.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/shipments/{id}",
+          "permissionsRequired": [
+            "ill.shipment.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/shipments/{id}",
+          "permissionsRequired": [
+            "ill.shipment.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/stateModel/export",
+          "permissionsRequired": [
+            "ill.statemodel.export.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/stateModel/getValidActions",
+          "permissionsRequired": [
+            "ill.statemodel.getvalidactions.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/stateModel/import",
+          "permissionsRequired": [
+            "ill.statemodel.ingest.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/statistics/",
+          "permissionsRequired": [
+            "ill.statistics.index.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/statistics/forSymbol",
+          "permissionsRequired": [
+            "ill.statistics.fileupload.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/status",
+          "permissionsRequired": [
+            "ill.status.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/status/{id}",
+          "permissionsRequired": [
+            "ill.status.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/swagger*",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/swagger/api",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/tags",
+          "permissionsRequired": [
+            "ill.tags.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/tags",
+          "permissionsRequired": [
+            "ill.tags.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/tags/{id}",
+          "permissionsRequired": [
+            "ill.tags.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/tags/{id}",
+          "permissionsRequired": [
+            "ill.tags.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/tags/{id}",
+          "permissionsRequired": [
+            "ill.tags.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/template",
+          "permissionsRequired": [
+            "ill.template.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/template",
+          "permissionsRequired": [
+            "ill.template.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/template/createEditDetails",
+          "permissionsRequired": [
+            "ill.template.createeditdetails.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/template/{id}",
+          "permissionsRequired": [
+            "ill.template.delete.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/template/{id}",
+          "permissionsRequired": [
+            "ill.template.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/template/{id}",
+          "permissionsRequired": [
+            "ill.template.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testExternalSearch/locate",
+          "permissionsRequired": [
+            "ill.testexternalsearch.locate.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testHostLMS/acceptItem",
+          "permissionsRequired": [
+            "ill.testhostlms.accept.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testHostLMS/checkIn",
+          "permissionsRequired": [
+            "ill.testhostlms.checkin.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testHostLMS/checkOut",
+          "permissionsRequired": [
+            "ill.testhostlms.checkout.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testHostLMS/determineBestLocation",
+          "permissionsRequired": [
+            "ill.testhostlms.determinebestlocation.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testHostLMS/validate",
+          "permissionsRequired": [
+            "ill.testhostlms.validate.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/testRouting/findMoreSuppliers",
+          "permissionsRequired": [
+            "ill.testrouting.findmoresuppliers.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/timers",
+          "permissionsRequired": [
+            "ill.timer.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/timers",
+          "permissionsRequired": [
+            "ill.timer.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/timers/execute",
+          "permissionsRequired": [
+            "ill.timer.execute.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/ill/timers/{id}",
+          "permissionsRequired": [
+            "ill.timer.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/ill/timers/{id}",
+          "permissionsRequired": [
+            "ill.timer.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/ill/timers/{id}",
+          "permissionsRequired": [
+            "ill.timer.item.put"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "_tenant",
+      "version": "1.2",
+      "interfaceType": "system",
+      "handlers": [
+        {
+          "methods": [
+            "POST",
+            "DELETE"
+          ],
+          "pathPattern": "/_/tenant"
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/_/tenant/disable"
+        }
+      ]
+    },
+    {
+      "id": "_timer",
+      "version": "1.0",
+      "interfaceType": "system",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/ill/settings/worker",
+          "unit": "minute",
+          "delay": "10",
+          "modulePermissions": [
+            "configuration.entries.item.get",
+            "configuration.entries.collection.get",
+            "templates.item.get",
+            "template-request.post",
+            "email.message.post"
+          ]
+        }
+      ]
+    }
+  ],
+  "permissionSets": [
+    {
+      "permissionName": "ill.all",
+      "displayName": "Ill - All permissions",
+      "description": "All Ill",
+      "visible": true,
+      "subPermissions": [
+        "ill.application.all",
+        "ill.availableaction.all",
+        "ill.batch.all",
+        "ill.copyright message.all",
+        "ill.custprops.all",
+        "ill.directoryapi.all",
+        "ill.directoryentry.all",
+        "ill.directorygroup.all",
+        "ill.directorygroups.all",
+        "ill.externalapi.all",
+        "ill.filedefinition.all",
+        "ill.hostlmsitemloanpolicy.all",
+        "ill.hostlmslocations.all",
+        "ill.hostlmspatronprofiles.all",
+        "ill.illsmtpmessage.all",
+        "ill.institutionsetting.all",
+        "ill.iso18626.all",
+        "ill.kiwt.all",
+        "ill.logging.all",
+        "ill.moduledescriptor.all",
+        "ill.namingauthority.all",
+        "ill.noticeevent.all",
+        "ill.noticepolicies.all",
+        "ill.patron.all",
+        "ill.patronrequests.all",
+        "ill.protocol.all",
+        "ill.refdata.all",
+        "ill.remoteaction.all",
+        "ill.report.all",
+        "ill.search.all",
+        "ill.searchattribute.all",
+        "ill.searchgroup.all",
+        "ill.searchtree.all",
+        "ill.service.all",
+        "ill.serviceaccount.all",
+        "ill.sharedindexquery.all",
+        "ill.shelvinglocations.all",
+        "ill.shelvinglocationsite.all",
+        "ill.shipment.all",
+        "ill.statemodel.all",
+        "ill.statistics.all",
+        "ill.status.all",
+        "ill.swagger.all",
+        "ill.symbol.all",
+        "ill.systemsetting.all",
+        "ill.tags.all",
+        "ill.template.all",
+        "ill.testexternalsearch.all",
+        "ill.testhostlms.all",
+        "ill.testrouting.all",
+        "ill.timer.all"
+      ]
+    },
+    {
+      "permissionName": "ill.application.all",
+      "displayName": "Ill - All permissions for the application api",
+      "description": "All Ill application",
+      "visible": true,
+      "subPermissions": [
+        "ill.application.write"
+      ]
+    },
+    {
+      "permissionName": "ill.application.read",
+      "displayName": "Ill - Read permissions for the application api",
+      "description": "Read Ill application",
+      "visible": true,
+      "subPermissions": []
+    },
+    {
+      "permissionName": "ill.application.write",
+      "displayName": "Ill - Create, Update and Read permissions for the application api",
+      "description": "Write Ill application",
+      "visible": true,
+      "subPermissions": [
+        "ill.application.read"
+      ]
+    },
+    {
+      "permissionName": "ill.availableaction.all",
+      "displayName": "Ill - All permissions for the availableAction api",
+      "description": "All Ill availableAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.availableaction.write"
+      ]
+    },
+    {
+      "permissionName": "ill.availableaction.creategraph.get",
+      "displayName": "Ill - Builds a graph of the requested state model using the DOT language ",
+      "description": "Builds a graph of the requested state model using the DOT language ",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.availableaction.fromstates.get",
+      "displayName": "Ill - List the from states that an action can be triggered from",
+      "description": "List the from states that an action can be triggered from",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.availableaction.read",
+      "displayName": "Ill - Read permissions for the availableAction api",
+      "description": "Read Ill availableAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.availableaction.creategraph.get",
+        "ill.availableaction.fromstates.get",
+        "ill.availableaction.tostates.get"
+      ]
+    },
+    {
+      "permissionName": "ill.availableaction.tostates.get",
+      "displayName": "Ill - List the states that a request can end up in after the action has been performed",
+      "description": "List the states that a request can end up in after the action has been performed",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.availableaction.write",
+      "displayName": "Ill - Create, Update and Read permissions for the availableAction api",
+      "description": "Write Ill availableAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.availableaction.read"
+      ]
+    },
+    {
+      "permissionName": "ill.batch.all",
+      "displayName": "Ill - All permissions for the batch api",
+      "description": "All Ill batch",
+      "visible": true,
+      "subPermissions": [
+        "ill.batch.item.delete",
+        "ill.batch.write"
+      ]
+    },
+    {
+      "permissionName": "ill.batch.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.batch.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.batch.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.batch.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.batch.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.batch.read",
+      "displayName": "Ill - Read permissions for the batch api",
+      "description": "Read Ill batch",
+      "visible": true,
+      "subPermissions": [
+        "ill.batch.collection.get",
+        "ill.batch.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.batch.write",
+      "displayName": "Ill - Create, Update and Read permissions for the batch api",
+      "description": "Write Ill batch",
+      "visible": true,
+      "subPermissions": [
+        "ill.batch.item.post",
+        "ill.batch.item.put",
+        "ill.batch.read"
+      ]
+    },
+    {
+      "permissionName": "ill.copyright message.all",
+      "displayName": "Ill - All permissions for the Copyright Message api",
+      "description": "All Ill Copyright Message",
+      "visible": true,
+      "subPermissions": [
+        "ill.copyright message.item.delete",
+        "ill.copyright message.write"
+      ]
+    },
+    {
+      "permissionName": "ill.copyright message.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing a copyright message",
+      "description": "Details required for creating or editing a copyright message",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.copyright message.read",
+      "displayName": "Ill - Read permissions for the Copyright Message api",
+      "description": "Read Ill Copyright Message",
+      "visible": true,
+      "subPermissions": [
+        "ill.copyright message.collection.get",
+        "ill.copyright message.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.copyright message.write",
+      "displayName": "Ill - Create, Update and Read permissions for the Copyright Message api",
+      "description": "Write Ill Copyright Message",
+      "visible": true,
+      "subPermissions": [
+        "ill.copyright message.createeditdetails.get",
+        "ill.copyright message.item.post",
+        "ill.copyright message.item.put",
+        "ill.copyright message.read"
+      ]
+    },
+    {
+      "permissionName": "ill.custprops.all",
+      "displayName": "Ill - All permissions for the custprops api",
+      "description": "All Ill custprops",
+      "visible": true,
+      "subPermissions": [
+        "ill.custprops.item.delete",
+        "ill.custprops.write"
+      ]
+    },
+    {
+      "permissionName": "ill.custprops.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.custprops.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.custprops.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.custprops.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.custprops.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.custprops.read",
+      "displayName": "Ill - Read permissions for the custprops api",
+      "description": "Read Ill custprops",
+      "visible": true,
+      "subPermissions": [
+        "ill.custprops.collection.get",
+        "ill.custprops.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.custprops.write",
+      "displayName": "Ill - Create, Update and Read permissions for the custprops api",
+      "description": "Write Ill custprops",
+      "visible": true,
+      "subPermissions": [
+        "ill.custprops.item.post",
+        "ill.custprops.item.put",
+        "ill.custprops.read"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryapi.addfriend.get",
+      "displayName": "Ill - Fetches the specified url and adds the found institutions as directory entries",
+      "description": "Fetches the specified url and adds the found institutions as directory entries",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryapi.all",
+      "displayName": "Ill - All permissions for the directoryApi api",
+      "description": "All Ill directoryApi",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryapi.write"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryapi.findsymbol.get",
+      "displayName": "Ill - Fetch the symbols for a directory entry",
+      "description": "Fetch the symbols for a directory entry",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryapi.freshen.get",
+      "displayName": "Ill - Freshen the directory entries",
+      "description": "Freshen the directory entries",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryapi.read",
+      "displayName": "Ill - Read permissions for the directoryApi api",
+      "description": "Read Ill directoryApi",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryapi.findsymbol.get",
+        "ill.directoryapi.freshen.get"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryapi.write",
+      "displayName": "Ill - Create, Update and Read permissions for the directoryApi api",
+      "description": "Write Ill directoryApi",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryapi.addfriend.get",
+        "ill.directoryapi.read"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryentry.all",
+      "displayName": "Ill - All permissions for the directoryEntry api",
+      "description": "All Ill directoryEntry",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryentry.item.delete",
+        "ill.directoryentry.write"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryentry.index.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.read",
+      "displayName": "Ill - Read permissions for the directoryEntry api",
+      "description": "Read Ill directoryEntry",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryentry.index.get",
+        "ill.directoryentry.show.get"
+      ]
+    },
+    {
+      "permissionName": "ill.directoryentry.show.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.validate.post",
+      "displayName": "Ill - Validates the supplied record",
+      "description": "Validates the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directoryentry.write",
+      "displayName": "Ill - Create, Update and Read permissions for the directoryEntry api",
+      "description": "Write Ill directoryEntry",
+      "visible": true,
+      "subPermissions": [
+        "ill.directoryentry.item.post",
+        "ill.directoryentry.item.put",
+        "ill.directoryentry.read",
+        "ill.directoryentry.validate.post"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroup.all",
+      "displayName": "Ill - All permissions for the directorygroup api",
+      "description": "All Ill directorygroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroup.item.delete",
+        "ill.directorygroup.write"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroup.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroup.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroup.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroup.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroup.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroup.read",
+      "displayName": "Ill - Read permissions for the directorygroup api",
+      "description": "Read Ill directorygroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroup.collection.get",
+        "ill.directorygroup.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroup.write",
+      "displayName": "Ill - Create, Update and Read permissions for the directorygroup api",
+      "description": "Write Ill directorygroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroup.item.post",
+        "ill.directorygroup.item.put",
+        "ill.directorygroup.read"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroups.all",
+      "displayName": "Ill - All permissions for the directorygroups api",
+      "description": "All Ill directorygroups",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroups.item.delete",
+        "ill.directorygroups.write"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroups.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroups.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroups.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroups.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroups.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.directorygroups.read",
+      "displayName": "Ill - Read permissions for the directorygroups api",
+      "description": "Read Ill directorygroups",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroups.collection.get",
+        "ill.directorygroups.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.directorygroups.write",
+      "displayName": "Ill - Create, Update and Read permissions for the directorygroups api",
+      "description": "Write Ill directorygroups",
+      "visible": true,
+      "subPermissions": [
+        "ill.directorygroups.item.post",
+        "ill.directorygroups.item.put",
+        "ill.directorygroups.read"
+      ]
+    },
+    {
+      "permissionName": "ill.externalapi.all",
+      "displayName": "Ill - All permissions for the externalApi api",
+      "description": "All Ill externalApi",
+      "visible": true,
+      "subPermissions": [
+        "ill.externalapi.write"
+      ]
+    },
+    {
+      "permissionName": "ill.externalapi.read",
+      "displayName": "Ill - Read permissions for the externalApi api",
+      "description": "Read Ill externalApi",
+      "visible": true,
+      "subPermissions": []
+    },
+    {
+      "permissionName": "ill.externalapi.write",
+      "displayName": "Ill - Create, Update and Read permissions for the externalApi api",
+      "description": "Write Ill externalApi",
+      "visible": true,
+      "subPermissions": [
+        "ill.externalapi.read"
+      ]
+    },
+    {
+      "permissionName": "ill.filedefinition.all",
+      "displayName": "Ill - All permissions for the fileDefinition api",
+      "description": "All Ill fileDefinition",
+      "visible": true,
+      "subPermissions": [
+        "ill.filedefinition.item.delete",
+        "ill.filedefinition.write"
+      ]
+    },
+    {
+      "permissionName": "ill.filedefinition.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.filedownload.get",
+      "displayName": "Ill - File download",
+      "description": "File download",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.fileupload.post",
+      "displayName": "Ill - File upload",
+      "description": "File upload",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.filedefinition.read",
+      "displayName": "Ill - Read permissions for the fileDefinition api",
+      "description": "Read Ill fileDefinition",
+      "visible": true,
+      "subPermissions": [
+        "ill.filedefinition.collection.get",
+        "ill.filedefinition.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.filedefinition.write",
+      "displayName": "Ill - Create, Update and Read permissions for the fileDefinition api",
+      "description": "Write Ill fileDefinition",
+      "visible": true,
+      "subPermissions": [
+        "ill.filedefinition.filedownload.get",
+        "ill.filedefinition.fileupload.post",
+        "ill.filedefinition.item.post",
+        "ill.filedefinition.item.put",
+        "ill.filedefinition.read"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.all",
+      "displayName": "Ill - All permissions for the hostLMSItemLoanPolicy api",
+      "description": "All Ill hostLMSItemLoanPolicy",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmsitemloanpolicy.delete.delete",
+        "ill.hostlmsitemloanpolicy.write"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.delete.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.read",
+      "displayName": "Ill - Read permissions for the hostLMSItemLoanPolicy api",
+      "description": "Read Ill hostLMSItemLoanPolicy",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmsitemloanpolicy.collection.get",
+        "ill.hostlmsitemloanpolicy.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmsitemloanpolicy.write",
+      "displayName": "Ill - Create, Update and Read permissions for the hostLMSItemLoanPolicy api",
+      "description": "Write Ill hostLMSItemLoanPolicy",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmsitemloanpolicy.item.post",
+        "ill.hostlmsitemloanpolicy.item.put",
+        "ill.hostlmsitemloanpolicy.read"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmslocations.all",
+      "displayName": "Ill - All permissions for the hostLMSLocations api",
+      "description": "All Ill hostLMSLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmslocations.delete.delete",
+        "ill.hostlmslocations.write"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmslocations.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmslocations.delete.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmslocations.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmslocations.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmslocations.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmslocations.read",
+      "displayName": "Ill - Read permissions for the hostLMSLocations api",
+      "description": "Read Ill hostLMSLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmslocations.collection.get",
+        "ill.hostlmslocations.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmslocations.write",
+      "displayName": "Ill - Create, Update and Read permissions for the hostLMSLocations api",
+      "description": "Write Ill hostLMSLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmslocations.item.post",
+        "ill.hostlmslocations.item.put",
+        "ill.hostlmslocations.read"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.all",
+      "displayName": "Ill - All permissions for the hostLMSPatronProfiles api",
+      "description": "All Ill hostLMSPatronProfiles",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmspatronprofiles.delete.delete",
+        "ill.hostlmspatronprofiles.write"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.delete.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.read",
+      "displayName": "Ill - Read permissions for the hostLMSPatronProfiles api",
+      "description": "Read Ill hostLMSPatronProfiles",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmspatronprofiles.collection.get",
+        "ill.hostlmspatronprofiles.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.hostlmspatronprofiles.write",
+      "displayName": "Ill - Create, Update and Read permissions for the hostLMSPatronProfiles api",
+      "description": "Write Ill hostLMSPatronProfiles",
+      "visible": true,
+      "subPermissions": [
+        "ill.hostlmspatronprofiles.item.post",
+        "ill.hostlmspatronprofiles.item.put",
+        "ill.hostlmspatronprofiles.read"
+      ]
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.all",
+      "displayName": "Ill - All permissions for the illSmtpMessage api",
+      "description": "All Ill illSmtpMessage",
+      "visible": true,
+      "subPermissions": [
+        "ill.illsmtpmessage.item.delete",
+        "ill.illsmtpmessage.write"
+      ]
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing an Ill SMTP Message",
+      "description": "Details required for creating or editing an Ill SMTP Message",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.read",
+      "displayName": "Ill - Read permissions for the illSmtpMessage api",
+      "description": "Read Ill illSmtpMessage",
+      "visible": true,
+      "subPermissions": [
+        "ill.illsmtpmessage.collection.get",
+        "ill.illsmtpmessage.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.tokenvalues.get",
+      "displayName": "Ill - Retrieves the token values that will be used for a request, when sending a SMTP request",
+      "description": "Retrieves the token values that will be used for a request, when sending a SMTP request",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.illsmtpmessage.write",
+      "displayName": "Ill - Create, Update and Read permissions for the illSmtpMessage api",
+      "description": "Write Ill illSmtpMessage",
+      "visible": true,
+      "subPermissions": [
+        "ill.illsmtpmessage.createeditdetails.get",
+        "ill.illsmtpmessage.item.post",
+        "ill.illsmtpmessage.item.put",
+        "ill.illsmtpmessage.read",
+        "ill.illsmtpmessage.tokenvalues.get"
+      ]
+    },
+    {
+      "permissionName": "ill.institution.all",
+      "displayName": "Ill - All permissions for the institution api",
+      "description": "All Ill institution",
+      "visible": true,
+      "subPermissions": [
+        "ill.institution.item.delete",
+        "ill.institution.write"
+      ]
+    },
+    {
+      "permissionName": "ill.institution.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing an institution",
+      "description": "Details required for creating or editing an institution",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.modifygroups.get",
+      "displayName": "Ill - Modifies the groups associated with the institution",
+      "description": "Modifies the groups associated with the institution",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.read",
+      "displayName": "Ill - Read permissions for the institution api",
+      "description": "Read Ill institution",
+      "visible": true,
+      "subPermissions": [
+        "ill.institution.collection.get",
+        "ill.institution.createeditdetails.get",
+        "ill.institution.item.get",
+        "ill.institution.users.get"
+      ]
+    },
+    {
+      "permissionName": "ill.institution.users.get",
+      "displayName": "Ill - Users associated with the institution",
+      "description": "Users associated with the institution",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institution.write",
+      "displayName": "Ill - Create, Update and Read permissions for the institution api",
+      "description": "Write Ill institution",
+      "visible": true,
+      "subPermissions": [
+        "ill.institution.item.post",
+        "ill.institution.item.put",
+        "ill.institution.modifygroups.get",
+        "ill.institution.read"
+      ]
+    },
+    {
+      "permissionName": "ill.institutiongroup.all",
+      "displayName": "Ill - All permissions for the institutiongroup api",
+      "description": "All Ill institutiongroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutiongroup.item.delete",
+        "ill.institutiongroup.write"
+      ]
+    },
+    {
+      "permissionName": "ill.institutiongroup.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing an institution group",
+      "description": "Details required for creating or editing an institution group",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.modifyinstitutions.get",
+      "displayName": "Ill - Modifies the institutions associated with the group",
+      "description": "Modifies the institutions associated with the group",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.modifyusers.get",
+      "displayName": "Ill - Modifies the users associated with the group",
+      "description": "Modifies the users associated with the group",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutiongroup.read",
+      "displayName": "Ill - Read permissions for the institutiongroup api",
+      "description": "Read Ill institutiongroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutiongroup.collection.get",
+        "ill.institutiongroup.createeditdetails.get",
+        "ill.institutiongroup.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.institutiongroup.write",
+      "displayName": "Ill - Create, Update and Read permissions for the institutiongroup api",
+      "description": "Write Ill institutiongroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutiongroup.item.post",
+        "ill.institutiongroup.item.put",
+        "ill.institutiongroup.modifyinstitutions.get",
+        "ill.institutiongroup.modifyusers.get",
+        "ill.institutiongroup.read"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionsetting.all",
+      "displayName": "Ill - All permissions for the institutionSetting api",
+      "description": "All Ill institutionSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionsetting.item.delete",
+        "ill.institutionsetting.write"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionsetting.index.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionsetting.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionsetting.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionsetting.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionsetting.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionsetting.read",
+      "displayName": "Ill - Read permissions for the institutionSetting api",
+      "description": "Read Ill institutionSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionsetting.index.get",
+        "ill.institutionsetting.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionsetting.write",
+      "displayName": "Ill - Create, Update and Read permissions for the institutionSetting api",
+      "description": "Write Ill institutionSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionsetting.item.post",
+        "ill.institutionsetting.item.put",
+        "ill.institutionsetting.read"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionuser.all",
+      "displayName": "Ill - All permissions for the institutionuser api",
+      "description": "All Ill institutionuser",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionuser.item.delete",
+        "ill.institutionuser.write"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionuser.canmanage.get",
+      "displayName": "Ill - canManage",
+      "description": "canManage",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing an institution user",
+      "description": "Details required for creating or editing an institution user",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.institutions.get",
+      "displayName": "Ill - Institutions associated with the user",
+      "description": "Institutions associated with the user",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.manageinstitution.get",
+      "displayName": "Ill - Set the institution to be managed",
+      "description": "Set the institution to be managed",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.modifygroups.get",
+      "displayName": "Ill - Modifies the groups associated with the institution",
+      "description": "Modifies the groups associated with the institution",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.institutionuser.read",
+      "displayName": "Ill - Read permissions for the institutionuser api",
+      "description": "Read Ill institutionuser",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionuser.canmanage.get",
+        "ill.institutionuser.collection.get",
+        "ill.institutionuser.createeditdetails.get",
+        "ill.institutionuser.institutions.get",
+        "ill.institutionuser.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.institutionuser.write",
+      "displayName": "Ill - Create, Update and Read permissions for the institutionuser api",
+      "description": "Write Ill institutionuser",
+      "visible": true,
+      "subPermissions": [
+        "ill.institutionuser.item.post",
+        "ill.institutionuser.item.put",
+        "ill.institutionuser.manageinstitution.get",
+        "ill.institutionuser.modifygroups.get",
+        "ill.institutionuser.read"
+      ]
+    },
+    {
+      "permissionName": "ill.iso18626.all",
+      "displayName": "Ill - All permissions for the iso18626 api",
+      "description": "All Ill iso18626",
+      "visible": true,
+      "subPermissions": [
+        "ill.iso18626.write"
+      ]
+    },
+    {
+      "permissionName": "ill.iso18626.read",
+      "displayName": "Ill - Read permissions for the iso18626 api",
+      "description": "Read Ill iso18626",
+      "visible": true,
+      "subPermissions": []
+    },
+    {
+      "permissionName": "ill.iso18626.write",
+      "displayName": "Ill - Create, Update and Read permissions for the iso18626 api",
+      "description": "Write Ill iso18626",
+      "visible": true,
+      "subPermissions": [
+        "ill.iso18626.read"
+      ]
+    },
+    {
+      "permissionName": "ill.kiwt.all",
+      "displayName": "Ill - All permissions for the kiwt api",
+      "description": "All Ill kiwt",
+      "visible": true,
+      "subPermissions": [
+        "ill.kiwt.write"
+      ]
+    },
+    {
+      "permissionName": "ill.kiwt.raml.get",
+      "displayName": "Ill - The raml file for the applications",
+      "description": "The raml file for the applications",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.kiwt.read",
+      "displayName": "Ill - Read permissions for the kiwt api",
+      "description": "Read Ill kiwt",
+      "visible": true,
+      "subPermissions": [
+        "ill.kiwt.raml.get"
+      ]
+    },
+    {
+      "permissionName": "ill.kiwt.write",
+      "displayName": "Ill - Create, Update and Read permissions for the kiwt api",
+      "description": "Write Ill kiwt",
+      "visible": true,
+      "subPermissions": [
+        "ill.kiwt.read"
+      ]
+    },
+    {
+      "permissionName": "ill.logging.all",
+      "displayName": "Ill - All permissions for the logging api",
+      "description": "All Ill logging",
+      "visible": true,
+      "subPermissions": [
+        "ill.logging.write"
+      ]
+    },
+    {
+      "permissionName": "ill.logging.index.get",
+      "displayName": "Ill - Sets the log level for the specified class, returning what it was set to previously",
+      "description": "Sets the log level for the specified class, returning what it was set to previously",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.logging.read",
+      "displayName": "Ill - Read permissions for the logging api",
+      "description": "Read Ill logging",
+      "visible": true,
+      "subPermissions": []
+    },
+    {
+      "permissionName": "ill.logging.write",
+      "displayName": "Ill - Create, Update and Read permissions for the logging api",
+      "description": "Write Ill logging",
+      "visible": true,
+      "subPermissions": [
+        "ill.logging.index.get",
+        "ill.logging.read"
+      ]
+    },
+    {
+      "permissionName": "ill.moduledescriptor.all",
+      "displayName": "Ill - All permissions for the moduleDescriptor api",
+      "description": "All Ill moduleDescriptor",
+      "visible": true,
+      "subPermissions": [
+        "ill.moduledescriptor.write"
+      ]
+    },
+    {
+      "permissionName": "ill.moduledescriptor.generate.get",
+      "displayName": "Ill - Generate the module descriptor template",
+      "description": "Generate the module descriptor template",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.moduledescriptor.read",
+      "displayName": "Ill - Read permissions for the moduleDescriptor api",
+      "description": "Read Ill moduleDescriptor",
+      "visible": true,
+      "subPermissions": [
+        "ill.moduledescriptor.generate.get"
+      ]
+    },
+    {
+      "permissionName": "ill.moduledescriptor.write",
+      "displayName": "Ill - Create, Update and Read permissions for the moduleDescriptor api",
+      "description": "Write Ill moduleDescriptor",
+      "visible": true,
+      "subPermissions": [
+        "ill.moduledescriptor.read"
+      ]
+    },
+    {
+      "permissionName": "ill.namingauthority.all",
+      "displayName": "Ill - All permissions for the namingAuthority api",
+      "description": "All Ill namingAuthority",
+      "visible": true,
+      "subPermissions": [
+        "ill.namingauthority.item.delete",
+        "ill.namingauthority.write"
+      ]
+    },
+    {
+      "permissionName": "ill.namingauthority.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.namingauthority.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.namingauthority.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.namingauthority.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.namingauthority.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.namingauthority.read",
+      "displayName": "Ill - Read permissions for the namingAuthority api",
+      "description": "Read Ill namingAuthority",
+      "visible": true,
+      "subPermissions": [
+        "ill.namingauthority.collection.get",
+        "ill.namingauthority.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.namingauthority.write",
+      "displayName": "Ill - Create, Update and Read permissions for the namingAuthority api",
+      "description": "Write Ill namingAuthority",
+      "visible": true,
+      "subPermissions": [
+        "ill.namingauthority.item.post",
+        "ill.namingauthority.item.put",
+        "ill.namingauthority.read"
+      ]
+    },
+    {
+      "permissionName": "ill.noticeevent.all",
+      "displayName": "Ill - All permissions for the noticeEvent api",
+      "description": "All Ill noticeEvent",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticeevent.item.delete",
+        "ill.noticeevent.write"
+      ]
+    },
+    {
+      "permissionName": "ill.noticeevent.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticeevent.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticeevent.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticeevent.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticeevent.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticeevent.read",
+      "displayName": "Ill - Read permissions for the noticeEvent api",
+      "description": "Read Ill noticeEvent",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticeevent.collection.get",
+        "ill.noticeevent.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.noticeevent.write",
+      "displayName": "Ill - Create, Update and Read permissions for the noticeEvent api",
+      "description": "Write Ill noticeEvent",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticeevent.item.post",
+        "ill.noticeevent.item.put",
+        "ill.noticeevent.read"
+      ]
+    },
+    {
+      "permissionName": "ill.noticepolicies.all",
+      "displayName": "Ill - All permissions for the noticePolicies api",
+      "description": "All Ill noticePolicies",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticepolicies.item.delete",
+        "ill.noticepolicies.write"
+      ]
+    },
+    {
+      "permissionName": "ill.noticepolicies.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticepolicies.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticepolicies.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticepolicies.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticepolicies.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.noticepolicies.read",
+      "displayName": "Ill - Read permissions for the noticePolicies api",
+      "description": "Read Ill noticePolicies",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticepolicies.collection.get",
+        "ill.noticepolicies.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.noticepolicies.write",
+      "displayName": "Ill - Create, Update and Read permissions for the noticePolicies api",
+      "description": "Write Ill noticePolicies",
+      "visible": true,
+      "subPermissions": [
+        "ill.noticepolicies.item.post",
+        "ill.noticepolicies.item.put",
+        "ill.noticepolicies.read"
+      ]
+    },
+    {
+      "permissionName": "ill.patron.all",
+      "displayName": "Ill - All permissions for the patron api",
+      "description": "All Ill patron",
+      "visible": true,
+      "subPermissions": [
+        "ill.patron.item.delete",
+        "ill.patron.write"
+      ]
+    },
+    {
+      "permissionName": "ill.patron.cancreaterequest.get",
+      "displayName": "Ill - Is the user allowed to make requests",
+      "description": "Is the user allowed to make requests",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patron.read",
+      "displayName": "Ill - Read permissions for the patron api",
+      "description": "Read Ill patron",
+      "visible": true,
+      "subPermissions": [
+        "ill.patron.collection.get",
+        "ill.patron.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.patron.write",
+      "displayName": "Ill - Create, Update and Read permissions for the patron api",
+      "description": "Write Ill patron",
+      "visible": true,
+      "subPermissions": [
+        "ill.patron.cancreaterequest.get",
+        "ill.patron.item.post",
+        "ill.patron.item.put",
+        "ill.patron.read"
+      ]
+    },
+    {
+      "permissionName": "ill.patronrequests.all",
+      "displayName": "Ill - All permissions for the patronrequests api",
+      "description": "All Ill patronrequests",
+      "visible": true,
+      "subPermissions": [
+        "ill.patronrequests.item.delete",
+        "ill.patronrequests.write"
+      ]
+    },
+    {
+      "permissionName": "ill.patronrequests.bulkaction.post",
+      "displayName": "Ill - Performs the specified action against the specified requests",
+      "description": "Performs the specified action against the specified requests",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.generatepicklistbatch.get",
+      "displayName": "Ill - Generates the pick list batch based on the passed in filter",
+      "description": "Generates the pick list batch based on the passed in filter",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.index.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.manualclosestates.get",
+      "displayName": "Ill - List the close states that are valid for the request",
+      "description": "List the close states that are valid for the request",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.markbatchasprinted.get",
+      "displayName": "Ill - Actions the requests in the batch as printed",
+      "description": "Actions the requests in the batch as printed",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.newrequestdetails.get",
+      "displayName": "Ill - New request details",
+      "description": "New request details",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.performaction.post",
+      "displayName": "Ill - Performs the action the posted action for the given request",
+      "description": "Performs the action the posted action for the given request",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.read",
+      "displayName": "Ill - Read permissions for the patronrequests api",
+      "description": "Read Ill patronrequests",
+      "visible": true,
+      "subPermissions": [
+        "ill.patronrequests.index.get",
+        "ill.patronrequests.item.get",
+        "ill.patronrequests.newrequestdetails.get"
+      ]
+    },
+    {
+      "permissionName": "ill.patronrequests.uploaddocument.post",
+      "displayName": "Ill - Uploads a document to be associated with the request",
+      "description": "Uploads a document to be associated with the request",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.validactions.get",
+      "displayName": "Ill - List the actions that are available for the request",
+      "description": "List the actions that are available for the request",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.patronrequests.write",
+      "displayName": "Ill - Create, Update and Read permissions for the patronrequests api",
+      "description": "Write Ill patronrequests",
+      "visible": true,
+      "subPermissions": [
+        "ill.patronrequests.bulkaction.post",
+        "ill.patronrequests.generatepicklistbatch.get",
+        "ill.patronrequests.item.post",
+        "ill.patronrequests.item.put",
+        "ill.patronrequests.manualclosestates.get",
+        "ill.patronrequests.markbatchasprinted.get",
+        "ill.patronrequests.performaction.post",
+        "ill.patronrequests.read",
+        "ill.patronrequests.uploaddocument.post",
+        "ill.patronrequests.validactions.get"
+      ]
+    },
+    {
+      "permissionName": "ill.protocol.all",
+      "displayName": "Ill - All permissions for the protocol api",
+      "description": "All Ill protocol",
+      "visible": true,
+      "subPermissions": [
+        "ill.protocol.item.delete",
+        "ill.protocol.write"
+      ]
+    },
+    {
+      "permissionName": "ill.protocol.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.protocol.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.protocol.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.protocol.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.protocol.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.protocol.read",
+      "displayName": "Ill - Read permissions for the protocol api",
+      "description": "Read Ill protocol",
+      "visible": true,
+      "subPermissions": [
+        "ill.protocol.collection.get",
+        "ill.protocol.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.protocol.write",
+      "displayName": "Ill - Create, Update and Read permissions for the protocol api",
+      "description": "Write Ill protocol",
+      "visible": true,
+      "subPermissions": [
+        "ill.protocol.item.post",
+        "ill.protocol.item.put",
+        "ill.protocol.read"
+      ]
+    },
+    {
+      "permissionName": "ill.refdata.all",
+      "displayName": "Ill - All permissions for the refdata api",
+      "description": "All Ill refdata",
+      "visible": true,
+      "subPermissions": [
+        "ill.refdata.item.delete",
+        "ill.refdata.write"
+      ]
+    },
+    {
+      "permissionName": "ill.refdata.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.collectionpropertylookup.get",
+      "displayName": "Ill - Returns all the category values for the supplied domain and property",
+      "description": "Returns all the category values for the supplied domain and property",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.refdata.read",
+      "displayName": "Ill - Read permissions for the refdata api",
+      "description": "Read Ill refdata",
+      "visible": true,
+      "subPermissions": [
+        "ill.refdata.collection.get",
+        "ill.refdata.collectionpropertylookup.get",
+        "ill.refdata.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.refdata.write",
+      "displayName": "Ill - Create, Update and Read permissions for the refdata api",
+      "description": "Write Ill refdata",
+      "visible": true,
+      "subPermissions": [
+        "ill.refdata.item.post",
+        "ill.refdata.item.put",
+        "ill.refdata.read"
+      ]
+    },
+    {
+      "permissionName": "ill.remoteaction.all",
+      "displayName": "Ill - All permissions for the remoteAction api",
+      "description": "All Ill remoteAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.remoteaction.item.delete",
+        "ill.remoteaction.write"
+      ]
+    },
+    {
+      "permissionName": "ill.remoteaction.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.remoteaction.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.remoteaction.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.remoteaction.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.remoteaction.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.remoteaction.read",
+      "displayName": "Ill - Read permissions for the remoteAction api",
+      "description": "Read Ill remoteAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.remoteaction.collection.get",
+        "ill.remoteaction.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.remoteaction.write",
+      "displayName": "Ill - Create, Update and Read permissions for the remoteAction api",
+      "description": "Write Ill remoteAction",
+      "visible": true,
+      "subPermissions": [
+        "ill.remoteaction.item.post",
+        "ill.remoteaction.item.put",
+        "ill.remoteaction.read"
+      ]
+    },
+    {
+      "permissionName": "ill.report.all",
+      "displayName": "Ill - All permissions for the report api",
+      "description": "All Ill report",
+      "visible": true,
+      "subPermissions": [
+        "ill.report.write"
+      ]
+    },
+    {
+      "permissionName": "ill.report.createupdate.post",
+      "displayName": "Ill - Create / Update a report",
+      "description": "Create / Update a report",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.report.execute.get",
+      "displayName": "Ill - Executes the specified report",
+      "description": "Executes the specified report",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.report.generatepicklist.get",
+      "displayName": "Ill - Executes the picklist report",
+      "description": "Executes the picklist report",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.report.read",
+      "displayName": "Ill - Read permissions for the report api",
+      "description": "Read Ill report",
+      "visible": true,
+      "subPermissions": [
+        "ill.report.execute.get",
+        "ill.report.generatepicklist.get"
+      ]
+    },
+    {
+      "permissionName": "ill.report.write",
+      "displayName": "Ill - Create, Update and Read permissions for the report api",
+      "description": "Write Ill report",
+      "visible": true,
+      "subPermissions": [
+        "ill.report.createupdate.post",
+        "ill.report.read"
+      ]
+    },
+    {
+      "permissionName": "ill.search.all",
+      "displayName": "Ill - All permissions for the search api",
+      "description": "All Ill search",
+      "visible": true,
+      "subPermissions": [
+        "ill.search.item.delete",
+        "ill.search.write"
+      ]
+    },
+    {
+      "permissionName": "ill.search.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.search.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.search.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.search.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.search.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.search.read",
+      "displayName": "Ill - Read permissions for the search api",
+      "description": "Read Ill search",
+      "visible": true,
+      "subPermissions": [
+        "ill.search.collection.get",
+        "ill.search.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.search.write",
+      "displayName": "Ill - Create, Update and Read permissions for the search api",
+      "description": "Write Ill search",
+      "visible": true,
+      "subPermissions": [
+        "ill.search.item.post",
+        "ill.search.item.put",
+        "ill.search.read"
+      ]
+    },
+    {
+      "permissionName": "ill.searchattribute.all",
+      "displayName": "Ill - All permissions for the searchattribute api",
+      "description": "All Ill searchattribute",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchattribute.item.delete",
+        "ill.searchattribute.write"
+      ]
+    },
+    {
+      "permissionName": "ill.searchattribute.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchattribute.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchattribute.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchattribute.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchattribute.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchattribute.read",
+      "displayName": "Ill - Read permissions for the searchattribute api",
+      "description": "Read Ill searchattribute",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchattribute.collection.get",
+        "ill.searchattribute.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.searchattribute.write",
+      "displayName": "Ill - Create, Update and Read permissions for the searchattribute api",
+      "description": "Write Ill searchattribute",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchattribute.item.post",
+        "ill.searchattribute.item.put",
+        "ill.searchattribute.read"
+      ]
+    },
+    {
+      "permissionName": "ill.searchgroup.all",
+      "displayName": "Ill - All permissions for the searchgroup api",
+      "description": "All Ill searchgroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchgroup.item.delete",
+        "ill.searchgroup.write"
+      ]
+    },
+    {
+      "permissionName": "ill.searchgroup.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchgroup.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchgroup.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchgroup.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchgroup.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchgroup.read",
+      "displayName": "Ill - Read permissions for the searchgroup api",
+      "description": "Read Ill searchgroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchgroup.collection.get",
+        "ill.searchgroup.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.searchgroup.write",
+      "displayName": "Ill - Create, Update and Read permissions for the searchgroup api",
+      "description": "Write Ill searchgroup",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchgroup.item.post",
+        "ill.searchgroup.item.put",
+        "ill.searchgroup.read"
+      ]
+    },
+    {
+      "permissionName": "ill.searchtree.all",
+      "displayName": "Ill - All permissions for the searchtree api",
+      "description": "All Ill searchtree",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchtree.item.delete",
+        "ill.searchtree.write"
+      ]
+    },
+    {
+      "permissionName": "ill.searchtree.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchtree.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchtree.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchtree.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchtree.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.searchtree.read",
+      "displayName": "Ill - Read permissions for the searchtree api",
+      "description": "Read Ill searchtree",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchtree.collection.get",
+        "ill.searchtree.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.searchtree.write",
+      "displayName": "Ill - Create, Update and Read permissions for the searchtree api",
+      "description": "Write Ill searchtree",
+      "visible": true,
+      "subPermissions": [
+        "ill.searchtree.item.post",
+        "ill.searchtree.item.put",
+        "ill.searchtree.read"
+      ]
+    },
+    {
+      "permissionName": "ill.service.all",
+      "displayName": "Ill - All permissions for the service api",
+      "description": "All Ill service",
+      "visible": true,
+      "subPermissions": [
+        "ill.service.item.delete",
+        "ill.service.write"
+      ]
+    },
+    {
+      "permissionName": "ill.service.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.service.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.service.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.service.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.service.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.service.read",
+      "displayName": "Ill - Read permissions for the service api",
+      "description": "Read Ill service",
+      "visible": true,
+      "subPermissions": [
+        "ill.service.collection.get",
+        "ill.service.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.service.write",
+      "displayName": "Ill - Create, Update and Read permissions for the service api",
+      "description": "Write Ill service",
+      "visible": true,
+      "subPermissions": [
+        "ill.service.item.post",
+        "ill.service.item.put",
+        "ill.service.read"
+      ]
+    },
+    {
+      "permissionName": "ill.serviceaccount.all",
+      "displayName": "Ill - All permissions for the serviceAccount api",
+      "description": "All Ill serviceAccount",
+      "visible": true,
+      "subPermissions": [
+        "ill.serviceaccount.item.delete",
+        "ill.serviceaccount.write"
+      ]
+    },
+    {
+      "permissionName": "ill.serviceaccount.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.serviceaccount.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.serviceaccount.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.serviceaccount.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.serviceaccount.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.serviceaccount.read",
+      "displayName": "Ill - Read permissions for the serviceAccount api",
+      "description": "Read Ill serviceAccount",
+      "visible": true,
+      "subPermissions": [
+        "ill.serviceaccount.collection.get",
+        "ill.serviceaccount.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.serviceaccount.write",
+      "displayName": "Ill - Create, Update and Read permissions for the serviceAccount api",
+      "description": "Write Ill serviceAccount",
+      "visible": true,
+      "subPermissions": [
+        "ill.serviceaccount.item.post",
+        "ill.serviceaccount.item.put",
+        "ill.serviceaccount.read"
+      ]
+    },
+    {
+      "permissionName": "ill.sharedindexquery.all",
+      "displayName": "Ill - All permissions for the sharedIndexQuery api",
+      "description": "All Ill sharedIndexQuery",
+      "visible": true,
+      "subPermissions": [
+        "ill.sharedindexquery.write"
+      ]
+    },
+    {
+      "permissionName": "ill.sharedindexquery.availability.get",
+      "displayName": "Ill - Fetch the availability for a cluster identifier",
+      "description": "Fetch the availability for a cluster identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.byid.get",
+      "displayName": "Ill - Fetch the bib record for a cluster identifier",
+      "description": "Fetch the bib record for a cluster identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.byquery.get",
+      "displayName": "Ill - Fetch the bib record for a cluster identifier using a query search",
+      "description": "Fetch the bib record for a cluster identifier using a query search",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.findmoresuppliers.get",
+      "displayName": "Ill - Find suppliers for the shared index cluster identifier",
+      "description": "Find suppliers for the shared index cluster identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.passthrough.get",
+      "displayName": "Ill - Performs a pass through query to the configured shared index, this will be removed so clients do not need to know about the shared index",
+      "description": "Performs a pass through query to the configured shared index, this will be removed so clients do not need to know about the shared index",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.read",
+      "displayName": "Ill - Read permissions for the sharedIndexQuery api",
+      "description": "Read Ill sharedIndexQuery",
+      "visible": true,
+      "subPermissions": [
+        "ill.sharedindexquery.availability.get",
+        "ill.sharedindexquery.byid.get",
+        "ill.sharedindexquery.byquery.get",
+        "ill.sharedindexquery.findmoresuppliers.get",
+        "ill.sharedindexquery.passthrough.get",
+        "ill.sharedindexquery.token.post"
+      ]
+    },
+    {
+      "permissionName": "ill.sharedindexquery.token.post",
+      "displayName": "Ill - Retrieve a token from the Shared Index authentication server",
+      "description": "Retrieve a token from the Shared Index authentication server",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.sharedindexquery.write",
+      "displayName": "Ill - Create, Update and Read permissions for the sharedIndexQuery api",
+      "description": "Write Ill sharedIndexQuery",
+      "visible": true,
+      "subPermissions": [
+        "ill.sharedindexquery.read"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocations.all",
+      "displayName": "Ill - All permissions for the shelvingLocations api",
+      "description": "All Ill shelvingLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocations.delete.delete",
+        "ill.shelvinglocations.write"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocations.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocations.delete.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocations.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocations.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocations.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocations.read",
+      "displayName": "Ill - Read permissions for the shelvingLocations api",
+      "description": "Read Ill shelvingLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocations.collection.get",
+        "ill.shelvinglocations.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocations.write",
+      "displayName": "Ill - Create, Update and Read permissions for the shelvingLocations api",
+      "description": "Write Ill shelvingLocations",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocations.item.post",
+        "ill.shelvinglocations.item.put",
+        "ill.shelvinglocations.read"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.all",
+      "displayName": "Ill - All permissions for the shelvingLocationSite api",
+      "description": "All Ill shelvingLocationSite",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocationsite.item.delete",
+        "ill.shelvinglocationsite.write"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.read",
+      "displayName": "Ill - Read permissions for the shelvingLocationSite api",
+      "description": "Read Ill shelvingLocationSite",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocationsite.collection.get",
+        "ill.shelvinglocationsite.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.shelvinglocationsite.write",
+      "displayName": "Ill - Create, Update and Read permissions for the shelvingLocationSite api",
+      "description": "Write Ill shelvingLocationSite",
+      "visible": true,
+      "subPermissions": [
+        "ill.shelvinglocationsite.item.post",
+        "ill.shelvinglocationsite.item.put",
+        "ill.shelvinglocationsite.read"
+      ]
+    },
+    {
+      "permissionName": "ill.shipment.all",
+      "displayName": "Ill - All permissions for the shipment api",
+      "description": "All Ill shipment",
+      "visible": true,
+      "subPermissions": [
+        "ill.shipment.item.delete",
+        "ill.shipment.write"
+      ]
+    },
+    {
+      "permissionName": "ill.shipment.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shipment.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shipment.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shipment.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shipment.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.shipment.read",
+      "displayName": "Ill - Read permissions for the shipment api",
+      "description": "Read Ill shipment",
+      "visible": true,
+      "subPermissions": [
+        "ill.shipment.collection.get",
+        "ill.shipment.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.shipment.write",
+      "displayName": "Ill - Create, Update and Read permissions for the shipment api",
+      "description": "Write Ill shipment",
+      "visible": true,
+      "subPermissions": [
+        "ill.shipment.item.post",
+        "ill.shipment.item.put",
+        "ill.shipment.read"
+      ]
+    },
+    {
+      "permissionName": "ill.statemodel.all",
+      "displayName": "Ill - All permissions for the stateModel api",
+      "description": "All Ill stateModel",
+      "visible": true,
+      "subPermissions": [
+        "ill.statemodel.write"
+      ]
+    },
+    {
+      "permissionName": "ill.statemodel.export.get",
+      "displayName": "Ill - Exports the full definitions of the state models, without any the ids (just the codes), if the stateModel query parameter is specified then we only return that state model",
+      "description": "Exports the full definitions of the state models, without any the ids (just the codes), if the stateModel query parameter is specified then we only return that state model",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.statemodel.getvalidactions.get",
+      "displayName": "Ill - Retrieves the valid actions for state table for a given state",
+      "description": "Retrieves the valid actions for state table for a given state",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.statemodel.ingest.post",
+      "displayName": "Ill - Imports the json file that is equivalent to what is created by an export",
+      "description": "Imports the json file that is equivalent to what is created by an export",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.statemodel.read",
+      "displayName": "Ill - Read permissions for the stateModel api",
+      "description": "Read Ill stateModel",
+      "visible": true,
+      "subPermissions": [
+        "ill.statemodel.export.get",
+        "ill.statemodel.getvalidactions.get"
+      ]
+    },
+    {
+      "permissionName": "ill.statemodel.write",
+      "displayName": "Ill - Create, Update and Read permissions for the stateModel api",
+      "description": "Write Ill stateModel",
+      "visible": true,
+      "subPermissions": [
+        "ill.statemodel.ingest.post",
+        "ill.statemodel.read"
+      ]
+    },
+    {
+      "permissionName": "ill.statistics.all",
+      "displayName": "Ill - All permissions for the statistics api",
+      "description": "All Ill statistics",
+      "visible": true,
+      "subPermissions": [
+        "ill.statistics.write"
+      ]
+    },
+    {
+      "permissionName": "ill.statistics.fileupload.get",
+      "displayName": "Ill - Generates the statistics for a symbol",
+      "description": "Generates the statistics for a symbol",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.statistics.index.get",
+      "displayName": "Ill - Generates the statistics for this tenant",
+      "description": "Generates the statistics for this tenant",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.statistics.read",
+      "displayName": "Ill - Read permissions for the statistics api",
+      "description": "Read Ill statistics",
+      "visible": true,
+      "subPermissions": [
+        "ill.statistics.fileupload.get",
+        "ill.statistics.index.get"
+      ]
+    },
+    {
+      "permissionName": "ill.statistics.write",
+      "displayName": "Ill - Create, Update and Read permissions for the statistics api",
+      "description": "Write Ill statistics",
+      "visible": true,
+      "subPermissions": [
+        "ill.statistics.read"
+      ]
+    },
+    {
+      "permissionName": "ill.status.all",
+      "displayName": "Ill - All permissions for the status api",
+      "description": "All Ill status",
+      "visible": true,
+      "subPermissions": [
+        "ill.status.write"
+      ]
+    },
+    {
+      "permissionName": "ill.status.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.status.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.status.read",
+      "displayName": "Ill - Read permissions for the status api",
+      "description": "Read Ill status",
+      "visible": true,
+      "subPermissions": [
+        "ill.status.collection.get",
+        "ill.status.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.status.write",
+      "displayName": "Ill - Create, Update and Read permissions for the status api",
+      "description": "Write Ill status",
+      "visible": true,
+      "subPermissions": [
+        "ill.status.read"
+      ]
+    },
+    {
+      "permissionName": "ill.swagger.all",
+      "displayName": "Ill - All permissions for the swagger api",
+      "description": "All Ill swagger",
+      "visible": true,
+      "subPermissions": [
+        "ill.swagger.write"
+      ]
+    },
+    {
+      "permissionName": "ill.swagger.read",
+      "displayName": "Ill - Read permissions for the swagger api",
+      "description": "Read Ill swagger",
+      "visible": true,
+      "subPermissions": []
+    },
+    {
+      "permissionName": "ill.swagger.write",
+      "displayName": "Ill - Create, Update and Read permissions for the swagger api",
+      "description": "Write Ill swagger",
+      "visible": true,
+      "subPermissions": [
+        "ill.swagger.read"
+      ]
+    },
+    {
+      "permissionName": "ill.symbol.all",
+      "displayName": "Ill - All permissions for the symbol api",
+      "description": "All Ill symbol",
+      "visible": true,
+      "subPermissions": [
+        "ill.symbol.item.delete",
+        "ill.symbol.write"
+      ]
+    },
+    {
+      "permissionName": "ill.symbol.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.symbol.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.symbol.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.symbol.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.symbol.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.symbol.read",
+      "displayName": "Ill - Read permissions for the symbol api",
+      "description": "Read Ill symbol",
+      "visible": true,
+      "subPermissions": [
+        "ill.symbol.collection.get",
+        "ill.symbol.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.symbol.write",
+      "displayName": "Ill - Create, Update and Read permissions for the symbol api",
+      "description": "Write Ill symbol",
+      "visible": true,
+      "subPermissions": [
+        "ill.symbol.item.post",
+        "ill.symbol.item.put",
+        "ill.symbol.read"
+      ]
+    },
+    {
+      "permissionName": "ill.system.all",
+      "displayName": "Ill - All permissions for the system api",
+      "description": "All Ill system",
+      "visible": true,
+      "subPermissions": [
+        "ill.institution.all",
+        "ill.institutiongroup.all",
+        "ill.institutionuser.all"
+      ]
+    },
+    {
+      "permissionName": "ill.systemsetting.all",
+      "displayName": "Ill - All permissions for the systemSetting api",
+      "description": "All Ill systemSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.systemsetting.item.delete",
+        "ill.systemsetting.write"
+      ]
+    },
+    {
+      "permissionName": "ill.systemsetting.index.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.systemsetting.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.systemsetting.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.systemsetting.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.systemsetting.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.systemsetting.read",
+      "displayName": "Ill - Read permissions for the systemSetting api",
+      "description": "Read Ill systemSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.systemsetting.index.get",
+        "ill.systemsetting.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.systemsetting.write",
+      "displayName": "Ill - Create, Update and Read permissions for the systemSetting api",
+      "description": "Write Ill systemSetting",
+      "visible": true,
+      "subPermissions": [
+        "ill.systemsetting.item.post",
+        "ill.systemsetting.item.put",
+        "ill.systemsetting.read"
+      ]
+    },
+    {
+      "permissionName": "ill.tags.all",
+      "displayName": "Ill - All permissions for the tags api",
+      "description": "All Ill tags",
+      "visible": true,
+      "subPermissions": [
+        "ill.tags.item.delete",
+        "ill.tags.write"
+      ]
+    },
+    {
+      "permissionName": "ill.tags.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.tags.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.tags.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.tags.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.tags.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.tags.read",
+      "displayName": "Ill - Read permissions for the tags api",
+      "description": "Read Ill tags",
+      "visible": true,
+      "subPermissions": [
+        "ill.tags.collection.get",
+        "ill.tags.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.tags.write",
+      "displayName": "Ill - Create, Update and Read permissions for the tags api",
+      "description": "Write Ill tags",
+      "visible": true,
+      "subPermissions": [
+        "ill.tags.item.post",
+        "ill.tags.item.put",
+        "ill.tags.read"
+      ]
+    },
+    {
+      "permissionName": "ill.template.all",
+      "displayName": "Ill - All permissions for the template api",
+      "description": "All Ill template",
+      "visible": true,
+      "subPermissions": [
+        "ill.template.delete.delete",
+        "ill.template.write"
+      ]
+    },
+    {
+      "permissionName": "ill.template.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.createeditdetails.get",
+      "displayName": "Ill - Details required for creating or editing a template container",
+      "description": "Details required for creating or editing a template container",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.delete.delete",
+      "displayName": "Ill - Deletes the specified template container",
+      "description": "Deletes the specified template container",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.template.read",
+      "displayName": "Ill - Read permissions for the template api",
+      "description": "Read Ill template",
+      "visible": true,
+      "subPermissions": [
+        "ill.template.collection.get",
+        "ill.template.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.template.write",
+      "displayName": "Ill - Create, Update and Read permissions for the template api",
+      "description": "Write Ill template",
+      "visible": true,
+      "subPermissions": [
+        "ill.template.createeditdetails.get",
+        "ill.template.item.post",
+        "ill.template.item.put",
+        "ill.template.read"
+      ]
+    },
+    {
+      "permissionName": "ill.testexternalsearch.all",
+      "displayName": "Ill - All permissions for the testExternalSearch api",
+      "description": "All Ill testExternalSearch",
+      "visible": true,
+      "subPermissions": [
+        "ill.testexternalsearch.write"
+      ]
+    },
+    {
+      "permissionName": "ill.testexternalsearch.locate.get",
+      "displayName": "Ill - Locate an item externally",
+      "description": "Locate an item externally",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testexternalsearch.read",
+      "displayName": "Ill - Read permissions for the testExternalSearch api",
+      "description": "Read Ill testExternalSearch",
+      "visible": true,
+      "subPermissions": [
+        "ill.testexternalsearch.locate.get"
+      ]
+    },
+    {
+      "permissionName": "ill.testexternalsearch.write",
+      "displayName": "Ill - Create, Update and Read permissions for the testExternalSearch api",
+      "description": "Write Ill testExternalSearch",
+      "visible": true,
+      "subPermissions": [
+        "ill.testexternalsearch.read"
+      ]
+    },
+    {
+      "permissionName": "ill.testhostlms.accept.get",
+      "displayName": "Ill - Accept Item",
+      "description": "Accept Item",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testhostlms.all",
+      "displayName": "Ill - All permissions for the testHostLMS api",
+      "description": "All Ill testHostLMS",
+      "visible": true,
+      "subPermissions": [
+        "ill.testhostlms.write"
+      ]
+    },
+    {
+      "permissionName": "ill.testhostlms.checkin.get",
+      "displayName": "Ill - Check in an item",
+      "description": "Check in an item",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testhostlms.checkout.get",
+      "displayName": "Ill - Check out an item",
+      "description": "Check out an item",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testhostlms.determinebestlocation.get",
+      "displayName": "Ill - Determine best location",
+      "description": "Determine best location",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testhostlms.read",
+      "displayName": "Ill - Read permissions for the testHostLMS api",
+      "description": "Read Ill testHostLMS",
+      "visible": true,
+      "subPermissions": [
+        "ill.testhostlms.determinebestlocation.get",
+        "ill.testhostlms.validate.get"
+      ]
+    },
+    {
+      "permissionName": "ill.testhostlms.validate.get",
+      "displayName": "Ill - Validates the user against the specified Host LMS",
+      "description": "Validates the user against the specified Host LMS",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testhostlms.write",
+      "displayName": "Ill - Create, Update and Read permissions for the testHostLMS api",
+      "description": "Write Ill testHostLMS",
+      "visible": true,
+      "subPermissions": [
+        "ill.testhostlms.accept.get",
+        "ill.testhostlms.checkin.get",
+        "ill.testhostlms.checkout.get",
+        "ill.testhostlms.read"
+      ]
+    },
+    {
+      "permissionName": "ill.testrouting.all",
+      "displayName": "Ill - All permissions for the testRouting api",
+      "description": "All Ill testRouting",
+      "visible": true,
+      "subPermissions": [
+        "ill.testrouting.write"
+      ]
+    },
+    {
+      "permissionName": "ill.testrouting.findmoresuppliers.get",
+      "displayName": "Ill - View the results from request routing",
+      "description": "View the results from request routing",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.testrouting.read",
+      "displayName": "Ill - Read permissions for the testRouting api",
+      "description": "Read Ill testRouting",
+      "visible": true,
+      "subPermissions": [
+        "ill.testrouting.findmoresuppliers.get"
+      ]
+    },
+    {
+      "permissionName": "ill.testrouting.write",
+      "displayName": "Ill - Create, Update and Read permissions for the testRouting api",
+      "description": "Write Ill testRouting",
+      "visible": true,
+      "subPermissions": [
+        "ill.testrouting.read"
+      ]
+    },
+    {
+      "permissionName": "ill.timer.all",
+      "displayName": "Ill - All permissions for the timer api",
+      "description": "All Ill timer",
+      "visible": true,
+      "subPermissions": [
+        "ill.timer.item.delete",
+        "ill.timer.write"
+      ]
+    },
+    {
+      "permissionName": "ill.timer.collection.get",
+      "displayName": "Ill - Search with the supplied criteria",
+      "description": "Search with the supplied criteria",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.execute.get",
+      "displayName": "Ill - Executes the timer with the supplied code",
+      "description": "Executes the timer with the supplied code",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.item.delete",
+      "displayName": "Ill - Deletes the record with the supplied identifier",
+      "description": "Deletes the record with the supplied identifier",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.item.get",
+      "displayName": "Ill - Returns the supplied record",
+      "description": "Returns the supplied record",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.item.post",
+      "displayName": "Ill - Creates a new record with the supplied data",
+      "description": "Creates a new record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.item.put",
+      "displayName": "Ill - Updates the record with the supplied data",
+      "description": "Updates the record with the supplied data",
+      "visible": false,
+      "subPermissions": null
+    },
+    {
+      "permissionName": "ill.timer.read",
+      "displayName": "Ill - Read permissions for the timer api",
+      "description": "Read Ill timer",
+      "visible": true,
+      "subPermissions": [
+        "ill.timer.collection.get",
+        "ill.timer.item.get"
+      ]
+    },
+    {
+      "permissionName": "ill.timer.write",
+      "displayName": "Ill - Create, Update and Read permissions for the timer api",
+      "description": "Write Ill timer",
+      "visible": true,
+      "subPermissions": [
+        "ill.timer.execute.get",
+        "ill.timer.item.post",
+        "ill.timer.item.put",
+        "ill.timer.read"
+      ]
+    }
+  ],
+  "metadata": {
+    "user": {
+      "type": "system",
+      "permissions": [
+      ]
+    }
+  },
+  "requires": [
+    {
+      "id": "email",
+      "version": "1.1"
+    }
+  ],
+  "launchDescriptor": {
+    "dockerImage": "${info.app.name}:${info.app.version}",
+    "dockerPull": false,
+    "dockerArgs": {
+      "HostConfig": {
+        "PortBindings": {
+          "8080/tcp": [
+            {
+              "HostPort": "%p"
+            }
+          ]
+        }
+      }
+    },
+    "env": [
+      {
+        "name": "JAVA_OPTIONS",
+        "value": "-server -XX:+UseContainerSupport -XX:MaxRAMPercentage=55.0 -XX:+PrintFlagsFinal"
+      }
+    ],
+    "dockerPull": false
+  }
+}

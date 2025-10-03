@@ -1,0 +1,72 @@
+import groovy.transform.*
+import com.k_int.directory.DirectoryEntry
+import com.k_int.directory.ServiceAccount
+
+@Field DirectoryEntry directoryEntry
+
+final def toExpand = (params.full == "true") ? [
+                                                 'customProperties',
+                                                 'tags',
+                                                 'status',
+                                                 'type',
+                                                 'announcements',
+                                                 'addresses',
+                                                 'services',
+                                                 'symbols',
+                                                 'units'
+                                               ] :
+                                               [
+                                                 'tags', 
+                   								 'status', 
+                   								 'addresses'
+                   							   ];
+                   								
+final def toExclude = (params.full == "true") ? [
+                                                  'parent',
+												  'members'
+												] :
+											    [
+											      'services', 
+							                      'customProperties', 
+							                      'parent', 
+							                      'symbols', 
+							                      'addresses', 
+							                      'announcements', 
+							                      'units',
+							                      'friends',
+							                      'members'
+							                    ];
+                   								
+json g.render(directoryEntry, [
+        expand: toExpand, 
+        excludes: toExclude ]) {
+        
+  if ( directoryEntry.members ) {
+    def memlist = directoryEntry.members?.collect {
+      [
+        id: it.memberOrg?.id,
+        name: it.memberOrg?.name
+      ]
+    }
+    members: memlist
+  }
+
+  if ( directoryEntry.parent ) {
+    parent {
+      id directoryEntry.parent?.id
+      name directoryEntry.parent?.name
+      fullyQualifiedName directoryEntry.parent?.fullyQualifiedName
+    }
+  }
+
+  canEdit directoryEntry.canEdit
+  tagSummary directoryEntry.getTagSummary()
+  symbolSummary directoryEntry.getSymbolSummary()
+  fullyQualifiedName directoryEntry.getFullyQualifiedName()
+  
+  // If it is the full listing output, then output the service directory     
+  if (params.full == "true") {
+    services g.render(template:"/serviceAccount/serviceAccount", collection: directoryEntry.services, var:'serviceAccount',
+      model:[excludes:['accountHolder'], expand:['service','customProperties']])
+  }
+}

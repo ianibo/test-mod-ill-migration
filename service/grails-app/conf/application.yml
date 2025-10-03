@@ -1,0 +1,266 @@
+---
+###
+# All root settings (anything not under the 'environements' key) here are loaded for every profile. 
+###
+
+ill:
+    patronNoticesEnabled: true
+
+
+grails:
+    profile: rest-api
+    codegen:
+        defaultPackage: mod.ill
+    gorm:
+        reactor:
+            # Whether to translate GORM events into Reactor events
+            # Disabled by default for performance reasons
+            events: false
+#    cors:
+#        enabled: true
+
+info:
+    app:
+        name: '@info.app.name@'
+        version: '@info.app.version@'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    main:
+        banner-mode: "off"
+    groovy:
+        template:
+            check-template-location: false
+
+management:
+    security:
+        enabled: true
+    endpoints:
+        enabled-by-default: true
+        jmx:
+            enabled: true
+        health:
+            enabled: true
+            db:
+                enabled: true
+            defaults:
+                enabled: true
+        info:
+            enabled: true
+        configprops:
+            enabled: true
+        loggers:
+            enabled: true
+        web:
+            exposure:
+                include: 'health,info'
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            json:
+              - application/json
+              - text/json   
+            hal:
+              - application/hal+json
+              - application/hal+xml  
+            xml:
+              - text/xml
+              - application/xml                                 
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            js: text/javascript
+            rss: application/rss+xml
+            text: text/plain
+            all: '*/*'            
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+    converters:
+        encoding: UTF-8
+
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents: []
+    controllers:
+       upload:
+          maxFileSize: 209715200
+          maxRequestSize: 220200960
+    gorm:
+        multiTenancy:
+            mode: SCHEMA
+            tenantResolverClass: com.k_int.okapi.OkapiTenantResolver    # See src/main/groovy
+
+    plugin:
+      springsecurity:
+        providerNames:
+          - 'okapiAuthenticationProvider'
+
+        controllerAnnotations:
+          staticRules:
+            -
+              pattern: '/okapi/**'
+              access:
+                - 'permitAll' # Should maybe lock this down to the Super tenant once it is properly enforced?
+            -
+              pattern: '/**'
+              access:
+                - 'permitAll'
+        filterChain:
+          chainMap:
+            - 
+              pattern: '/**'
+              filters: 'JOINED_FILTERS,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter,-basicAuthenticationFilter'
+    databinding:
+        dateFormats:
+          - "yyyy-MM-dd'T'HH:mm:ssX"
+          - "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+          - "yyyy-MM-dd'T'HH:mm:ss'Z'"
+          - "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+          - "yyyy-MM-dd'T'HH:mm:ss"
+          - "yyyy-MM-dd'T'HH:mm:ss.SSS"
+          - 'yyyy-MM-dd'
+    server:
+        host: 10.0.2.2
+        port: 8081
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: '/admin'
+      exposure:
+        include:
+          - health
+          - info
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+     
+  health:
+    datasource:
+      enabled: true
+    defaults:
+      enabled: false
+
+okapi:
+  schema:
+    appName: 'mod-ill'
+  service:
+    register: false
+    deploy: false
+
+---
+hibernate:
+  cache:
+    queries: false
+    use_second_level_cache: false
+    use_query_cache: false
+  allow_update_outside_transaction: true
+  enable_lazy_load_no_trans: true
+    
+dataSource:
+  logSql: false
+  pooled: true
+  jmxExport: false
+  dbCreate: none
+  username: "${db.username:folio_admin}"
+  password: "${db.password:folio_admin}"
+  driverClassName: org.postgresql.Driver
+  dialect: com.k_int.hibernate.dialects.postgres.KIPostgres94Dialect
+  url: "jdbc:postgresql://${db.host:localhost}:${db.port:5432}/${db.database:okapi_modules}?ApplicationName=${okapi.schema.appName}"
+  hikari:
+    data-source-properties:
+      ApplicationName: "${okapi.schema.appName}"
+  schemaHandler: com.k_int.okapi.OkapiSchemaHandler
+  properties:
+    jmxEnabled: false
+    maximumPoolSize: ${db.maxpoolsize:20}
+    transactionIsolation: TRANSACTION_READ_COMMITTED
+
+
+events:
+  consumer:
+    zk:
+      connect: '${zookeeper_host:localhost}:${zookeeper_port:2181}'
+    bootstrap:
+      servers: 'localhost:29092'
+    key:
+      deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value:
+      deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    group:
+      id: ModRSConsumer
+    'auto.offset.reset': 'earliest'
+
+# see https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html
+# Setting linger to 1 will cause a 1ms delay in sending to batch up groups of messages.
+  publisher:
+    zk:
+      connect: 'localhost:2181'
+    bootstrap:
+      servers: 'localhost:29092'
+    key:
+      serializer: org.apache.kafka.common.serialization.StringSerializer
+    value:
+      serializer: org.apache.kafka.common.serialization.StringSerializer
+    acks: 'all'
+    retries: 0
+    'linger.ms': 50
+    
+logging:
+  config: classpath:logback.xml
+
+##
+# The settings below are loaded per environment. i.e. Anything declared under 'environments.production' will override
+# values at the root when that particular profile is active.
+##
+environments:
+  test:
+    dataSource:
+      url: "jdbc:postgresql://${db.host:localhost}:${db.port:54321}/${db.database:okapi_modules}?ApplicationName=mod-ill-test"
+      properties:
+        initialSize: 7
+        minIdle: 2
+        maxIdle: 10
+        maxActive: 10
+        validationQuery: SELECT 1
+        testOnBorrow: true
+        testWhileIdle: true
+        testOnReturn: false
+        defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+  development:
+    dataSource:
+      url: "jdbc:postgresql://${db.host:localhost}:${db.port:54321}/${db.database:okapi_modules}?ApplicationName=mod-ill-dev"
+      # logSql: true
+      # formatSql: true
+    # This is only used when the there is no request from okapi coming to the module or a none-okapi request.
+    # OKAPI supplies information about how to reach it to the modules. These options are used for self reg and other calls
+    # when the request did not come through OKAPI.
+    okapi: 
+      service:
+        host: localhost
+        port: 9130
+        register: false
+        deploy: false
+
+    gorm:
+      tenantId: public # Used by SystemPropertyTenantResolver
+

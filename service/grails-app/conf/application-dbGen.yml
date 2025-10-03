@@ -1,0 +1,11 @@
+grails:
+  gorm:
+    multiTenancy:
+      mode: SCHEMA
+      tenantResolverClass: org.grails.datastore.mapping.multitenancy.resolvers.SystemPropertyTenantResolver # System prop of gorm.tenantId 
+  plugin:
+    databasemigration:
+      updateOnStart: true
+      updateOnStartFileName: module-tenant-changelog.groovy
+hibernate:
+  enable_lazy_load_no_trans: true 

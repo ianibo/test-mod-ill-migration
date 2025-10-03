@@ -1,0 +1,739 @@
+<svg width="1604px" height="1000px"
+ viewBox="0.00 0.00 1340.90 836.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 832.0)">
+    <title>State Transitions</title>
+    <polygon fill="white" stroke="transparent" points="-4,4 -4,-832 1336.9,-832 1336.9,4 -4,4"/>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED -->
+    <g id="node1" class="node">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED</title>
+      <polygon fill="none" stroke="black" points="505.26,-828 228.54,-828 228.54,-792 505.26,-792 505.26,-828"/>
+      <text text-anchor="middle" x="366.9" y="-805.8" font-family="arial" font-size="14.00">REQ_CONDITIONAL_ANSWER_RECEIVED</text>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED -->
+    <g id="edge4" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED</title>
+      <g id="a_edge4">
+        <a xlink:title="ISO18626StatusChange">
+          <path fill="none" stroke="purple" d="M505.25,-820.28C516.26,-818.03 523.08,-814.61 523.08,-810 523.08,-806.98 520.14,-804.46 515.01,-802.46"/>
+          <polygon fill="purple" stroke="purple" points="515.82,-799.05 505.25,-799.72 513.93,-805.79 515.82,-799.05"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCEL_PENDING -->
+    <g id="node2" class="node">
+      <title>REQ_CANCEL_PENDING</title>
+      <polygon fill="none" stroke="black" points="635.58,-756 468.23,-756 468.23,-720 635.58,-720 635.58,-756"/>
+      <text text-anchor="middle" x="551.9" y="-733.8" font-family="arial" font-size="14.00">REQ_CANCEL_PENDING</text>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge2" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge2">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M400.36,-791.88C424.17,-782.09 456.55,-769.77 485.38,-759.47"/>
+          <polygon fill="purple" stroke="purple" points="486.75,-762.7 495.01,-756.07 484.41,-756.1 486.75,-762.7"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge6" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge6">
+        <a xlink:title="requesterRejectConditions">
+          <path fill="none" stroke="purple" d="M412.16,-791.88C437.9,-782.14 470.31,-769.87 497.44,-759.61"/>
+          <polygon fill="purple" stroke="purple" points="498.68,-762.88 506.79,-756.07 496.2,-756.33 498.68,-762.88"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCELLED -->
+    <g id="node4" class="node">
+      <title>REQ_CANCELLED</title>
+      <ellipse fill="none" stroke="red" cx="1023.9" cy="-90" rx="86.2" ry="18"/>
+      <text text-anchor="middle" x="1023.9" y="-85.8" font-family="arial" font-size="14.00">REQ_CANCELLED</text>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCELLED -->
+    <g id="edge3" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge3">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M482.94,-791.94C739.61,-754.21 1332.9,-667 1332.9,-667 1332.9,-667 1332.9,-667 1332.9,-233 1332.9,-233 1157.9,-144 1157.9,-144 1157.9,-144 1110.31,-125.17 1071.85,-109.96"/>
+          <polygon fill="red" stroke="red" points="1072.89,-106.61 1062.3,-106.19 1070.31,-113.12 1072.89,-106.61"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SHIPPED -->
+    <g id="node7" class="node">
+      <title>REQ_SHIPPED</title>
+      <polygon fill="none" stroke="black" points="181.29,-108 72.52,-108 72.52,-72 181.29,-72 181.29,-108"/>
+      <text text-anchor="middle" x="126.9" y="-85.8" font-family="arial" font-size="14.00">REQ_SHIPPED</text>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_SHIPPED -->
+    <g id="edge5" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_SHIPPED</title>
+      <g id="a_edge5">
+        <a xlink:title="ISO18626StatusChange&#45;Loaned">
+          <path fill="none" stroke="purple" d="M314.11,-791.94C266.16,-776.45 202.9,-756 202.9,-756 202.9,-756 88.9,-667 88.9,-667 88.9,-667 88.9,-667 88.9,-233 88.9,-233 108.71,-158.97 119.72,-117.82"/>
+          <polygon fill="purple" stroke="purple" points="123.11,-118.69 122.32,-108.13 116.35,-116.88 123.11,-118.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY -->
+    <g id="node8" class="node">
+      <title>REQ_EXPECTS_TO_SUPPLY</title>
+      <polygon fill="none" stroke="black" points="347.27,-180 154.53,-180 154.53,-144 347.27,-144 347.27,-180"/>
+      <text text-anchor="middle" x="250.9" y="-157.8" font-family="arial" font-size="14.00">REQ_EXPECTS_TO_SUPPLY</text>
+    </g>
+    <!-- REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_EXPECTS_TO_SUPPLY -->
+    <g id="edge1" class="edge link&#45;class">
+      <title>REQ_CONDITIONAL_ANSWER_RECEIVED&#45;&gt;REQ_EXPECTS_TO_SUPPLY</title>
+      <g id="a_edge1">
+        <a xlink:title="requesterAgreeConditions">
+          <path fill="none" stroke="purple" d="M322.39,-791.94C286.03,-776.45 240.9,-756 240.9,-756 240.9,-756 126.9,-667 126.9,-667 126.9,-667 126.9,-667 126.9,-377 126.9,-377 197.33,-245.93 232.27,-188.94"/>
+          <polygon fill="purple" stroke="purple" points="235.43,-190.49 237.76,-180.15 229.5,-186.78 235.43,-190.49"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED -->
+    <g id="edge13" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED</title>
+      <g id="a_edge13">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M518.47,-756.11C494.64,-765.9 462.2,-778.25 433.33,-788.56"/>
+          <polygon fill="purple" stroke="purple" points="431.96,-785.33 423.7,-791.97 434.29,-791.93 431.96,-785.33"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_SHIPPED -->
+    <g id="edge16" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_SHIPPED</title>
+      <g id="a_edge16">
+        <a xlink:title="ISO18626CancelResponse&#45;Loaned">
+          <path fill="none" stroke="purple" d="M486.55,-719.94C427.21,-704.45 348.9,-684 348.9,-684 348.9,-684 220.9,-595 220.9,-595 220.9,-595 220.9,-595 220.9,-521 220.9,-521 145.9,-180 145.9,-180 145.9,-180 138.25,-144.17 132.66,-117.97"/>
+          <polygon fill="purple" stroke="purple" points="136.07,-117.21 130.56,-108.16 129.23,-118.67 136.07,-117.21"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_EXPECTS_TO_SUPPLY -->
+    <g id="edge14" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_EXPECTS_TO_SUPPLY</title>
+      <g id="a_edge14">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M498.06,-719.94C453.22,-704.45 396.9,-684 396.9,-684 396.9,-684 258.9,-595 258.9,-595 258.9,-595 258.9,-595 258.9,-521 258.9,-521 247.17,-273.91 248.36,-190.29"/>
+          <polygon fill="purple" stroke="purple" points="251.86,-190.35 248.59,-180.27 244.86,-190.18 251.86,-190.35"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER -->
+    <g id="node9" class="node">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER</title>
+      <polygon fill="none" stroke="black" points="518.56,-252 267.24,-252 267.24,-216 518.56,-216 518.56,-252"/>
+      <text text-anchor="middle" x="392.9" y="-229.8" font-family="arial" font-size="14.00">REQ_REQUEST_SENT_TO_SUPPLIER</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER -->
+    <g id="edge9" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER</title>
+      <g id="a_edge9">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M519.72,-719.87C454.76,-682.1 314.9,-595 314.9,-595 314.9,-595 314.9,-595 314.9,-377 314.9,-377 351.48,-301.71 374.85,-260.78"/>
+          <polygon fill="purple" stroke="purple" points="377.88,-262.53 379.9,-252.13 371.84,-259 377.88,-262.53"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCELLED_WITH_SUPPLIER -->
+    <g id="node10" class="node">
+      <title>REQ_CANCELLED_WITH_SUPPLIER</title>
+      <ellipse fill="none" stroke="red" cx="809.9" cy="-378" rx="167.41" ry="18"/>
+      <text text-anchor="middle" x="809.9" y="-373.8" font-family="arial" font-size="14.00">REQ_CANCELLED_WITH_SUPPLIER</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_CANCELLED_WITH_SUPPLIER -->
+    <g id="edge15" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_CANCELLED_WITH_SUPPLIER</title>
+      <g id="a_edge15">
+        <a xlink:title="ISO18626CancelResponse&#45;Cancelled">
+          <path fill="none" stroke="red" d="M567.94,-719.87C603.32,-682.1 684.9,-595 684.9,-595 684.9,-595 684.9,-595 684.9,-521 684.9,-521 752.29,-444.44 788.11,-403.75"/>
+          <polygon fill="red" stroke="red" points="790.84,-405.95 794.82,-396.13 785.59,-401.32 790.84,-405.95"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SOURCING_ITEM -->
+    <g id="node11" class="node">
+      <title>REQ_SOURCING_ITEM</title>
+      <polygon fill="none" stroke="black" points="1305.18,-468 1146.62,-468 1146.62,-432 1305.18,-432 1305.18,-468"/>
+      <text text-anchor="middle" x="1225.9" y="-445.8" font-family="arial" font-size="14.00">REQ_SOURCING_ITEM</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_SOURCING_ITEM -->
+    <g id="edge12" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_SOURCING_ITEM</title>
+      <g id="a_edge12">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M635.82,-724.37C744.77,-708.7 920.9,-684 920.9,-684 920.9,-684 1123.9,-612 1123.9,-612 1123.9,-612 1175.81,-522.14 1205.81,-476.69"/>
+          <polygon fill="purple" stroke="purple" points="1208.83,-478.48 1211.5,-468.23 1203.02,-474.58 1208.83,-478.48"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED -->
+    <g id="node12" class="node">
+      <title>REQ_SUPPLIER_IDENTIFIED</title>
+      <polygon fill="none" stroke="black" points="656.57,-468 447.23,-468 447.23,-432 656.57,-432 656.57,-468"/>
+      <text text-anchor="middle" x="551.9" y="-445.8" font-family="arial" font-size="14.00">REQ_SUPPLIER_IDENTIFIED</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_SUPPLIER_IDENTIFIED -->
+    <g id="edge11" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_SUPPLIER_IDENTIFIED</title>
+      <g id="a_edge11">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M548.49,-719.97C544.32,-672.29 544.06,-537.18 547.71,-478.63"/>
+          <polygon fill="purple" stroke="purple" points="551.22,-478.54 548.46,-468.31 544.24,-478.02 551.22,-478.54"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE -->
+    <g id="node13" class="node">
+      <title>REQ_IDLE</title>
+      <polygon fill="none" stroke="black" points="852.59,-684 769.21,-684 769.21,-648 852.59,-648 852.59,-684"/>
+      <text text-anchor="middle" x="810.9" y="-661.8" font-family="arial" font-size="14.00">REQ_IDLE</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_IDLE -->
+    <g id="edge10" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_IDLE</title>
+      <g id="a_edge10">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M610.4,-719.94C667.59,-704.45 745.9,-684 745.9,-684 745.9,-684 751.46,-682.31 759.35,-680"/>
+          <polygon fill="purple" stroke="purple" points="760.46,-683.33 769.09,-677.18 758.51,-676.6 760.46,-683.33"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON -->
+    <g id="node14" class="node">
+      <title>REQ_INVALID_PATRON</title>
+      <polygon fill="none" stroke="black" points="880.58,-612 713.23,-612 713.23,-576 880.58,-576 880.58,-612"/>
+      <text text-anchor="middle" x="796.9" y="-589.8" font-family="arial" font-size="14.00">REQ_INVALID_PATRON</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge8" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge8">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M592.38,-719.94C633.19,-704.45 689.9,-684 689.9,-684 689.9,-684 732.93,-644.93 764.58,-618.56"/>
+          <polygon fill="purple" stroke="purple" points="766.85,-621.22 772.35,-612.16 762.4,-615.82 766.85,-621.22"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED -->
+    <g id="node15" class="node">
+      <title>REQ_VALIDATED</title>
+      <polygon fill="none" stroke="black" points="1090.58,-540 965.22,-540 965.22,-504 1090.58,-504 1090.58,-540"/>
+      <text text-anchor="middle" x="1027.9" y="-517.8" font-family="arial" font-size="14.00">REQ_VALIDATED</text>
+    </g>
+    <!-- REQ_CANCEL_PENDING&#45;&gt;REQ_VALIDATED -->
+    <g id="edge7" class="edge link&#45;class">
+      <title>REQ_CANCEL_PENDING&#45;&gt;REQ_VALIDATED</title>
+      <g id="a_edge7">
+        <a xlink:title="ISO18626CancelResponse&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M635.49,-722.45C730.06,-706.76 870.9,-684 870.9,-684 870.9,-684 978.9,-612 978.9,-612 978.9,-612 995.44,-575.21 1009.64,-548.94"/>
+          <polygon fill="purple" stroke="purple" points="1012.72,-550.6 1014.53,-540.16 1006.6,-547.19 1012.72,-550.6"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_LOCAL_REVIEW -->
+    <g id="node3" class="node">
+      <title>REQ_LOCAL_REVIEW</title>
+      <polygon fill="none" stroke="black" points="549.28,-396 398.52,-396 398.52,-360 549.28,-360 549.28,-396"/>
+      <text text-anchor="middle" x="473.9" y="-373.8" font-family="arial" font-size="14.00">REQ_LOCAL_REVIEW</text>
+    </g>
+    <!-- REQ_LOCAL_REVIEW&#45;&gt;REQ_CANCELLED -->
+    <g id="edge19" class="edge link&#45;class">
+      <title>REQ_LOCAL_REVIEW&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge19">
+        <a xlink:title="cancelLocal">
+          <path fill="none" stroke="red" d="M549.3,-364.56C565,-361.96 576.9,-360 576.9,-360 576.9,-360 817.9,-324 817.9,-324 817.9,-324 817.9,-288 817.9,-288 817.9,-288 733.9,-252 733.9,-252 733.9,-252 733.9,-216 733.9,-216 733.9,-216 896.94,-145.73 978.52,-110.56"/>
+          <polygon fill="red" stroke="red" points="980.25,-113.63 988.05,-106.45 977.48,-107.2 980.25,-113.63"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_FILLED_LOCALLY -->
+    <g id="node5" class="node">
+      <title>REQ_FILLED_LOCALLY</title>
+      <ellipse fill="none" stroke="red" cx="513.9" cy="-306" rx="115.13" ry="18"/>
+      <text text-anchor="middle" x="513.9" y="-301.8" font-family="arial" font-size="14.00">REQ_FILLED_LOCALLY</text>
+    </g>
+    <!-- REQ_LOCAL_REVIEW&#45;&gt;REQ_FILLED_LOCALLY -->
+    <g id="edge18" class="edge link&#45;class">
+      <title>REQ_LOCAL_REVIEW&#45;&gt;REQ_FILLED_LOCALLY</title>
+      <g id="a_edge18">
+        <a xlink:title="fillLocally">
+          <path fill="none" stroke="red" d="M483.79,-359.7C488.39,-351.64 493.96,-341.89 499.05,-332.98"/>
+          <polygon fill="red" stroke="red" points="502.2,-334.52 504.13,-324.1 496.13,-331.05 502.2,-334.52"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_UNFILLED -->
+    <g id="node6" class="node">
+      <title>REQ_UNFILLED</title>
+      <ellipse fill="none" stroke="red" cx="727.9" cy="-306" rx="80.61" ry="18"/>
+      <text text-anchor="middle" x="727.9" y="-301.8" font-family="arial" font-size="14.00">REQ_UNFILLED</text>
+    </g>
+    <!-- REQ_LOCAL_REVIEW&#45;&gt;REQ_UNFILLED -->
+    <g id="edge17" class="edge link&#45;class">
+      <title>REQ_LOCAL_REVIEW&#45;&gt;REQ_UNFILLED</title>
+      <g id="a_edge17">
+        <a xlink:title="localSupplierCannotSupply">
+          <path fill="none" stroke="red" d="M529.82,-359.97C570.22,-348.5 624.68,-333.51 666.31,-322.4"/>
+          <polygon fill="red" stroke="red" points="667.3,-325.76 676.06,-319.81 665.5,-319 667.3,-325.76"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_UNFILLED&#45;&gt;REQ_LOCAL_REVIEW -->
+    <g id="edge21" class="edge link&#45;class">
+      <title>REQ_UNFILLED&#45;&gt;REQ_LOCAL_REVIEW</title>
+      <g id="a_edge21">
+        <a xlink:title="STATUS_REQ_UNFILLED_ind&#45;localReview">
+          <path fill="none" stroke="green" d="M682.87,-320.93C646.48,-331.34 594.52,-345.72 551.48,-357.31"/>
+          <polygon fill="green" stroke="green" points="550.35,-353.99 541.6,-359.97 552.16,-360.75 550.35,-353.99"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_UNFILLED&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER -->
+    <g id="edge22" class="edge link&#45;class">
+      <title>REQ_UNFILLED&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER</title>
+      <g id="a_edge22">
+        <a xlink:title="STATUS_REQ_UNFILLED_ind">
+          <path fill="none" stroke="green" d="M668.58,-293.68C615.87,-283.03 538.29,-266.89 478.81,-254.23"/>
+          <polygon fill="green" stroke="green" points="479.19,-250.73 468.68,-252.06 477.73,-257.57 479.19,-250.73"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_END_OF_ROTA -->
+    <g id="node17" class="node">
+      <title>REQ_END_OF_ROTA</title>
+      <ellipse fill="none" stroke="red" cx="840.9" cy="-234" rx="97.87" ry="18"/>
+      <text text-anchor="middle" x="840.9" y="-229.8" font-family="arial" font-size="14.00">REQ_END_OF_ROTA</text>
+    </g>
+    <!-- REQ_UNFILLED&#45;&gt;REQ_END_OF_ROTA -->
+    <g id="edge20" class="edge link&#45;class">
+      <title>REQ_UNFILLED&#45;&gt;REQ_END_OF_ROTA</title>
+      <g id="a_edge20">
+        <a xlink:title="STATUS_REQ_UNFILLED_ind&#45;endOfRota">
+          <path fill="none" stroke="red" d="M753.83,-288.94C769.11,-279.47 788.66,-267.36 805.37,-257.01"/>
+          <polygon fill="red" stroke="red" points="807.65,-259.71 814.31,-251.47 803.97,-253.76 807.65,-259.71"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SHIPPED&#45;&gt;REQ_SHIPPED -->
+    <g id="edge24" class="edge link&#45;class">
+      <title>REQ_SHIPPED&#45;&gt;REQ_SHIPPED</title>
+      <g id="a_edge24">
+        <a xlink:title="ISO18626StatusChange">
+          <path fill="none" stroke="purple" d="M181.36,-102.85C191.75,-101.32 199.09,-97.03 199.09,-90 199.09,-85.5 196.08,-82.12 191.18,-79.87"/>
+          <polygon fill="purple" stroke="purple" points="191.94,-76.45 181.36,-77.15 190.07,-83.19 191.94,-76.45"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_COMPLETE -->
+    <g id="node16" class="node">
+      <title>REQ_REQUEST_COMPLETE</title>
+      <ellipse fill="none" stroke="red" cx="126.9" cy="-18" rx="126.8" ry="18"/>
+      <text text-anchor="middle" x="126.9" y="-13.8" font-family="arial" font-size="14.00">REQ_REQUEST_COMPLETE</text>
+    </g>
+    <!-- REQ_SHIPPED&#45;&gt;REQ_REQUEST_COMPLETE -->
+    <g id="edge23" class="edge link&#45;class">
+      <title>REQ_SHIPPED&#45;&gt;REQ_REQUEST_COMPLETE</title>
+      <g id="a_edge23">
+        <a xlink:title="requesterReceived&#45;copy">
+          <path fill="none" stroke="red" d="M126.9,-71.7C126.9,-63.98 126.9,-54.71 126.9,-46.11"/>
+          <polygon fill="red" stroke="red" points="130.4,-46.1 126.9,-36.1 123.4,-46.1 130.4,-46.1"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED -->
+    <g id="edge28" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED</title>
+      <g id="a_edge28">
+        <a xlink:title="ISO18626StatusChange&#45;Conditional">
+          <path fill="none" stroke="purple" d="M245.61,-180.15C223.39,-230.93 144.9,-377 144.9,-377 144.9,-667 144.9,-667 144.9,-667 144.9,-667 258.9,-756 258.9,-756 258.9,-756 295.97,-772.79 326.77,-787.47"/>
+          <polygon fill="purple" stroke="purple" points="325.55,-790.77 336.08,-791.94 328.58,-784.46 325.55,-790.77"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge25" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge25">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M254.85,-180.27C264.12,-251.78 276.9,-521 276.9,-521 276.9,-595 276.9,-595 276.9,-595 276.9,-595 414.9,-684 414.9,-684 414.9,-684 462.76,-701.38 501.99,-716.23"/>
+          <polygon fill="purple" stroke="purple" points="501.15,-719.65 511.75,-719.94 503.64,-713.11 501.15,-719.65"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CANCELLED -->
+    <g id="edge26" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge26">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M347.24,-152.28C498.71,-138.56 790.31,-112.15 936.23,-98.94"/>
+          <polygon fill="red" stroke="red" points="936.84,-102.4 946.48,-98.01 936.2,-95.43 936.84,-102.4"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_UNFILLED -->
+    <g id="edge27" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_UNFILLED</title>
+      <g id="a_edge27">
+        <a xlink:title="ISO18626StatusChange&#45;Unfilled">
+          <path fill="none" stroke="red" d="M345.86,-180.06C432.1,-195.55 545.9,-216 545.9,-216 545.9,-216 632.79,-258.49 686.49,-284.75"/>
+          <polygon fill="red" stroke="red" points="685.26,-288.04 695.78,-289.29 688.34,-281.76 685.26,-288.04"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_SHIPPED -->
+    <g id="edge30" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_SHIPPED</title>
+      <g id="a_edge30">
+        <a xlink:title="ISO18626StatusChange&#45;Loaned">
+          <path fill="none" stroke="purple" d="M220.57,-143.88C204.2,-134.64 183.82,-123.13 166.25,-113.21"/>
+          <polygon fill="purple" stroke="purple" points="167.78,-110.06 157.35,-108.19 164.34,-116.15 167.78,-110.06"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_EXPECTS_TO_SUPPLY -->
+    <g id="edge29" class="edge link&#45;class">
+      <title>REQ_EXPECTS_TO_SUPPLY&#45;&gt;REQ_EXPECTS_TO_SUPPLY</title>
+      <g id="a_edge29">
+        <a xlink:title="ISO18626StatusChange">
+          <path fill="none" stroke="purple" d="M347.11,-173.44C358.02,-171.3 365.09,-167.48 365.09,-162 365.09,-158.4 362.04,-155.52 356.87,-153.36"/>
+          <polygon fill="purple" stroke="purple" points="357.69,-149.96 347.11,-150.56 355.76,-156.68 357.69,-149.96"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED -->
+    <g id="edge35" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CONDITIONAL_ANSWER_RECEIVED</title>
+      <g id="a_edge35">
+        <a xlink:title="ISO18626StatusChange&#45;Conditional">
+          <path fill="none" stroke="purple" d="M377.77,-252.06C364.03,-267.55 345.9,-288 345.9,-288 345.9,-288 182.9,-521 182.9,-521 182.9,-667 182.9,-667 182.9,-667 182.9,-667 284.6,-745.48 336.78,-785.75"/>
+          <polygon fill="purple" stroke="purple" points="334.65,-788.53 344.71,-791.87 338.93,-782.99 334.65,-788.53"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge31" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge31">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M389.25,-252.13C375.23,-289.9 332.9,-377 332.9,-377 332.9,-595 332.9,-595 332.9,-595 332.9,-595 459.95,-674.13 520.63,-714.25"/>
+          <polygon fill="purple" stroke="purple" points="518.81,-717.24 529.07,-719.87 522.69,-711.42 518.81,-717.24"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CANCELLED -->
+    <g id="edge32" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge32">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M451.92,-215.95C541.35,-190.1 700.9,-144 700.9,-144 700.9,-144 852.77,-119.08 948.23,-103.42"/>
+          <polygon fill="red" stroke="red" points="948.85,-106.86 958.15,-101.79 947.71,-99.95 948.85,-106.86"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_UNFILLED -->
+    <g id="edge34" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_UNFILLED</title>
+      <g id="a_edge34">
+        <a xlink:title="ISO18626StatusChange&#45;Unfilled">
+          <path fill="none" stroke="red" d="M480.38,-252.05C537.9,-263.81 611.85,-279.28 663.91,-290.46"/>
+          <polygon fill="red" stroke="red" points="663.19,-293.88 673.7,-292.57 664.66,-287.04 663.19,-293.88"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_EXPECTS_TO_SUPPLY -->
+    <g id="edge33" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_EXPECTS_TO_SUPPLY</title>
+      <g id="a_edge33">
+        <a xlink:title="ISO18626StatusChange&#45;ExpectToSupply">
+          <path fill="none" stroke="purple" d="M358.16,-215.88C339.08,-206.47 315.22,-194.71 294.85,-184.67"/>
+          <polygon fill="purple" stroke="purple" points="296.29,-181.47 285.77,-180.19 293.19,-187.75 296.29,-181.47"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER -->
+    <g id="edge36" class="edge link&#45;class">
+      <title>REQ_REQUEST_SENT_TO_SUPPLIER&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER</title>
+      <g id="a_edge36">
+        <a xlink:title="ISO18626StatusChange">
+          <path fill="none" stroke="purple" d="M518.91,-244.53C529.73,-242.29 536.48,-238.78 536.48,-234 536.48,-230.94 533.71,-228.4 528.87,-226.37"/>
+          <polygon fill="purple" stroke="purple" points="529.49,-222.91 518.91,-223.47 527.53,-229.63 529.49,-222.91"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCELLED_WITH_SUPPLIER&#45;&gt;REQ_CANCELLED -->
+    <g id="edge38" class="edge link&#45;class">
+      <title>REQ_CANCELLED_WITH_SUPPLIER&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge38">
+        <a xlink:title="STATUS_REQ_CANCELLED_WITH_SUPPLIER_ind">
+          <path fill="none" stroke="red" d="M862.14,-360.81C912.42,-345.22 980.9,-324 980.9,-324 980.9,-324 1007.52,-179.78 1018.87,-118.27"/>
+          <polygon fill="red" stroke="red" points="1022.37,-118.6 1020.74,-108.13 1015.48,-117.33 1022.37,-118.6"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_CANCELLED_WITH_SUPPLIER&#45;&gt;REQ_UNFILLED -->
+    <g id="edge37" class="edge link&#45;class">
+      <title>REQ_CANCELLED_WITH_SUPPLIER&#45;&gt;REQ_UNFILLED</title>
+      <g id="a_edge37">
+        <a xlink:title="STATUS_REQ_CANCELLED_WITH_SUPPLIER_ind&#45;continue">
+          <path fill="none" stroke="red" d="M790.05,-360.05C779.5,-351.05 766.37,-339.84 754.91,-330.05"/>
+          <polygon fill="red" stroke="red" points="757.16,-327.38 747.28,-323.55 752.62,-332.7 757.16,-327.38"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SOURCING_ITEM&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge39" class="edge link&#45;class">
+      <title>REQ_SOURCING_ITEM&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge39">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M1220.39,-468.23C1200.96,-509.76 1141.9,-612 1141.9,-612 1141.9,-612 938.9,-684 938.9,-684 938.9,-684 760.36,-709.03 645.76,-724.69"/>
+          <polygon fill="purple" stroke="purple" points="645,-721.26 635.57,-726.08 645.95,-728.2 645,-721.26"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SOURCING_ITEM&#45;&gt;REQ_CANCELLED -->
+    <g id="edge40" class="edge link&#45;class">
+      <title>REQ_SOURCING_ITEM&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge40">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M1221.8,-431.87C1212.76,-394.1 1191.9,-307 1191.9,-307 1191.9,-307 1191.9,-307 1191.9,-233 1191.9,-233 1132.9,-144 1132.9,-144 1132.9,-144 1096.38,-126.24 1065.62,-111.29"/>
+          <polygon fill="red" stroke="red" points="1066.83,-107.98 1056.31,-106.76 1063.77,-114.28 1066.83,-107.98"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge44" class="edge link&#45;class">
+      <title>REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge44">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M555.34,-468.31C559.49,-516.31 559.74,-651.44 556.07,-709.7"/>
+          <polygon fill="purple" stroke="purple" points="552.56,-709.74 555.31,-719.97 559.54,-710.25 552.56,-709.74"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_LOCAL_REVIEW -->
+    <g id="edge42" class="edge link&#45;class">
+      <title>REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_LOCAL_REVIEW</title>
+      <g id="a_edge42">
+        <a xlink:title="STATUS_REQ_SUPPLIER_IDENTIFIED_ind&#45;localReview">
+          <path fill="none" stroke="green" d="M532.62,-431.7C522.99,-423.05 511.17,-412.45 500.67,-403.03"/>
+          <polygon fill="green" stroke="green" points="502.74,-400.18 492.96,-396.1 498.06,-405.39 502.74,-400.18"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_CANCELLED -->
+    <g id="edge45" class="edge link&#45;class">
+      <title>REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge45">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M567.67,-431.94C582,-416.45 600.9,-396 600.9,-396 600.9,-396 633.9,-360 633.9,-360 633.9,-360 864.9,-324 864.9,-324 864.9,-324 947.9,-252 947.9,-252 947.9,-252 989.99,-162.83 1011.53,-117.21"/>
+          <polygon fill="red" stroke="red" points="1014.81,-118.46 1015.91,-107.93 1008.48,-115.47 1014.81,-118.46"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER -->
+    <g id="edge43" class="edge link&#45;class">
+      <title>REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_REQUEST_SENT_TO_SUPPLIER</title>
+      <g id="a_edge43">
+        <a xlink:title="STATUS_REQ_SUPPLIER_IDENTIFIED_ind">
+          <path fill="none" stroke="green" d="M499.75,-431.94C452.39,-416.45 389.9,-396 389.9,-396 389.9,-396 389.9,-288 389.9,-288 389.9,-288 390.62,-275.27 391.36,-262.29"/>
+          <polygon fill="green" stroke="green" points="394.86,-262.24 391.93,-252.06 387.88,-261.85 394.86,-262.24"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_END_OF_ROTA -->
+    <g id="edge41" class="edge link&#45;class">
+      <title>REQ_SUPPLIER_IDENTIFIED&#45;&gt;REQ_END_OF_ROTA</title>
+      <g id="a_edge41">
+        <a xlink:title="STATUS_REQ_SUPPLIER_IDENTIFIED_ind&#45;endOfRota">
+          <path fill="none" stroke="red" d="M561.35,-431.84C575.59,-405.98 600.9,-360 600.9,-360 600.9,-360 850.9,-324 850.9,-324 850.9,-324 850.9,-288 850.9,-288 850.9,-288 848.45,-275.02 845.98,-261.9"/>
+          <polygon fill="red" stroke="red" points="849.41,-261.24 844.12,-252.06 842.53,-262.54 849.41,-261.24"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge49" class="edge link&#45;class">
+      <title>REQ_IDLE&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge49">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M769.01,-682.43C765.87,-683.4 763.9,-684 763.9,-684 763.9,-684 693.63,-702.35 633.95,-717.45"/>
+          <polygon fill="purple" stroke="purple" points="632.93,-714.1 624.09,-719.94 634.64,-720.88 632.93,-714.1"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE&#45;&gt;REQ_CANCELLED -->
+    <g id="edge50" class="edge link&#45;class">
+      <title>REQ_IDLE&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge50">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M852.85,-652.44C905.19,-636.77 987.9,-612 987.9,-612 987.9,-612 1099.9,-540 1099.9,-540 1099.9,-540 1118.9,-523 1118.9,-523 1118.9,-523 1118.9,-523 1118.9,-233 1118.9,-233 1074.9,-144 1074.9,-144 1074.9,-144 1060.72,-129.26 1047.31,-115.33"/>
+          <polygon fill="red" stroke="red" points="1049.49,-112.55 1040.04,-107.77 1044.45,-117.4 1049.49,-112.55"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE&#45;&gt;REQ_IDLE -->
+    <g id="edge48" class="edge link&#45;class">
+      <title>REQ_IDLE&#45;&gt;REQ_IDLE</title>
+      <g id="a_edge48">
+        <a xlink:title="borrowerCheck&#45;hostLMSCallFailed">
+          <path fill="none" stroke="purple" d="M852.67,-679.29C862.89,-678.3 870.49,-673.88 870.49,-666 870.49,-660.96 867.37,-657.32 862.44,-655.11"/>
+          <polygon fill="purple" stroke="purple" points="863.22,-651.69 852.67,-652.71 861.55,-658.49 863.22,-651.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge47" class="edge link&#45;class">
+      <title>REQ_IDLE&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge47">
+        <a xlink:title="borrowerCheck&#45;invalidPatron">
+          <path fill="none" stroke="purple" d="M807.44,-647.7C805.9,-639.98 804.04,-630.71 802.32,-622.11"/>
+          <polygon fill="purple" stroke="purple" points="805.71,-621.22 800.32,-612.1 798.85,-622.6 805.71,-621.22"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_IDLE&#45;&gt;REQ_VALIDATED -->
+    <g id="edge46" class="edge link&#45;class">
+      <title>REQ_IDLE&#45;&gt;REQ_VALIDATED</title>
+      <g id="a_edge46">
+        <a xlink:title="borrowerCheck">
+          <path fill="none" stroke="purple" d="M852.56,-650.38C897.26,-634.69 961.9,-612 961.9,-612 961.9,-612 989.66,-574.56 1009.18,-548.25"/>
+          <polygon fill="purple" stroke="purple" points="1012.03,-550.28 1015.18,-540.16 1006.41,-546.11 1012.03,-550.28"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge57" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge57">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M783.66,-612.16C758.53,-638.02 707.9,-684 707.9,-684 707.9,-684 658.89,-701.67 615.73,-716.61"/>
+          <polygon fill="purple" stroke="purple" points="614.38,-713.37 606.07,-719.94 616.66,-719.99 614.38,-713.37"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_CANCELLED -->
+    <g id="edge58" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge58">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M816.62,-575.85C874.99,-525.07 1042.9,-379 1042.9,-379 1042.9,-379 1042.9,-379 1042.9,-233 1042.9,-233 1033.04,-159.29 1027.52,-118.08"/>
+          <polygon fill="red" stroke="red" points="1030.99,-117.58 1026.19,-108.13 1024.05,-118.5 1030.99,-117.58"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge52" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge52">
+        <a xlink:title="borrowerCheckOverride&#45;invalidPatron">
+          <path fill="none" stroke="purple" d="M880.59,-596.96C891.37,-596.44 898.49,-595.46 898.49,-594 898.49,-593.07 895.57,-592.32 890.63,-591.78"/>
+          <polygon fill="purple" stroke="purple" points="890.82,-588.28 880.59,-591.04 890.31,-595.26 890.82,-588.28"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge53" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge53">
+        <a xlink:title="borrowerCheckOverride&#45;hostLMSCallFailed">
+          <path fill="none" stroke="purple" d="M880.72,-600.64C901.23,-600.15 916.49,-597.94 916.49,-594 916.49,-590.74 906.02,-588.66 890.78,-587.76"/>
+          <polygon fill="purple" stroke="purple" points="890.86,-584.26 880.72,-587.36 890.57,-591.26 890.86,-584.26"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge55" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge55">
+        <a xlink:title="borrowerCheck&#45;invalidPatron">
+          <path fill="none" stroke="purple" d="M880.53,-604.12C910.29,-604.31 934.49,-600.93 934.49,-594 934.49,-587.88 915.63,-584.53 890.73,-583.96"/>
+          <polygon fill="purple" stroke="purple" points="890.56,-580.46 880.53,-583.88 890.5,-587.46 890.56,-580.46"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON -->
+    <g id="edge56" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_INVALID_PATRON</title>
+      <g id="a_edge56">
+        <a xlink:title="borrowerCheck&#45;hostLMSCallFailed">
+          <path fill="none" stroke="purple" d="M880.53,-607.25C918.98,-608.65 952.49,-604.23 952.49,-594 952.49,-584.69 924.73,-580.19 890.76,-580.52"/>
+          <polygon fill="purple" stroke="purple" points="890.45,-577.02 880.53,-580.75 890.61,-584.02 890.45,-577.02"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_VALIDATED -->
+    <g id="edge51" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_VALIDATED</title>
+      <g id="a_edge51">
+        <a xlink:title="borrowerCheckOverride">
+          <path fill="none" stroke="purple" d="M847.23,-575.97C879.02,-566.01 920.53,-553.41 955.78,-542.99"/>
+          <polygon fill="purple" stroke="purple" points="956.94,-546.29 965.54,-540.11 954.96,-539.58 956.94,-546.29"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_INVALID_PATRON&#45;&gt;REQ_VALIDATED -->
+    <g id="edge54" class="edge link&#45;class">
+      <title>REQ_INVALID_PATRON&#45;&gt;REQ_VALIDATED</title>
+      <g id="a_edge54">
+        <a xlink:title="borrowerCheck">
+          <path fill="none" stroke="purple" d="M859,-575.97C892.74,-566.06 934.23,-553.51 967.68,-543.12"/>
+          <polygon fill="purple" stroke="purple" points="968.83,-546.43 977.33,-540.11 966.74,-539.75 968.83,-546.43"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED&#45;&gt;REQ_CANCEL_PENDING -->
+    <g id="edge62" class="edge link&#45;class">
+      <title>REQ_VALIDATED&#45;&gt;REQ_CANCEL_PENDING</title>
+      <g id="a_edge62">
+        <a xlink:title="requesterCancel">
+          <path fill="none" stroke="purple" d="M1025.85,-540.16C1017.56,-566.02 996.9,-612 996.9,-612 996.9,-612 888.9,-684 888.9,-684 888.9,-684 745.64,-707.15 645.87,-722.85"/>
+          <polygon fill="purple" stroke="purple" points="645.09,-719.43 635.76,-724.44 646.18,-726.34 645.09,-719.43"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED&#45;&gt;REQ_CANCELLED -->
+    <g id="edge63" class="edge link&#45;class">
+      <title>REQ_VALIDATED&#45;&gt;REQ_CANCELLED</title>
+      <g id="a_edge63">
+        <a xlink:title="requesterCancel&#45;noSupplier">
+          <path fill="none" stroke="red" d="M1037.24,-503.94C1045.71,-488.45 1056.9,-468 1056.9,-468 1056.9,-468 1080.9,-379 1080.9,-379 1080.9,-379 1080.9,-379 1080.9,-233 1080.9,-233 1056.9,-144 1056.9,-144 1056.9,-144 1048.33,-130.24 1039.93,-116.75"/>
+          <polygon fill="red" stroke="red" points="1042.78,-114.7 1034.52,-108.06 1036.84,-118.4 1042.78,-114.7"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED&#45;&gt;REQ_SOURCING_ITEM -->
+    <g id="edge59" class="edge link&#45;class">
+      <title>REQ_VALIDATED&#45;&gt;REQ_SOURCING_ITEM</title>
+      <g id="a_edge59">
+        <a xlink:title="STATUS_REQ_VALIDATED_ind&#45;sourcing">
+          <path fill="none" stroke="green" d="M1076.08,-503.97C1103.75,-494.19 1138.68,-481.84 1167.85,-471.52"/>
+          <polygon fill="green" stroke="green" points="1169.24,-474.74 1177.5,-468.11 1166.91,-468.14 1169.24,-474.74"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED&#45;&gt;REQ_SUPPLIER_IDENTIFIED -->
+    <g id="edge60" class="edge link&#45;class">
+      <title>REQ_VALIDATED&#45;&gt;REQ_SUPPLIER_IDENTIFIED</title>
+      <g id="a_edge60">
+        <a xlink:title="STATUS_REQ_VALIDATED_ind">
+          <path fill="none" stroke="green" d="M965.18,-511.78C889.43,-500.64 760.52,-481.68 666.78,-467.89"/>
+          <polygon fill="green" stroke="green" points="667.08,-464.4 656.67,-466.41 666.06,-471.33 667.08,-464.4"/>
+        </a>
+      </g>
+    </g>
+    <!-- REQ_VALIDATED&#45;&gt;REQ_END_OF_ROTA -->
+    <g id="edge61" class="edge link&#45;class">
+      <title>REQ_VALIDATED&#45;&gt;REQ_END_OF_ROTA</title>
+      <g id="a_edge61">
+        <a xlink:title="STATUS_REQ_VALIDATED_ind&#45;endOfRota">
+          <path fill="none" stroke="red" d="M1023.41,-503.77C1012.57,-462.24 985.9,-360 985.9,-360 985.9,-360 910.12,-294.67 868.12,-258.47"/>
+          <polygon fill="red" stroke="red" points="870.32,-255.74 860.46,-251.86 865.74,-261.04 870.32,-255.74"/>
+        </a>
+      </g>
+    </g>
+  </g>
+</svg>

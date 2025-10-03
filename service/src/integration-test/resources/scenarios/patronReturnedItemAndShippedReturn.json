@@ -1,0 +1,10 @@
+{
+  "action": "patronReturnedItemAndShippedReturn",
+  "actionParams": {
+    "itemBarcodes": [
+      {
+        "itemId": "CHAS-88"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+import groovy.transform.*
+import com.k_int.ill.statemodel.StateTransition
+
+@Field StateTransition stateTransition
+json g.render(stateTransition, [expand: ['action'
+                                       ],
+                              excludes: []])
+

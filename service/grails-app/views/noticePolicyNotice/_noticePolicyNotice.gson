@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.NoticePolicyNotice
+
+@Field NoticePolicyNotice noticePolicyNotice
+json g.render(noticePolicyNotice, [expand: ['template']])

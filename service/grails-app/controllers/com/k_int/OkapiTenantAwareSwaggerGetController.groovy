@@ -1,0 +1,254 @@
+package com.k_int;
+
+import com.k_int.ill.logging.ContextLogging;
+import com.k_int.permissions.OkapiPermission;
+import com.k_int.permissions.PermissionGroup;
+import com.k_int.web.toolkit.SimpleLookupService;
+
+import grails.artefact.Artefact;
+import grails.gorm.multitenancy.CurrentTenant;
+import grails.gorm.transactions.Transactional;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import services.k_int.tests.ExcludeFromGeneratedCoverageReport
+
+/**
+ * This class was written so that we had a swagger interface for all the controller end points
+ * that are implemented byOkapiTenantAwareController, with one addition in that we override doTheLookup
+ * so that we can change the maximum number of records that can be returned per page
+ * @author Chas
+ *
+ * @param <T> The class of record that we are offering the end points for
+ */
+@CurrentTenant
+@Artefact('Controller')
+@ExcludeFromGeneratedCoverageReport
+public class OkapiTenantAwareSwaggerGetController<T> extends OkapiTenantAwareInstitutionController<T>  {
+
+    // Required as we override the maximum number of records that can be returned in index
+    SimpleLookupService simpleLookupService;
+
+    /** Specifies the maximum number of records to return for a page */
+    private int maxRecordsPerPage = 1000;
+
+    public OkapiTenantAwareSwaggerGetController(Class<T> resource, int maxRecordsPerPage = 1000) {
+        this(resource, false, maxRecordsPerPage);
+    }
+
+    public OkapiTenantAwareSwaggerGetController(Class<T> resource, boolean readOnly, int maxRecordsPerPage = 1000) {
+        super(resource, readOnly);
+        this.maxRecordsPerPage = maxRecordsPerPage;
+    }
+
+    @ApiOperation(
+        value = "Search with the supplied criteria",
+        nickname = "/",
+        produces = "application/json",
+        httpMethod = "GET"
+    )
+    @ApiResponses([
+        @ApiResponse(code = 200, message = "Success")
+    ])
+    @ApiImplicitParams([
+        @ApiImplicitParam(
+            name = "term",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "The term to be searched for",
+            dataType = "string"
+        ),
+        @ApiImplicitParam(
+            name = "match",
+            paramType = "query",
+            required = false,
+            allowMultiple = true,
+            value = "The properties the match is to be applied to",
+            dataType = "string"
+        ),
+        @ApiImplicitParam(
+            name = "filters",
+            paramType = "query",
+            required = false,
+            allowMultiple = true,
+            value = "The filters to be applied",
+            dataType = "string"
+        ),
+        @ApiImplicitParam(
+            name = "sort",
+            paramType = "query",
+            required = false,
+            allowMultiple = true,
+            value = "The properties to sort the items by",
+            dataType = "string"
+        ),
+        @ApiImplicitParam(
+            name = "max",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "Maximum number of items to return",
+            dataType = "integer"
+        ),
+        @ApiImplicitParam(
+            name = "perPage",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "Number of items per page",
+            dataType = "integer"
+        ),
+        @ApiImplicitParam(
+            name = "offset",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "Offset from the becoming of the result set to start returning results",
+            dataType = "integer"
+        ),
+        @ApiImplicitParam(
+            name = "page",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "The page you wnat the results being returned from",
+            dataType = "integer"
+        ),
+        @ApiImplicitParam(
+            name = "stats",
+            paramType = "query",
+            required = false,
+            allowMultiple = false,
+            value = "Do we return statistics about the search",
+            dataType = "boolean"
+        )
+    ])
+    @OkapiPermission(name = "collection", permissionGroup = PermissionGroup.READ)
+    @Transactional
+    public def index(Integer max) {
+        // Setup the variables we want to log
+        ContextLogging.startTime();
+        ContextLogging.setValue(ContextLogging.FIELD_RESOURCE, resource.getSimpleName());
+        ContextLogging.setValue(ContextLogging.FIELD_ACTION, ContextLogging.ACTION_SEARCH);
+        ContextLogging.setValue(ContextLogging.FIELD_TERM, params.term);
+        ContextLogging.setValue(ContextLogging.FIELD_FIELDS_TO_MATCH, params.match);
+        ContextLogging.setValue(ContextLogging.FIELD_FILTERS, params.filters);
+        ContextLogging.setValue(ContextLogging.FIELD_SORT, params.sort);
+        ContextLogging.setValue(ContextLogging.FIELD_MAXIMUM_RESULTS, max);
+        ContextLogging.setValue(ContextLogging.FIELD_NUMBER_PER_PAGE, params.perPage);
+        ContextLogging.setValue(ContextLogging.FIELD_OFFSET, params.offset);
+        ContextLogging.setValue(ContextLogging.FIELD_PAGE, params.page);
+        ContextLogging.setValue(ContextLogging.FIELD_STATISTICS_REQUIRED, params.stats);
+        log.debug(ContextLogging.MESSAGE_ENTERING);
+
+        // Now do the work
+        super.index(max);
+
+        // Record how long it took
+        ContextLogging.duration();
+        log.debug(ContextLogging.MESSAGE_EXITING);
+    }
+
+    @ApiOperation(
+        value = "Returns the supplied record",
+        nickname = "{id}",
+        httpMethod = "GET"
+    )
+    @ApiResponses([
+        @ApiResponse(code = 200, message = "Success")
+    ])
+    @ApiImplicitParams([
+        @ApiImplicitParam(
+            name = "id",
+            paramType = "path",
+            required = true,
+            allowMultiple = false,
+            value = "The id of the record to return",
+            dataType = "string"
+        )
+    ])
+    @OkapiPermission(name = "item", permissionGroup = PermissionGroup.READ)
+    @Transactional
+    public def show() {
+        // Setup the variables we want to log
+        ContextLogging.startTime();
+        ContextLogging.setValue(ContextLogging.FIELD_RESOURCE, resource.getSimpleName());
+        ContextLogging.setValue(ContextLogging.FIELD_ACTION, ContextLogging.ACTION_FETCH);
+        ContextLogging.setValue(ContextLogging.FIELD_ID, params.id);
+        log.debug(ContextLogging.MESSAGE_ENTERING);
+
+        // Have we been passed an id
+        if (params.id) {
+            // See if we can get hold of it
+            T record = queryForResource(params.id);
+
+            // Did we find the record
+            if (record == null) {
+                // We need to set the response to invalid parameter
+                response.status = 400;
+            } else {
+                // Let us see if it is for our institution
+                if (isValidForInstitution("fetch", params.id, record)) {
+                    // It is for our institution, we may want to add additional data onto the record
+                    loadedRecord(record);
+
+                    // Now respond with the record
+                    respond record;
+                } else {
+                    // Not for our institution
+                    response.status = 400;
+                }
+            }
+        } else {
+            // Mo id specified
+            response.status = 400;
+        }
+
+        // Record how long it took
+        ContextLogging.duration();
+        log.debug(ContextLogging.MESSAGE_EXITING);
+    }
+
+    @Override
+    /**
+     * We override this method so we can vary what the maximum number of items that get returned is.
+     * So for a large record we can restrict it to the default of 100 that is in the library
+     * and for smaller records we can make it a larger number.
+     * The method was copied from com.k_int.web.toolkit.rest.RestfulController.groovy with maxRecordsPerPage replacing 100
+     * Note: simpleLookupService still caps it at 1000 regardless
+     *
+     * @param res The class that we are returning records for
+     * @param baseQuery A closure that contains any extra queries beyond what has been asked for in the parameters
+     * @return The results of the query
+     */
+    @Transactional
+    protected def doTheLookup (Class<T> res = this.resource, Closure baseQuery) {
+        final int offset = params.int("offset") ?: 0;
+        final int perPage = Math.min(params.int('perPage') ?: params.int('max') ?: 10, maxRecordsPerPage);
+        final int page = params.int("page") ?: (offset ? (offset / perPage) + 1 : 1);
+        final List<String> filters = addInstitutionFilterIfNeeded(getParamList("filters"));
+        final List<String> match_in = getParamList("match");
+        final List<String> sorts = getParamList("sort");
+
+        if (params.boolean('stats')) {
+            def result = simpleLookupService.lookupWithStats(res, params.term, perPage, page, filters, match_in, sorts, null, baseQuery);
+            loadedRecords(result.results);
+            return(result);
+        } else {
+            List<T> result = simpleLookupService.lookup(res, params.term, perPage, page, filters, match_in, sorts, baseQuery);
+            loadedRecords(result);
+            return(result);
+        }
+    }
+
+    protected void loadedRecord(T record) {
+        // By default we do nothing
+    }
+
+    protected void loadedRecords(List<T> records) {
+        // By default we do nothing
+    }
+}

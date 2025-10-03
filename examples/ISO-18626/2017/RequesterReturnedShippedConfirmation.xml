@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tag0:ISO18626Message xmlns:tag0="http://illtransactions.org/2013/iso18626"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      tag0:version="1.0"
+                      xsi:schemaLocation="http://illtransactions.org/2013/iso18626 http://illtransactions.org/schemas/ISO-18626-v1_1.xsd">
+	<tag0:requestingAgencyMessageConfirmation>
+		<tag0:confirmationHeader>
+			<tag0:supplyingAgencyId>
+				<tag0:agencyIdType>RESHARE</tag0:agencyIdType>
+				<tag0:agencyIdValue>LOCALHOSTB</tag0:agencyIdValue>
+			</tag0:supplyingAgencyId>
+			<tag0:requestingAgencyId>
+				<tag0:agencyIdType>RESHARE</tag0:agencyIdType>
+				<tag0:agencyIdValue>LOCALHOSTA</tag0:agencyIdValue>
+			</tag0:requestingAgencyId>
+			<tag0:timestamp>2023-09-29T13:58:13Z</tag0:timestamp>
+			<tag0:requestingAgencyRequestId>CHAS-141~0</tag0:requestingAgencyRequestId>
+			<tag0:timestampReceived>2023-09-29T12:58:13.810640700Z</tag0:timestampReceived>
+			<tag0:messageStatus>OK</tag0:messageStatus>
+			<tag0:action>ShippedReturn</tag0:action>
+		</tag0:confirmationHeader>
+	</tag0:requestingAgencyMessageConfirmation>
+</tag0:ISO18626Message>

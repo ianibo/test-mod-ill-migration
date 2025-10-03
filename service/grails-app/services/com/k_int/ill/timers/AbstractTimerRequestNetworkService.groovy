@@ -1,0 +1,71 @@
+package com.k_int.ill.timers;
+
+import com.k_int.ill.IllActionService;
+import com.k_int.ill.IllApplicationEventHandlerService;
+import com.k_int.ill.NetworkStatus;
+import com.k_int.ill.PatronRequest;
+import com.k_int.ill.protocol.ProtocolService;
+import com.k_int.institution.Institution;
+
+/**
+ * Base class for the nwtwork timers as they essentially need the same fluff
+ *
+ * @author Chas
+ *
+ */
+public abstract class AbstractTimerRequestNetworkService extends AbstractTimer {
+
+    IllActionService illActionService;
+    IllApplicationEventHandlerService illApplicationEventHandlerService;
+	ProtocolService protocolService;
+
+    /** The network status we will be using to find the requests to process */
+    protected final String networkStatusFilter;
+
+    AbstractTimerRequestNetworkService(NetworkStatus networkStatus) {
+        // Need to convert to a string as that is what is stored
+        networkStatusFilter = networkStatus.toString();
+    }
+
+    /**
+     * Does the actual work required for requests in this network state
+     * @param request The request that needs reprocessing
+     * @param retryEventData The event data that we can retry with
+     */
+    abstract public void performNetworkTask(PatronRequest request);
+
+    @Override
+    public void performTask(String tenant, Institution institution, String config) {
+        // First of all, get hold of all the requests that we are interested in
+        List requests = PatronRequest.findAllByNetworkStatusAndNextSendAttemptLessThan(networkStatusFilter, new Date());
+
+        // Are there any
+        if (requests) {
+            // Loop through all the requests
+            requests.each { request ->
+                // Start a new transaction for this request as we want to treat each request independently
+                PatronRequest.withNewTransaction { transactionStatus ->
+                    // Lock the request
+                    PatronRequest lockedRequest = illApplicationEventHandlerService.delayedGet(request.id, true);
+
+                    // If we failed to lock it, it will be picked up later
+                    if (lockedRequest != null) {
+                        // Do we have some protocol event data
+                        if (lockedRequest.lastProtocolData == null) {
+                            // That is a bit of a bummer, have to set the network status to error
+                            illApplicationEventHandlerService.auditEntry(lockedRequest, lockedRequest.state, lockedRequest.state, 'No lastProtocolData in order to reprocess the request after a network problem (' + networkStatusFilter + ')', null);
+                            lockedRequest.networkStatus = NetworkStatus.Error;
+                            log.error('Network status timer and no lastProtocolData for request: ' + lockedRequest.id + ', status: ' + networkStatusFilter);
+                        } else {
+                            // Now call the abstract method to do its job
+                            performNetworkTask(lockedRequest);
+                        }
+
+                        // Now we can save the request
+                        lockedRequest.save(flush:true, failOnError:true);
+                    }
+                }
+            }
+        }
+    }
+}

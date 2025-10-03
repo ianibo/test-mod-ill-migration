@@ -1,0 +1,30 @@
+volumes:
+  lsp_pgdata:
+    driver: local
+  minio_data:
+    driver: local
+
+services:
+  postgres:
+    container_name: testing_pg
+    hostname: postgres
+    image: docker.libsdev.k-int.com/postgres-test:v1
+    restart: "no"
+    volumes:
+      - lsp_pgdata:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+      - 54321:5432
+    environment:
+      POSTGRES_PASSWORD: pa55w0rd
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+  minio:
+    container_name: minio_tests
+    hostname: minio
+    image: docker.libsdev.k-int.com/knowledgeintegration/cicd-minio-folio:v2
+    volumes:
+      - minio_data:/data
+    ports:
+      - 9001:9001
+      - 9000:9000

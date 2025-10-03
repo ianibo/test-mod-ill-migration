@@ -1,0 +1,11 @@
+.gradle
+.okapirc
+.project
+.settings
+Vagrantfile
+tools/testing/zk-single-kafka-single
+*.log
+tools/minio/minio_data
+tools/testing/minio_data
+/service/dbChanges.txt
+/service/dependencies.txt

@@ -1,0 +1,6 @@
+{
+    "action": "message",
+    "actionParams": {
+        "note": "A message sent to the other side"
+    }
+}

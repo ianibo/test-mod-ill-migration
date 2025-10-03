@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.templating.LocalizedTemplate;
+
+@Field LocalizedTemplate localizedTemplate
+json g.render(localizedTemplate, [expand: ['template'], excludes: ['owner']])

@@ -1,0 +1,114 @@
+package com.k_int.ill.timers;
+
+import org.dmfs.rfc5545.DateTime;
+import org.dmfs.rfc5545.Duration;
+
+import com.k_int.ill.PatronRequest;
+import com.k_int.ill.referenceData.SettingsData;
+import com.k_int.ill.statemodel.ActionService;
+import com.k_int.institution.Institution;
+import com.k_int.settings.InstitutionSettingsService
+
+/**
+ * Checks to see if a supplier request is idle or not, if it is we respond with the stale action on the state model
+ *
+ * @author Chas
+ *
+ */
+public class TimerCheckForStaleSupplierRequestsService extends AbstractTimer {
+
+	/** The fall back number of idle days, if the value from the settings is invalid */
+	private static final int DEFAULT_IDLE_DAYS = 3;
+
+	/** The query to be performed to find the stale requests */
+    private static final String STALE_REQUESTS_QUERY = """
+from PatronRequest as pr
+where pr.dateCreated < :staleDate and
+      pr.isRequester = false and
+      pr.stateModel.staleAction is not null and
+      pr.institution = :institution and
+      pr.state in (select s.state
+                   from StateModel as sm
+                        inner join sm.states as s
+                   where sm = pr.stateModel and
+                         s.canTriggerStaleRequest = true)
+""";
+
+	/** The duration that represents 1 day, used for when when we are excluding the weekend from the idle period */
+	private static final Duration DURATION_ONE_DAY = new Duration(-1, 1, 0);
+
+	private static final String SETTING_ENABLED_YES         = 'yes';
+	private static final String SETTING_EXCLUDE_WEEKEND_YES = 'yes';
+
+	private static final int DAY_OF_WEEK_SUNDAY   = 0;
+	private static final int DAY_OF_WEEK_SATURDAY = 6;
+
+	ActionService actionService;
+	InstitutionSettingsService institutionSettingsService;
+
+	@Override
+	public void performTask(String tenant, Institution institution, String config) {
+		if (institutionSettingsService.hasSettingValue(
+            institution,
+            SettingsData.SETTING_STALE_REQUEST_1_ENABLED,
+             SETTING_ENABLED_YES
+         )) {
+			// We look to see if a request has been sitting at a supplier for more than X days without the pull slip being printed
+
+			// The date that we request must have been created before, for us to take notice off, I believe dates are stored as UTC
+			int numberOfIdleDays = numberOfIdleDays(institution);
+			DateTime idleBeyondDate = (new DateTime(TimeZone.getTimeZone(TIME_ZONE_UTC), System.currentTimeMillis())).startOfDay();
+
+			// if we are ignoring weekends then the calculation for the idle start date will be slightly different
+			if (institutionSettingsService.hasSettingValue(
+                institution,
+                SettingsData.SETTING_STALE_REQUEST_3_EXCLUDE_WEEKEND, SETTING_EXCLUDE_WEEKEND_YES
+                ) &&
+                (numberOfIdleDays > 0)) {
+				// We ignore weekends, probably not the best way of doing this but it will work, can be optimised later
+				for (int i = 0; i < numberOfIdleDays; i++) {
+					idleBeyondDate = idleBeyondDate.addDuration(DURATION_ONE_DAY);
+					int dayOfWeek = idleBeyondDate.getDayOfWeek();
+					if ((dayOfWeek == DAY_OF_WEEK_SUNDAY)  || (dayOfWeek == DAY_OF_WEEK_SATURDAY)) {
+						// It is either a Saturday or Sunday, so subtract 1 from i, so we go round the loop again
+						i--;
+					}
+				}
+			} else {
+				// We do not ignore weekends
+				Duration duration = new Duration(-1, numberOfIdleDays, 0);
+				idleBeyondDate = idleBeyondDate.addDuration(duration);
+			}
+
+			// Now find all the stale requests
+            Map queryParameters = [
+                staleDate : new Date(idleBeyondDate.getTimestamp()),
+                institution : institution
+            ]
+			List<PatronRequest> requests = PatronRequest.findAll(STALE_REQUESTS_QUERY, queryParameters);
+			if ((requests != null) && (requests.size() > 0)) {
+				requests.each { request ->
+					// Perform a supplier cannot supply action
+                    try {
+                        actionService.performAction(request.stateModel.staleAction.code, request, ['note' : 'Request has been idle for more than ' + numberOfIdleDays + ' days.' ]);
+                    } catch (Exception e) {
+                        log.error("Exception thrown while performing stale action " + request.stateModel.staleAction.code + " on request " + request.hrid + " ( " + request.id.toString() + " )", e);
+                    }
+				}
+			}
+		}
+	}
+
+	/**
+	 * Obtains the number of idle days
+	 * @return the number of idle days
+	 */
+	private int numberOfIdleDays(Institution institution) {
+		// Get hold of the number of idle days
+		return(institutionSettingsService.getSettingAsInt(
+            institution,
+            SettingsData.SETTING_STALE_REQUEST_2_DAYS, DEFAULT_IDLE_DAYS,
+            false
+        ));
+	}
+}
