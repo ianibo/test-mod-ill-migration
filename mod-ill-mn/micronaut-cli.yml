@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.k_int
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle_kotlin
+features: [app-name, data, data-jdbc, flyway, graalvm, gradle, graphql, http-client-test, jackson-databind, java, java-application, jdbc-hikari, junit, logback, lombok, micronaut-aop, micronaut-aot, micronaut-build, micronaut-http-validation, multi-tenancy, netty-server, openapi, postgres, properties, readme, shade, static-resources, swagger-ui, testcontainers]
