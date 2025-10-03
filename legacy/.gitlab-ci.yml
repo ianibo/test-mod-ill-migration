@@ -1,0 +1,137 @@
+#
+# Used https://milanwittpohl.com/projects/tutorials/Full-Stack-Web-App/automating-using-gitlab-ci-cd 
+# tutorial to base this on
+#
+# Useful links
+#   https://docs.gitlab.com/ee/ci/services/
+# Keywords: https://docs.gitlab.com/ee/ci/yaml/#globally-defined-image-services-cache-before_script-after_script
+# Services: https://microfluidics.utoronto.ca/gitlab/help/ci/services/index.md
+# Tests: https://docs.gitlab.com/ee/ci/testing/unit_test_reports.html
+# metrics: https://docs.gitlab.com/ee/ci/testing/test_coverage_visualization.html
+# 
+before_script:
+  - echo `pwd` # debug
+  - echo "$CI_BUILD_NAME, $CI_BUILD_REF_NAME $CI_BUILD_STAGE $CI_JOB_ID" # debug
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+# https://docs.gitlab.com/ee/ci/runners/saas/linux_saas_runner.html
+#
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+stages:
+  - build
+  - deploy
+
+variables:
+  GIT_DEPTH: "0"
+
+Build-mod-ill:
+  stage: build
+  variables:
+    FF_NETWORK_PER_BUILD: 1
+    DOCKER_DRIVER: overlay2
+    POSTGRES_DB: postgres
+    POSTGRES_USER: pa55w0rd
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_HOST_AUTH_METHOD: trust
+    DB_HOST: postgres
+    DB_PORT: 5432
+  image:
+    pull_policy: if-not-present
+    name: gradle:7-jdk17
+  tags:
+    - docker
+    - ki-onprem
+  services:
+    - name: docker.libsdev.k-int.com/postgres-test:v1
+      pull_policy: if-not-present
+      alias: postgres
+    - name: docker.libsdev.k-int.com/knowledgeintegration/cicd-minio-folio:v2
+      pull_policy: if-not-present
+      alias: minio
+  script:
+    # Because the image is ubuntu jammy, use apt-get to install the docker cli
+    # our gitlab-ci will arrange for the docker socket to be mounted under /var which means
+    # we don't need to install the docker runtime - we will use the docker from the
+    # build host
+    - export TEST_CONTAINER_HOSTNAME=$(hostname)
+    - export GRAILS_SERVERURL=$TEST_CONTAINER_HOSTNAME
+    - export GRAILS_SERVER_URL=$TEST_CONTAINER_HOSTNAME
+    - export SERVER_URL=$TEST_CONTAINER_HOSTNAME
+    - export SERVERURL=$TEST_CONTAINER_HOSTNAME
+    - export MINIO_HOST="minio"
+    # Uncomment the following line if you wish to see the sql being executed in the output, be warned the outout will be significantly large
+    #- export logSqlParams="true"
+    - echo TEST_CONTAINER_HOSTNAME=$TEST_CONTAINER_HOSTNAME
+    - cd ./service
+    - ./gradlew --refresh-dependencies
+    - ./gradlew -D "grails.serverURL=http://$TEST_CONTAINER_HOSTNAME" build jacocoTestReport
+    - chmod +x obtainCodeCoverage.sh
+    - ./obtainCodeCoverage.sh
+    - cd ../validateDescriptor
+    - apt-get update
+    - apt-get -y install maven
+    - cd ../validateDescriptor
+    - chmod +x runValidator.sh
+    - mkdir ../service/build/validateDescriptor
+    - ./runValidator.sh > ../service/build/validateDescriptor/validateModuleDescriptorOutput.txt
+    - cd ..
+  coverage: '/^Code Coverage: \d+$/'
+  artifacts:
+    when: always
+    paths:
+      - service/build/test-results/test/*.xml
+      - service/build/test-results/integrationTest/*.xml
+      - service/build/libs/*.jar
+      - service/build/libs/*.war
+      - service/build/reports/cobertura.xml
+      - service/build/jacocoHtml/**
+      - service/build/validateDescriptor/validateModuleDescriptorOutput.txt
+    reports:
+      junit:
+        - service/build/test-results/test/*.xml
+        - service/build/test-results/integrationTest/*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: service/build/reports/cobertura.xml
+    expire_in: 1 week
+
+pages:
+  # Do not rename this from pages, see https://about.gitlab.com/blog/2016/11/03/publish-code-coverage-report-with-gitlab-pages/
+  stage: deploy
+  dependencies:
+    - Build-mod-ill
+  script:
+    - mv service/build/jacocoHtml/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - main
+    
+Deploy-mod-ill:
+  image:
+    pull_policy: if-not-present
+    name: gradle:7-jdk17
+  stage: deploy
+  only:
+    refs: 
+      - tags
+      - main
+  tags:
+    - docker
+    - ki-onprem
+  before_script:
+    - echo `pwd` # debug
+    - echo "$CI_BUILD_NAME, $CI_BUILD_REF_NAME $CI_BUILD_STAGE $CI_JOB_ID" # debug
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+  script:
+    - echo Publish container and descriptors
+    - cd service
+    - git tag
+    - ./gradlew --no-daemon --console=plain -Djib.to.auth.username=$NEXUS_USER -Djib.to.auth.password=$NEXUS_PASS -x integrationTest -x test build generateDescriptors jib publishModuleDescriptor

@@ -1,0 +1,7 @@
+import groovy.transform.*
+import com.k_int.directory.Address
+
+@Field Address address
+json g.render(address, [expand: [ 'lines', 'tags']])
+
+

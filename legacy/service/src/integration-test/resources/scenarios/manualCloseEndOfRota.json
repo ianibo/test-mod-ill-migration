@@ -1,0 +1,6 @@
+{
+  "action": "manualClose",
+  "actionParams": {
+    "terminalState": "REQ_END_OF_ROTA"
+  }
+}

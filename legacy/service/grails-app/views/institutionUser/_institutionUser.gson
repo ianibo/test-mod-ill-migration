@@ -1,0 +1,9 @@
+import groovy.transform.*
+import com.k_int.ill.PatronRequest;
+
+@Field InstitutionUser institutionUser
+
+json g.render(institutionUser, [ expand: [ 'institutionGroups' ] ]) {
+    canDelete ((institutionUser.institutionGroups == null) ||
+               (institutionUser.institutionGroups.size() == 0))
+}

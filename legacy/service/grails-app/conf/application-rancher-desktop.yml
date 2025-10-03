@@ -1,0 +1,55 @@
+# This file config can be specified in:  'service/gradle.properties'  org.gradle.jvmargs=
+# suffix 'application-' should not added when specifing this config
+
+##
+# This config file connects to the postgres install mapped by the vagrant file in the project root.
+# Use the flag '-Dgrails.env=vagrant-db' when running
+##
+---
+dataSource:
+  logSql: false
+  pooled: true
+  jmxExport: false
+  dbCreate: none
+  username: "${db.username:okapi_1}"
+  password: "${db.password:okapi_1}"
+  driverClassName: org.postgresql.Driver
+  dialect: com.k_int.hibernate.dialects.postgres.KIPostgres94Dialect
+  url: "jdbc:postgresql://${db.host:localhost}:${db.port:30101}/${db.database:okapi_modules}?ApplicationName=${okapi.schema.appName}"
+  hikari:
+    data-source-properties:
+      ApplicationName: "${okapi.schema.appName}"
+  schemaHandler: com.k_int.okapi.OkapiSchemaHandler
+  properties:
+    jmxEnabled: false
+    maximumPoolSize: ${db.maxpoolsize:20}
+    transactionIsolation: TRANSACTION_READ_COMMITTED
+#---
+#logging:
+#  level:
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type: TRACE
+---
+okapi: 
+  service:
+    host: localhost
+    port: 30100
+---
+server:
+    host: 0.0.0.0
+    port: 8081
+---
+events:
+  consumer:
+    zk:
+      connect: '${zookeeper_host:localhost}:${zookeeper_port:30104}'
+    bootstrap:
+      servers: 'localhost:30103'
+
+# see https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html
+# Setting linger to 1 will cause a 1ms delay in sending to batch up groups of messages.
+  publisher:
+    zk:
+      connect: 'localhost:30104'
+    bootstrap:
+      servers: 'localhost:30103'

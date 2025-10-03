@@ -1,0 +1,9 @@
+{
+    "action": "supplierCheckInToIll",
+    "actionParams": {
+        "itemBarcodes": [{
+                "itemId": "123"
+            }
+        ]
+    }
+}

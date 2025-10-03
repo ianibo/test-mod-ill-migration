@@ -1,0 +1,6 @@
+import groovy.transform.*
+import com.k_int.ill.statemodel.Status
+
+@Field Status status
+
+json g.render(status)

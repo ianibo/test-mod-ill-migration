@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.RequestVolume;
+
+@Field RequestVolume requestVolume
+json g.render(requestVolume, [includes: ['id', 'name', 'itemId', 'status', 'temporaryItemBarcode'], expand: ['status']])

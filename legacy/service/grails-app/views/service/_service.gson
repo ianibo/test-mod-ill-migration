@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.directory.Service
+
+@Field Service service
+json g.render(service, [expand: [ 'businessFunction', 'customProperties', 'tags', 'type' ]])

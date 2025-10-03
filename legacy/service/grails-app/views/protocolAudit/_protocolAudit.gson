@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.ProtocolAudit;
+
+@Field ProtocolAudit protocolAudit
+json g.render(protocolAudit, [excludes: ['patronRequest']])

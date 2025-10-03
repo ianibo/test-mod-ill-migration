@@ -1,0 +1,6 @@
+{
+    "action": "messagesAllSeen",
+    "actionParams": {
+        "seenStatus" : true
+     }
+}

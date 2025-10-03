@@ -1,0 +1,609 @@
+<svg width="1452px" height="1000px"
+ viewBox="0.00 0.00 900.19 620.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 616.0)">
+    <title>State Transitions</title>
+    <polygon fill="white" stroke="transparent" points="-4,4 -4,-616 896.19,-616 896.19,4 -4,4"/>
+    <!-- RES_ITEM_RETURNED -->
+    <g id="node1" class="node">
+      <title>RES_ITEM_RETURNED</title>
+      <polygon fill="none" stroke="black" points="207.47,-108 48.92,-108 48.92,-72 207.47,-72 207.47,-108"/>
+      <text text-anchor="middle" x="128.19" y="-85.8" font-family="arial" font-size="14.00">RES_ITEM_RETURNED</text>
+    </g>
+    <!-- RES_ITEM_RETURNED&#45;&gt;RES_ITEM_RETURNED -->
+    <g id="edge1" class="edge link&#45;class">
+      <title>RES_ITEM_RETURNED&#45;&gt;RES_ITEM_RETURNED</title>
+      <g id="a_edge1">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M207.67,-101.98C218.42,-99.97 225.58,-95.98 225.58,-90 225.58,-86.08 222.5,-83.01 217.34,-80.8"/>
+          <polygon fill="purple" stroke="purple" points="218.25,-77.42 207.67,-78.02 216.32,-84.15 218.25,-77.42"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_COMPLETE -->
+    <g id="node2" class="node">
+      <title>RES_COMPLETE</title>
+      <ellipse fill="none" stroke="red" cx="128.19" cy="-18" rx="80.61" ry="18"/>
+      <text text-anchor="middle" x="128.19" y="-13.8" font-family="arial" font-size="14.00">RES_COMPLETE</text>
+    </g>
+    <!-- RES_ITEM_RETURNED&#45;&gt;RES_COMPLETE -->
+    <g id="edge2" class="edge link&#45;class">
+      <title>RES_ITEM_RETURNED&#45;&gt;RES_COMPLETE</title>
+      <g id="a_edge2">
+        <a xlink:title="supplierCheckOutOfIll">
+          <path fill="none" stroke="red" d="M128.19,-71.7C128.19,-63.98 128.19,-54.71 128.19,-46.11"/>
+          <polygon fill="red" stroke="red" points="131.69,-46.1 128.19,-36.1 124.69,-46.1 131.69,-46.1"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_OVERDUE -->
+    <g id="node3" class="node">
+      <title>RES_OVERDUE</title>
+      <polygon fill="none" stroke="black" points="108.58,-180 -0.19,-180 -0.19,-144 108.58,-144 108.58,-180"/>
+      <text text-anchor="middle" x="54.19" y="-157.8" font-family="arial" font-size="14.00">RES_OVERDUE</text>
+    </g>
+    <!-- RES_OVERDUE&#45;&gt;RES_ITEM_RETURNED -->
+    <g id="edge4" class="edge link&#45;class">
+      <title>RES_OVERDUE&#45;&gt;RES_ITEM_RETURNED</title>
+      <g id="a_edge4">
+        <a xlink:title="ISO18626ShippedReturn">
+          <path fill="none" stroke="purple" d="M72.48,-143.7C81.62,-135.05 92.83,-124.45 102.79,-115.03"/>
+          <polygon fill="purple" stroke="purple" points="105.25,-117.52 110.11,-108.1 100.44,-112.43 105.25,-117.52"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_OVERDUE&#45;&gt;RES_COMPLETE -->
+    <g id="edge5" class="edge link&#45;class">
+      <title>RES_OVERDUE&#45;&gt;RES_COMPLETE</title>
+      <g id="a_edge5">
+        <a xlink:title="supplierCheckOutOfIll">
+          <path fill="none" stroke="red" d="M49.69,-143.94C45.59,-128.45 40.19,-108 40.19,-108 40.19,-108 40.19,-72 40.19,-72 40.19,-72 68.14,-55.16 92.54,-40.47"/>
+          <polygon fill="red" stroke="red" points="94.55,-43.35 101.31,-35.19 90.94,-37.35 94.55,-43.35"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_OVERDUE&#45;&gt;RES_OVERDUE -->
+    <g id="edge3" class="edge link&#45;class">
+      <title>RES_OVERDUE&#45;&gt;RES_OVERDUE</title>
+      <g id="a_edge3">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M108.66,-174.85C119.04,-173.32 126.38,-169.03 126.38,-162 126.38,-157.5 123.37,-154.12 118.47,-151.87"/>
+          <polygon fill="purple" stroke="purple" points="119.23,-148.45 108.66,-149.15 117.36,-155.19 119.23,-148.45"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_ITEM_SHIPPED -->
+    <g id="node4" class="node">
+      <title>RES_ITEM_SHIPPED</title>
+      <polygon fill="none" stroke="black" points="311.57,-180 160.81,-180 160.81,-144 311.57,-144 311.57,-180"/>
+      <text text-anchor="middle" x="236.19" y="-157.8" font-family="arial" font-size="14.00">RES_ITEM_SHIPPED</text>
+    </g>
+    <!-- RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_RETURNED -->
+    <g id="edge9" class="edge link&#45;class">
+      <title>RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_RETURNED</title>
+      <g id="a_edge9">
+        <a xlink:title="ISO18626ShippedReturn">
+          <path fill="none" stroke="purple" d="M209.77,-143.88C195.78,-134.81 178.42,-123.55 163.31,-113.76"/>
+          <polygon fill="purple" stroke="purple" points="165.01,-110.69 154.71,-108.19 161.2,-116.57 165.01,-110.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_ITEM_SHIPPED&#45;&gt;RES_COMPLETE -->
+    <g id="edge7" class="edge link&#45;class">
+      <title>RES_ITEM_SHIPPED&#45;&gt;RES_COMPLETE</title>
+      <g id="a_edge7">
+        <a xlink:title="ISO18626Received&#45;copy">
+          <path fill="none" stroke="red" d="M235.81,-143.84C235.23,-117.98 234.19,-72 234.19,-72 234.19,-72 198.46,-54.14 168.49,-39.15"/>
+          <polygon fill="red" stroke="red" points="169.93,-35.96 159.42,-34.62 166.8,-42.22 169.93,-35.96"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_SHIPPED -->
+    <g id="edge6" class="edge link&#45;class">
+      <title>RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_SHIPPED</title>
+      <g id="a_edge6">
+        <a xlink:title="ISO18626Received">
+          <path fill="none" stroke="purple" d="M311.51,-168.06C322.21,-167.08 329.38,-165.06 329.38,-162 329.38,-160.04 326.44,-158.51 321.51,-157.4"/>
+          <polygon fill="purple" stroke="purple" points="321.91,-153.92 311.51,-155.94 320.9,-160.85 321.91,-153.92"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_SHIPPED -->
+    <g id="edge8" class="edge link&#45;class">
+      <title>RES_ITEM_SHIPPED&#45;&gt;RES_ITEM_SHIPPED</title>
+      <g id="a_edge8">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M311.55,-175.4C331.9,-174.69 347.38,-170.23 347.38,-162 347.38,-155.19 336.76,-150.95 321.55,-149.3"/>
+          <polygon fill="purple" stroke="purple" points="321.77,-145.8 311.55,-148.6 321.28,-152.79 321.77,-145.8"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_IDLE -->
+    <g id="node5" class="node">
+      <title>RES_IDLE</title>
+      <polygon fill="none" stroke="black" points="575.88,-468 492.5,-468 492.5,-432 575.88,-432 575.88,-468"/>
+      <text text-anchor="middle" x="534.19" y="-445.8" font-family="arial" font-size="14.00">RES_IDLE</text>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_IDLE -->
+    <g id="edge15" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_IDLE</title>
+      <g id="a_edge15">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M575.96,-463.29C586.18,-462.3 593.79,-457.88 593.79,-450 593.79,-444.96 590.67,-441.32 585.74,-439.11"/>
+          <polygon fill="purple" stroke="purple" points="586.51,-435.69 575.96,-436.71 584.84,-442.49 586.51,-435.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="node7" class="node">
+      <title>RES_PENDING_CONDITIONAL_ANSWER</title>
+      <polygon fill="none" stroke="black" points="658.15,-540 390.23,-540 390.23,-504 658.15,-504 658.15,-540"/>
+      <text text-anchor="middle" x="524.19" y="-517.8" font-family="arial" font-size="14.00">RES_PENDING_CONDITIONAL_ANSWER</text>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge12" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge12">
+        <a xlink:title="supplierConditionalSupply&#45;holding">
+          <path fill="none" stroke="purple" d="M537.64,-468.1C537.35,-475.79 536.26,-485.05 534.7,-493.67"/>
+          <polygon fill="purple" stroke="purple" points="531.22,-493.19 532.58,-503.7 538.07,-494.64 531.22,-493.19"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="node8" class="node">
+      <title>RES_CANCEL_REQUEST_RECEIVED</title>
+      <polygon fill="none" stroke="black" points="576.45,-396 333.93,-396 333.93,-360 576.45,-360 576.45,-396"/>
+      <text text-anchor="middle" x="455.19" y="-373.8" font-family="arial" font-size="14.00">RES_CANCEL_REQUEST_RECEIVED</text>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge14" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge14">
+        <a xlink:title="ISO18626Cancel">
+          <path fill="none" stroke="purple" d="M508.75,-431.7C498.1,-423.05 485.96,-412.45 475.86,-403.03"/>
+          <polygon fill="purple" stroke="purple" points="478.25,-400.47 468.6,-396.1 473.42,-405.54 478.25,-400.47"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="node9" class="node">
+      <title>RES_NEW_AWAIT_PULL_SLIP</title>
+      <polygon fill="none" stroke="black" points="789.86,-324 580.52,-324 580.52,-288 789.86,-288 789.86,-324"/>
+      <text text-anchor="middle" x="685.19" y="-301.8" font-family="arial" font-size="14.00">RES_NEW_AWAIT_PULL_SLIP</text>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge10" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge10">
+        <a xlink:title="respondYes">
+          <path fill="none" stroke="purple" d="M549.56,-431.94C567.58,-416.45 594.19,-396 594.19,-396 594.19,-396 629.59,-357.59 656.42,-331.23"/>
+          <polygon fill="purple" stroke="purple" points="658.97,-333.63 663.72,-324.16 654.1,-328.6 658.97,-333.63"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge13" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge13">
+        <a xlink:title="supplierConditionalSupply">
+          <path fill="none" stroke="purple" d="M563.25,-431.94C585.58,-416.45 612.19,-396 612.19,-396 612.19,-396 646.68,-358.56 668.47,-332.25"/>
+          <polygon fill="purple" stroke="purple" points="671.45,-334.13 675.04,-324.16 666.02,-329.72 671.45,-334.13"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_UNFILLED -->
+    <g id="node12" class="node">
+      <title>RES_UNFILLED</title>
+      <ellipse fill="none" stroke="red" cx="802.19" cy="-162" rx="80.61" ry="18"/>
+      <text text-anchor="middle" x="802.19" y="-157.8" font-family="arial" font-size="14.00">RES_UNFILLED</text>
+    </g>
+    <!-- RES_IDLE&#45;&gt;RES_UNFILLED -->
+    <g id="edge11" class="edge link&#45;class">
+      <title>RES_IDLE&#45;&gt;RES_UNFILLED</title>
+      <g id="a_edge11">
+        <a xlink:title="supplierCannotSupply">
+          <path fill="none" stroke="red" d="M575.41,-431.88C657.85,-397.65 835.19,-324 835.19,-324 835.19,-324 835.19,-288 835.19,-288 835.19,-288 819.09,-226.99 809.38,-190.22"/>
+          <polygon fill="red" stroke="red" points="812.65,-188.89 806.71,-180.12 805.88,-190.68 812.65,-188.89"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP -->
+    <g id="node6" class="node">
+      <title>RES_AWAIT_SHIP</title>
+      <polygon fill="none" stroke="black" points="358.77,-612 225.61,-612 225.61,-576 358.77,-576 358.77,-612"/>
+      <text text-anchor="middle" x="292.19" y="-589.8" font-family="arial" font-size="14.00">RES_AWAIT_SHIP</text>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_ITEM_SHIPPED -->
+    <g id="edge20" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_ITEM_SHIPPED</title>
+      <g id="a_edge20">
+        <a xlink:title="supplierMarkShipped">
+          <path fill="none" stroke="purple" d="M278.2,-575.87C247.35,-538.1 176.19,-451 176.19,-451 176.19,-451 176.19,-451 176.19,-305 176.19,-305 209.19,-216 209.19,-216 209.19,-216 216.07,-202.5 222.88,-189.13"/>
+          <polygon fill="purple" stroke="purple" points="226.08,-190.56 227.5,-180.06 219.84,-187.38 226.08,-190.56"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge16" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge16">
+        <a xlink:title="supplierAddCondition">
+          <path fill="none" stroke="purple" d="M359.02,-598.14C369.68,-597.54 376.98,-596.16 376.98,-594 376.98,-592.62 373.99,-591.56 369.03,-590.81"/>
+          <polygon fill="purple" stroke="purple" points="369.3,-587.32 359.02,-589.86 368.64,-594.29 369.3,-587.32"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge19" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge19">
+        <a xlink:title="supplierCheckInToIll">
+          <path fill="none" stroke="purple" d="M358.93,-602.99C379.16,-602.76 394.98,-599.77 394.98,-594 394.98,-589.27 384.34,-586.4 369.34,-585.4"/>
+          <polygon fill="purple" stroke="purple" points="369.05,-581.89 358.93,-585.01 368.79,-588.89 369.05,-581.89"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge22" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge22">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M358.96,-607.33C388.03,-608.46 412.98,-604.02 412.98,-594 412.98,-585.15 393.54,-580.66 368.98,-580.5"/>
+          <polygon fill="purple" stroke="purple" points="368.9,-577 358.96,-580.67 369.02,-584 368.9,-577"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge17" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge17">
+        <a xlink:title="supplierAddCondition&#45;holding">
+          <path fill="none" stroke="purple" d="M342.76,-575.97C374.69,-566.01 416.39,-553.41 451.78,-542.99"/>
+          <polygon fill="purple" stroke="purple" points="452.98,-546.28 461.59,-540.11 451.01,-539.57 452.98,-546.28"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge21" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge21">
+        <a xlink:title="ISO18626Cancel">
+          <path fill="none" stroke="purple" d="M301.38,-575.85C326.51,-538.13 395.07,-447.83 431.73,-403.88"/>
+          <polygon fill="purple" stroke="purple" points="434.4,-406.13 438.18,-396.23 429.06,-401.61 434.4,-406.13"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING -->
+    <g id="node10" class="node">
+      <title>RES_AWAIT_PICKING</title>
+      <polygon fill="none" stroke="black" points="376.47,-252 217.92,-252 217.92,-216 376.47,-216 376.47,-252"/>
+      <text text-anchor="middle" x="297.19" y="-229.8" font-family="arial" font-size="14.00">RES_AWAIT_PICKING</text>
+    </g>
+    <!-- RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge18" class="edge link&#45;class">
+      <title>RES_AWAIT_SHIP&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge18">
+        <a xlink:title="supplierCheckInToIll">
+          <path fill="none" stroke="purple" d="M275.6,-575.87C251,-538.1 214.19,-451 214.19,-451 214.19,-451 214.19,-451 214.19,-377 214.19,-377 248.8,-301.4 274.5,-260.52"/>
+          <polygon fill="purple" stroke="purple" points="277.45,-262.41 280,-252.13 271.59,-258.58 277.45,-262.41"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_IDLE -->
+    <g id="edge27" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_IDLE</title>
+      <g id="a_edge27">
+        <a xlink:title="supplierMarkConditionsAgreed&#45;saved">
+          <path fill="none" stroke="purple" d="M520.75,-503.7C521.05,-495.98 522.15,-486.71 523.72,-478.11"/>
+          <polygon fill="purple" stroke="purple" points="527.2,-478.61 525.85,-468.1 520.35,-477.16 527.2,-478.61"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge26" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge26">
+        <a xlink:title="supplierMarkConditionsAgreed&#45;saved">
+          <path fill="none" stroke="purple" d="M473.38,-540.11C441.4,-550.08 399.69,-562.68 364.33,-573.09"/>
+          <polygon fill="purple" stroke="purple" points="363.15,-569.79 354.54,-575.97 365.12,-576.51 363.15,-569.79"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge29" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge29">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M658.57,-532.33C669.44,-530.08 676.17,-526.64 676.17,-522 676.17,-518.95 673.27,-516.42 668.21,-514.41"/>
+          <polygon fill="purple" stroke="purple" points="669.15,-511.04 658.57,-511.67 667.23,-517.77 669.15,-511.04"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge28" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge28">
+        <a xlink:title="ISO18626Cancel">
+          <path fill="none" stroke="purple" d="M504.15,-503.94C490.01,-488.45 474.19,-468 474.19,-468 474.19,-468 462.92,-432.17 456.98,-405.97"/>
+          <polygon fill="purple" stroke="purple" points="460.4,-405.24 454.93,-396.16 453.55,-406.66 460.4,-405.24"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge24" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge24">
+        <a xlink:title="supplierMarkConditionsAgreed&#45;saved">
+          <path fill="none" stroke="purple" d="M542.78,-503.94C563.72,-488.45 594.19,-468 594.19,-468 594.19,-468 632.19,-396 632.19,-396 632.19,-396 650.38,-359.21 665.76,-332.94"/>
+          <polygon fill="purple" stroke="purple" points="668.89,-334.53 671.05,-324.16 662.89,-330.92 668.89,-334.53"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge25" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge25">
+        <a xlink:title="supplierMarkConditionsAgreed&#45;saved">
+          <path fill="none" stroke="purple" d="M492.01,-503.88C433.44,-469.65 316.19,-396 316.19,-396 316.19,-396 300.95,-308.38 296.57,-262.41"/>
+          <polygon fill="purple" stroke="purple" points="300.04,-261.91 295.74,-252.23 293.07,-262.48 300.04,-261.91"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_UNFILLED -->
+    <g id="edge23" class="edge link&#45;class">
+      <title>RES_PENDING_CONDITIONAL_ANSWER&#45;&gt;RES_UNFILLED</title>
+      <g id="a_edge23">
+        <a xlink:title="supplierCannotSupply">
+          <path fill="none" stroke="red" d="M568.58,-503.87C666.46,-466.1 892.19,-379 892.19,-379 892.19,-379 892.19,-379 892.19,-305 892.19,-305 844.24,-229.34 818.34,-188.47"/>
+          <polygon fill="red" stroke="red" points="821.18,-186.42 812.87,-179.85 815.27,-190.17 821.18,-186.42"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_IDLE -->
+    <g id="edge35" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_IDLE</title>
+      <g id="a_edge35">
+        <a xlink:title="supplierRespondToCancel&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M480.39,-396.1C491.02,-404.72 503.16,-415.32 513.29,-424.76"/>
+          <polygon fill="purple" stroke="purple" points="510.92,-427.34 520.58,-431.7 515.75,-422.27 510.92,-427.34"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge31" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge31">
+        <a xlink:title="supplierRespondToCancel&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M445.95,-396.23C420.81,-433.95 352.47,-523.96 315.81,-567.94"/>
+          <polygon fill="purple" stroke="purple" points="312.91,-565.95 309.13,-575.85 318.26,-570.47 312.91,-565.95"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge33" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge33">
+        <a xlink:title="supplierRespondToCancel&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M466.25,-396.16C477.73,-422.02 492.19,-468 492.19,-468 492.19,-468 502.84,-481.76 512.09,-495.25"/>
+          <polygon fill="purple" stroke="purple" points="509.4,-497.53 517.84,-503.94 515.23,-493.67 509.4,-497.53"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge37" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge37">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M576.58,-388.73C587.63,-386.5 594.57,-382.92 594.57,-378 594.57,-374.77 591.58,-372.12 586.4,-370.05"/>
+          <polygon fill="purple" stroke="purple" points="587.16,-366.62 576.58,-367.27 585.25,-373.36 587.16,-366.62"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge32" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge32">
+        <a xlink:title="supplierRespondToCancel&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M505.27,-359.97C536.92,-350.01 578.26,-337.41 613.35,-326.99"/>
+          <polygon fill="purple" stroke="purple" points="614.48,-330.3 623.08,-324.11 612.49,-323.59 614.48,-330.3"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge34" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge34">
+        <a xlink:title="supplierRespondToCancel&#45;no&#45;saved">
+          <path fill="none" stroke="purple" d="M424.53,-359.94C400.74,-344.45 372.19,-324 372.19,-324 372.19,-324 336.55,-286.24 314.19,-259.91"/>
+          <polygon fill="purple" stroke="purple" points="316.82,-257.6 307.73,-252.16 311.44,-262.08 316.82,-257.6"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCELLED -->
+    <g id="node11" class="node">
+      <title>RES_CANCELLED</title>
+      <ellipse fill="none" stroke="red" cx="476.19" cy="-306" rx="86.2" ry="18"/>
+      <text text-anchor="middle" x="476.19" y="-301.8" font-family="arial" font-size="14.00">RES_CANCELLED</text>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCELLED -->
+    <g id="edge30" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCELLED</title>
+      <g id="a_edge30">
+        <a xlink:title="STATUS_RES_CANCEL_REQUEST_RECEIVED_ind&#45;cancelled">
+          <path fill="none" stroke="red" d="M454.47,-359.7C456.02,-351.81 458.65,-342.3 461.66,-333.55"/>
+          <polygon fill="red" stroke="red" points="464.96,-334.7 465.17,-324.1 458.4,-332.26 464.96,-334.7"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCELLED -->
+    <g id="edge36" class="edge link&#45;class">
+      <title>RES_CANCEL_REQUEST_RECEIVED&#45;&gt;RES_CANCELLED</title>
+      <g id="a_edge36">
+        <a xlink:title="supplierRespondToCancel">
+          <path fill="none" stroke="red" d="M466.3,-359.7C469.41,-351.98 472.42,-342.71 474.65,-334.11"/>
+          <polygon fill="red" stroke="red" points="478.13,-334.63 476.96,-324.1 471.3,-333.07 478.13,-334.63"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge39" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge39">
+        <a xlink:title="supplierAddCondition&#45;holding">
+          <path fill="none" stroke="purple" d="M682.37,-324.16C672.92,-350.02 650.19,-396 650.19,-396 650.19,-396 612.19,-468 612.19,-468 612.19,-468 588.23,-484.08 565.2,-498.52"/>
+          <polygon fill="purple" stroke="purple" points="563.12,-495.69 556.47,-503.94 566.81,-501.64 563.12,-495.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge42" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge42">
+        <a xlink:title="ISO18626Cancel">
+          <path fill="none" stroke="purple" d="M634.87,-324.11C603.17,-334.08 561.83,-346.68 526.76,-357.09"/>
+          <polygon fill="purple" stroke="purple" points="525.65,-353.77 517.05,-359.97 527.63,-360.48 525.65,-353.77"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge38" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge38">
+        <a xlink:title="supplierAddCondition">
+          <path fill="none" stroke="purple" d="M789.82,-311.59C800.76,-310.5 807.78,-308.64 807.78,-306 807.78,-304.31 804.9,-302.94 799.95,-301.88"/>
+          <polygon fill="purple" stroke="purple" points="800.22,-298.39 789.82,-300.41 799.21,-305.31 800.22,-298.39"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_NEW_AWAIT_PULL_SLIP -->
+    <g id="edge43" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_NEW_AWAIT_PULL_SLIP</title>
+      <g id="a_edge43">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M790.03,-318.94C810.9,-317.49 825.78,-313.17 825.78,-306 825.78,-300.06 815.57,-296.08 800.22,-294.06"/>
+          <polygon fill="purple" stroke="purple" points="800.33,-290.56 790.03,-293.06 799.64,-297.52 800.33,-290.56"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge40" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge40">
+        <a xlink:title="supplierPrintPullSlip">
+          <path fill="none" stroke="purple" d="M590.77,-287.97C528.62,-276.75 447.76,-262.16 386.64,-251.14"/>
+          <polygon fill="purple" stroke="purple" points="387.09,-247.66 376.62,-249.33 385.84,-254.55 387.09,-247.66"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_UNFILLED -->
+    <g id="edge41" class="edge link&#45;class">
+      <title>RES_NEW_AWAIT_PULL_SLIP&#45;&gt;RES_UNFILLED</title>
+      <g id="a_edge41">
+        <a xlink:title="supplierCannotSupply">
+          <path fill="none" stroke="red" d="M699.31,-287.87C719.88,-262.9 758.24,-216.35 781.86,-187.68"/>
+          <polygon fill="red" stroke="red" points="784.73,-189.69 788.39,-179.75 779.33,-185.24 784.73,-189.69"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_ITEM_SHIPPED -->
+    <g id="edge50" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_ITEM_SHIPPED</title>
+      <g id="a_edge50">
+        <a xlink:title="supplierCheckInToIllAndSupplierMarkShipped">
+          <path fill="none" stroke="purple" d="M282.11,-215.7C274.8,-207.3 265.88,-197.07 257.86,-187.86"/>
+          <polygon fill="purple" stroke="purple" points="260.31,-185.34 251.1,-180.1 255.03,-189.94 260.31,-185.34"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge47" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge47">
+        <a xlink:title="supplierCheckInToIll">
+          <path fill="none" stroke="purple" d="M289.35,-252.13C272.06,-289.9 232.19,-377 232.19,-377 232.19,-451 232.19,-451 232.19,-451 232.19,-451 263.6,-525.34 280.97,-566.44"/>
+          <polygon fill="purple" stroke="purple" points="277.84,-568.02 284.95,-575.87 284.29,-565.3 277.84,-568.02"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_SHIP -->
+    <g id="edge49" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_SHIP</title>
+      <g id="a_edge49">
+        <a xlink:title="supplierCheckInToIllAndSupplierMarkShipped&#45;checkedIn">
+          <path fill="none" stroke="purple" d="M298.7,-252.13C290.06,-289.9 250.19,-377 250.19,-377 250.19,-451 250.19,-451 250.19,-451 250.19,-451 281.34,-524.71 292.02,-565.92"/>
+          <polygon fill="purple" stroke="purple" points="288.65,-566.91 294.31,-575.87 295.48,-565.34 288.65,-566.91"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER -->
+    <g id="edge45" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_PENDING_CONDITIONAL_ANSWER</title>
+      <g id="a_edge45">
+        <a xlink:title="supplierAddCondition&#45;holding">
+          <path fill="none" stroke="purple" d="M304.63,-252.23C316.41,-293.76 334.19,-396 334.19,-396 334.19,-396 439.4,-462.08 493.36,-498.15"/>
+          <polygon fill="purple" stroke="purple" points="491.62,-501.2 501.87,-503.88 495.53,-495.39 491.62,-501.2"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_CANCEL_REQUEST_RECEIVED -->
+    <g id="edge52" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_CANCEL_REQUEST_RECEIVED</title>
+      <g id="a_edge52">
+        <a xlink:title="ISO18626Cancel">
+          <path fill="none" stroke="purple" d="M319.05,-252.16C346.8,-278.02 390.19,-324 390.19,-324 390.19,-324 411.66,-339.38 430.06,-353.56"/>
+          <polygon fill="purple" stroke="purple" points="428.18,-356.53 438.21,-359.94 432.49,-351.02 428.18,-356.53"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge44" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge44">
+        <a xlink:title="supplierAddCondition">
+          <path fill="none" stroke="purple" d="M376.67,-236.99C387.42,-236.49 394.58,-235.49 394.58,-234 394.58,-233.04 391.64,-232.29 386.71,-231.74"/>
+          <polygon fill="purple" stroke="purple" points="386.9,-228.24 376.67,-231.01 386.39,-235.23 386.9,-228.24"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge46" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge46">
+        <a xlink:title="supplierCheckInToIll">
+          <path fill="none" stroke="purple" d="M376.47,-240.68C397.06,-240.27 412.58,-238.04 412.58,-234 412.58,-230.65 401.93,-228.55 386.58,-227.69"/>
+          <polygon fill="purple" stroke="purple" points="386.59,-224.19 376.47,-227.32 386.33,-231.19 386.59,-224.19"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge48" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge48">
+        <a xlink:title="supplierCheckInToIllAndSupplierMarkShipped">
+          <path fill="none" stroke="purple" d="M376.62,-244.1C406.22,-244.43 430.58,-241.07 430.58,-234 430.58,-227.76 411.59,-224.41 386.78,-223.93"/>
+          <polygon fill="purple" stroke="purple" points="386.63,-220.43 376.62,-223.9 386.6,-227.43 386.63,-220.43"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING -->
+    <g id="edge53" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_AWAIT_PICKING</title>
+      <g id="a_edge53">
+        <a xlink:title="ISO18626StatusRequest">
+          <path fill="none" stroke="purple" d="M376.64,-247.17C414.85,-248.8 448.58,-244.41 448.58,-234 448.58,-224.53 420.64,-220.04 386.81,-220.54"/>
+          <polygon fill="purple" stroke="purple" points="386.53,-217.04 376.64,-220.83 386.73,-224.04 386.53,-217.04"/>
+        </a>
+      </g>
+    </g>
+    <!-- RES_AWAIT_PICKING&#45;&gt;RES_UNFILLED -->
+    <g id="edge51" class="edge link&#45;class">
+      <title>RES_AWAIT_PICKING&#45;&gt;RES_UNFILLED</title>
+      <g id="a_edge51">
+        <a xlink:title="supplierCannotSupply">
+          <path fill="none" stroke="red" d="M376.65,-221.99C472.2,-208.74 631.42,-186.67 725.65,-173.61"/>
+          <polygon fill="red" stroke="red" points="726.26,-177.06 735.68,-172.22 725.3,-170.13 726.26,-177.06"/>
+        </a>
+      </g>
+    </g>
+  </g>
+</svg>

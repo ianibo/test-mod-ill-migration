@@ -1,0 +1,6 @@
+import groovy.transform.*
+import com.k_int.ill.PatronRequest;
+
+@Field Institution institution
+
+json g.render(institution, [ expand: [ 'institutionGroups', 'directoryEntry' ] ])

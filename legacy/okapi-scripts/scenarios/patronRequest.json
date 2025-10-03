@@ -1,0 +1,30 @@
+{
+    "requestingInstitutionSymbol": "ILL:LOCALHOSTB",
+    "isRequester": true,
+    "patronIdentifier": "23033004447227",
+    "neededBy": "2023-02-02",
+    "pickupLocationSlug": "diku",
+    "volume": "volume 1",
+    "patronNote": "This be the notes",
+    "systemInstanceIdentifier": "system identifier",
+    "title": "title",
+    "author": "<<authorPlaceholder>>",
+    "publicationDate": "date of pub",
+    "publisher": "publisher",
+    "edition": "edition",
+    "placeOfPublication": "place of pub",
+    "isbn": "isbn",
+    "issn": "issn",
+    "oclcNumber": "oclc number",
+    "id": "b6b6bc1d-7665-4063-afca-baa907b82495",
+	requestIdentifiers: [
+		{
+			"identifierType": "type1",
+			"identifier": "First identifier"
+		},
+		{
+			"identifierType": "type2",
+			"identifier": "Second identifier"
+		}
+	]
+}

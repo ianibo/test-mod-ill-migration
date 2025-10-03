@@ -1,0 +1,53 @@
+# We start on the responder side
+responder
+
+# Send conditions. requester status: REQ_CONDITIONAL_ANSWER_RECEIVED
+supplierConditionalSupply.json
+
+# back to the requester
+requester
+
+# Accept the conditions, responder status: RES_NEW_AWAIT_PULL_SLIP
+requesterAgreeConditions.json
+
+# We will request to cancel it, Responder status: RES_CANCEL_REQUEST_RECEIVED
+requesterCancel.json
+
+# Back to the responder
+responder
+
+# We will respond with NO, Requester status: REQ_EXPECTS_TO_SUPPLY
+supplierRespondToCancelNo.json
+
+# We will add an additional condition, Requester status: REQ_CONDITIONAL_ANSWER_RECEIVED
+supplierAddCondition.json
+
+# This time the supplier will mark them as agreed
+supplierMarkConditionsAgreed.json
+
+#Print the pull slip, response: {"status":true}
+supplierPrintPullSlip.json
+
+# Check the item into ill
+supplierCheckInToIll.json
+
+# Mark it as shipped, Requester Status: REQ_SHIPPED
+supplierMarkShipped.json
+
+# We now move to the requester
+requester
+
+# And receive the request
+requesterReceived.json
+
+# It is returned by the patron, Responder Status: RES_ITEM_RETURNED
+patronReturnedItem.json
+
+# Return it back to the responder
+shippedReturn.json
+
+# Now we want to perform the actions against the responder
+responder
+
+# Now check it out of ill, Requester status: REQ_REQUEST_COMPLETE
+supplierCheckOutOfIll.json

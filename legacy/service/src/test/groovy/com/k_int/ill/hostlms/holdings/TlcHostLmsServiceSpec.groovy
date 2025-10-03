@@ -1,0 +1,23 @@
+package com.k_int.ill.hostlms.holdings;
+
+import com.k_int.ill.logging.DoNothingHoldingLogDetails;
+
+import grails.testing.services.ServiceUnitTest;
+import groovy.json.JsonOutput;
+import spock.lang.Specification;
+
+class TlcHostLmsServiceSpec extends Specification implements ServiceUnitTest<TlcHoldingsHostLmsService> {
+    def 'extractAvailableItemsFrom'() {
+        setup:
+        def parsedSample = new XmlSlurper().parseText(new File('src/test/resources/zresponsexml/tlc-eastern.xml').text);
+
+        when: 'We extract holdings'
+        def result = service.extractAvailableItemsFrom(parsedSample, null, new DoNothingHoldingLogDetails());
+
+        then:
+        def resultJson = JsonOutput.toJson(result.first());
+        result.size() == 1;
+        resultJson == '{"temporaryShelvingLocation":null,"itemId":null,"temporaryLocation":null,"shelvingLocation":"WARNER STACKS","callNumber":null,"reason":null,"shelvingPreference":null,"preference":null,"location":"Warner Library","itemLoanPolicy":null}';
+    }
+}
+

@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.HostLMSShelvingLocation
+
+@Field HostLMSShelvingLocation hostLMSShelvingLocation
+json g.render(hostLMSShelvingLocation)

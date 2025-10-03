@@ -1,0 +1,5 @@
+import groovy.transform.*
+import com.k_int.ill.ShelvingLocationSite
+
+@Field ShelvingLocationSite shelvingLocationSite
+json g.render(shelvingLocationSite, [expand: ['shelvingLocation'] ])

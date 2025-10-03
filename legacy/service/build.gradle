@@ -1,0 +1,581 @@
+buildscript {
+  repositories {
+    //mavenLocal()
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://repo.grails.org/grails/plugins" }
+    maven { url "https://maven.k-int.com/repository/releases" }
+  }
+  dependencies {
+    classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+    classpath "org.grails.plugins:hibernate5:$gormVersion"
+    classpath "org.grails.plugins:views-gradle:3.1.2"
+    classpath 'com.bmuschko:gradle-docker-plugin:6.6.1'
+    classpath 'org.grails.plugins:database-migration:4.2.1'
+    classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
+//     classpath "com.google.cloud.tools.jib:com.google.cloud.tools.jib.gradle.plugin:3.4.4"
+    // used directly in publish descriptors task at the bottom
+    classpath "org.apache.httpcomponents.client5:httpclient5:5.2.1"
+    // classpath 'com.k_int.gradle:kint-gradle-plugin:2.2.1'
+    classpath 'com.k_int.gradle:k-int-gradle-plugin:3.1.0'
+  }
+}
+
+
+plugins {
+  id "com.google.cloud.tools.jib" version "3.4.4"
+  id 'jacoco'
+  id "net.razvan.jacoco-to-cobertura" version "1.2.0"
+//  id "org.sonarqube" version "6.0.1.5171"
+}
+//  id 'codenarc'
+
+// Apply our custom plugins.
+apply plugin: "com.k_int.gradle.plugin"
+apply plugin: "com.k_int.gradle.conventional-git"
+
+
+repositories {
+  //mavenLocal()
+  mavenCentral()
+  maven { url "https://maven.k-int.com/content/repositories/public" }
+  maven { url "https://repo.grails.org/grails/core" }
+  maven { url "https://repo.grails.org/grails/plugins" }
+  maven { url "https://jitpack.io" }
+  maven { url 'https://maven.indexdata.com/' }
+  maven { url "https://maven.k-int.com/repository/releases" }
+  maven { url "https://repository.folio.org/repository/maven-folio" }
+}
+
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.client5.http.classic.HttpClient;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.core5.http.HttpResponse;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.StringEntity
+import org.apache.hc.core5.http.ContentType;
+
+println("This build relies on being able to resolve hostname minio - local builds may need to add this to /etc/hosts")
+
+Map<String, String> env = System.getenv()
+String appVersion=version
+String[] version_components = appVersion.split('\\.')
+
+    
+final String version_regex = /^(((\d+)\.\d+)\.\d+)(-([a-zA-Z]+(\.\d+)?))?$/
+String calculated_version = null;
+
+// Gitlab - lets use CI_PIPELINE_ID instead of env.BUILD_NUMBER
+if ( ( appVersion.contains('SNAPSHOT') ) && ( env.CI_PIPELINE_ID != null ) ) {
+  println("Detected snapshot version and build number - appending");
+  calculated_version = "${appVersion}.${env.CI_PIPELINE_ID}".toString()
+}
+else {
+  println("Release version");
+  calculated_version = "${appVersion}".toString()
+}
+
+version "${calculated_version}"
+group "mod.ill"
+
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"org.grails.grails-web"
+apply plugin:"org.grails.plugins.views-json"
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
+    grails { pathingJar = true }
+}
+
+sourceSets {
+  main {
+    resources {
+      srcDir 'grails-app/migrations'
+      srcDir 'src/main/okapi/tenant'
+    }
+  }
+}
+
+// https://github.com/grails/grails-core/issues/12181
+bootJar {
+  duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
+configurations {
+  developmentOnly
+  runtimeClasspath {
+    extendsFrom developmentOnly
+  }
+}
+
+dependencies {
+
+  /* Grails 6 */
+  compileOnly("io.micronaut:micronaut-inject-groovy")
+  console("org.grails:grails-console")
+  profile "org.grails.profiles:rest-api"
+
+  implementation("org.springframework.boot:spring-boot-autoconfigure")
+  implementation("org.springframework.boot:spring-boot-starter")
+  implementation("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-starter-logging")
+  //implementation("org.springframework.boot:spring-boot-starter-tomcat")
+  //implementation("org.springframework.boot:spring-boot-starter-validation")
+
+  implementation("org.grails:grails-core")
+  implementation("org.grails:grails-logging")
+
+  implementation("org.grails:grails-plugin-codecs")
+  implementation("org.grails:grails-plugin-databinding")
+  implementation("org.grails:grails-plugin-datasource")
+  implementation("org.grails:grails-plugin-i18n")
+  implementation("org.grails:grails-plugin-interceptors")
+  implementation("org.grails:grails-plugin-rest")
+  implementation("org.grails:grails-plugin-services")
+  implementation("org.grails:grails-plugin-url-mappings")
+
+  implementation("org.grails:grails-web-boot")
+
+  implementation("org.grails.plugins:async")
+  implementation("org.grails.plugins:events")
+  implementation("org.grails.plugins:hibernate5")
+  implementation("org.grails.plugins:spring-security-core:6.1.1") // NOT IN LINE WITH GRAILS PATCH VERSION
+  implementation("org.grails.plugins:views-json")
+  implementation("org.grails.plugins:views-json-templates")
+  implementation("org.hibernate:hibernate-core:5.6.15.Final")
+
+  //runtimeOnly("com.h2database:h2")
+  runtimeOnly("javax.xml.bind:jaxb-api:2.3.1")
+  //runtimeOnly("org.apache.tomcat:tomcat-jdbc")
+  //runtimeOnly("org.glassfish.web:el-impl:2.2.1-b05")
+  
+  // Testing
+  testImplementation("io.micronaut:micronaut-inject-groovy")
+  testImplementation("org.grails:grails-gorm-testing-support")
+  testImplementation("org.mockito:mockito-core")
+
+  /*  ---- Manually installed dependencies ---- */
+  implementation 'org.grails.plugins:spring-security-core:5.2.1'
+
+  implementation 'com.k_int.grails:web-toolkit-ce:10.1.0'
+  implementation('com.k_int.okapi:grails-okapi:7.4.0') {
+     exclude group: 'com.vaadin.external.google', module: 'android-json'
+   }
+
+  implementation 'io.github.http-builder-ng:http-builder-ng-core:1.0.4'
+  implementation 'org.codehaus.janino:janino:3.1.9'
+  implementation "org.springframework.boot:spring-boot-starter-undertow" // Replaces spring-boot-starter-tomcat
+  implementation "org.hibernate:hibernate-java8"
+  runtimeOnly "com.zaxxer:HikariCP:5.1.0"                             // Replaces Tomcat JDBC pool
+  runtimeOnly "org.postgresql:postgresql:42.5.3"
+  implementation ('org.grails.plugins:database-migration:4.2.1') {
+    exclude group: 'org.liquibase', module: 'liquibase-core'
+    exclude group: 'com.vaadin.external.google', module: 'android-json'
+  }
+  // For getting the correct version of liquibase
+  implementation 'org.liquibase:liquibase-core:4.19.1'
+  implementation 'org.yaml:snakeyaml:1.33'
+
+  implementation 'commons-io:commons-io:2.6'
+
+  /*  ---- Manually installed testing dependencies ---- */
+  testImplementation "org.grails.plugins:geb"
+  testImplementation "org.seleniumhq.selenium:selenium-remote-driver:3.14.0"
+  testImplementation "org.seleniumhq.selenium:selenium-api:3.14.0"
+  testImplementation "org.seleniumhq.selenium:selenium-support:3.14.0"
+  testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
+  testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
+  implementation 'org.z3950.zing:cql-java:1.13'
+
+  /* ---- Custom non profile deps ---- */
+  implementation 'com.github.everit-org.json-schema:org.everit.json.schema:1.12.2'
+
+  // implementation 'com.github.everit-org.json-schema:org.everit.json.schema:1.12.2'
+  // Better test reports.
+  testImplementation( 'com.athaydes:spock-reports:2.3.2-groovy-3.0' ) {
+    transitive = false // this avoids affecting your version of Groovy/Spock
+  }
+ 
+  // NCIP deps
+  implementation 'org.olf.rs:lib-ncip-client:0.21.1'
+  implementation 'com.github.jknack:handlebars:4.2.0'
+  implementation 'uk.co.cacoethes:groovy-handlebars-engine:0.2'
+  implementation 'org.apache.commons:commons-collections4:4.4'
+  implementation 'org.jsoup:jsoup:1.10.2'
+  implementation 'org.json:json:20190722'
+  implementation 'org.extensiblecatalog.ncip.v2:service:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:common:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-ilsdiv1_0_bc:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-ilsdiv1_0:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-wclv1_0:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-ncipv2_02:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-ncipv2_01:2.0.0'
+  implementation 'org.extensiblecatalog.ncip.v2:binding-jar:2.0.0'
+
+  implementation 'org.scala-saddle:google-rfc-2445:20110304'
+  // For RRule processing
+  implementation 'org.dmfs:lib-recur:0.11.6'
+  
+  // For graphviz
+  implementation 'guru.nidi:graphviz-java-all-j2v8:0.18.1'
+  
+  // For jasper reports
+  implementation 'net.sf.jasperreports:jasperreports:6.19.1'
+  implementation 'net.sf.jasperreports:jasperreports-fonts:6.19.1'
+  implementation 'net.sf.barcode4j:barcode4j:2.1'
+  implementation 'org.apache.xmlgraphics:batik-bridge:1.14'
+  
+  implementation("io.swagger:swagger-annotations:1.6.6") {
+    exclude group: "javax.validation", module: "validation-api"
+  }
+  implementation("io.swagger:swagger-models:1.6.6") {
+    exclude group: "javax.validation", module: "validation-api"
+  }
+  
+  // For using the minio ibrary, when storing to S3
+  implementation "io.minio:minio:8.3.3"
+  implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+  implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.70'
+
+  // For generating json log files 
+  implementation 'net.logstash.logback:logstash-logback-encoder:7.2'
+  
+  // For the http builder
+  implementation 'io.github.http-builder-ng:http-builder-ng-apache:1.0.4'
+
+  // For the uri builder
+  implementation 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+  // For communicating with elastic search, di try 8.12.2 but something was forceing it down to 7.17.8
+  //implementation 'co.elastic.clients:elasticsearch-java:8.12.2'
+  //implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+  //implementation 'jakarta.json:jakarta.json-api:2.1.3'
+}
+
+bootRun {
+  ignoreExitValue true
+  jvmArgs(
+    '-Dspring.output.ansi.enabled=always',
+    '-noverify',
+    '-XX:TieredStopAtLevel=1',
+    '-Xmx1024m'
+  )
+  sourceResources sourceSets.main
+  String springProfilesActive = 'spring.profiles.active'
+  systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+}
+
+// We now use ReplaceTokens instead of expand, as expand is restricted to a 64K source file
+// otherwise it blows up, now that the descriptor file is being auto generated it is more than 64K
+import org.apache.tools.ant.filters.ReplaceTokens;
+
+project.gradle.projectsEvaluated {
+  task generateDescriptors(type: Copy) {
+
+    dependsOn buildProperties
+
+    File grailsBuildInfoFile = buildProperties.outputs.files.files.find { it.name == 'grails.build.info' }
+
+    if(!(grailsBuildInfoFile)) return // No need to continue if the file is not there
+    final Properties props = new Properties()
+
+    doFirst {
+
+      // Place the loading within a do first as the info file from the buildProperties
+      // task will not be present until it is executed. This owuld cause a file not found
+      // during task configureation otherwise.
+      
+      // Read properties from the file
+      grailsBuildInfoFile.withInputStream {
+        props.load(it)
+      }
+
+      // May need to append some metadata if the version is a SNAPSHOT
+      String pre = project.hasProperty('versionPreRelease') ? project.property('versionPreRelease') .trim() : ""
+      if (pre.contains("SNAPSHOT")) {
+        // Augment the properties
+        // UTC
+        long nowMilli = Instant.now().toEpochMilli()
+
+        // Always include a timestamp to make OKAPI sort the versions as we expect.
+        final String fullMeta="${nowMilli}-${(buildMeta ?: '').trim()}"
+
+        props.setProperty("info.app.idMeta", "${version}+${fullMeta.trim()}")
+      }
+			else {
+				// II: I suspect info.app.idMeta is used in the generation of the module descriptor for release modules
+				// as well - not setting it seems to cause descriptor publish to explode :(
+        props.setProperty("info.app.idMeta", "${version}");
+			}
+    }
+
+    from ('./src/main/okapi') {
+      include '*-template.json'
+    }
+  
+    into './build/resources/main/okapi'
+    filteringCharset = 'UTF-8'
+    filter(ReplaceTokens, tokens: props, beginToken : '${', endToken : '}')
+    rename { String fileName ->
+      fileName.replace('-template', '')
+    }
+  }
+
+  jar {
+    version "${version.replaceAll(version_regex, '$2')}"
+  }
+
+  buildProperties.doLast {
+
+    // Find the right file
+    File grailsBuildInfoFile = it.outputs.files.files.find { it.name == 'grails.build.info' }
+
+    if(!grailsBuildInfoFile) return // No need to continue if the file is not there
+      Properties properties = new Properties()
+
+    // Read properties from the file
+    grailsBuildInfoFile.withInputStream {
+      properties.load(it)
+    }
+
+    // Load the app version
+    String version = properties.getProperty('info.app.version')
+
+    // Because order matters. The version may be missing from the properties. We should
+    // re-add it if it is.
+    println("Consider version ${version} / ${calculated_version}");
+    if (version && !(version =~ version_regex)) {
+      // Write the value again.
+      version = project.version
+      properties.setProperty('info.app.version', version)
+    }
+    else {
+      println("No version")
+    }
+
+    def versionParts
+    if (version && (versionParts = version =~ version_regex)) {
+      versionParts[0].with {
+        properties.setProperty('info.app.majorVersion', it[3])
+        properties.setProperty('info.app.minorVersion', it[2])
+        properties.setProperty('info.app.patchVersion', it[1])
+
+        if (it[5]) {
+          properties.setProperty('info.app.prVersion', it[5])
+        }
+      }
+    }
+
+    // Add in build number and other useful build env properties
+    // Map<String, String> env = System.getenv()
+    // println("Build env: ${env}")
+  
+    // Add new properties from various sources
+    properties.setProperty('build.time', new Date().format("yyyy-MM-dd HH:mm:ss"))
+
+    // Get a System property
+    properties.setProperty('build.java.version', System.getProperty('java.version'))
+
+    if(env.CI_COMMIT_SHA)
+      properties.setProperty('build.number', env.CI_COMMIT_SHA)
+
+    if ( env.GIT_REVISION ) {
+      properties.setProperty('build.git.revision', env.GIT_REVISION)
+      properties.setProperty('git.revision', env.GIT_REVISION)
+    }
+
+    if ( env.GIT_BRANCH ) {
+      properties.setProperty('build.git.branch', env.GIT_BRANCH)
+      properties.setProperty('git.branch', env.GIT_BRANCH)
+    }
+
+    if (env.GIT_COMMIT) {
+      properties.setProperty('build.git.commit', env.GIT_COMMIT)
+      properties.setProperty('git.commit', env.GIT_COMMIT)
+    }
+
+
+    // Write the properties back to the file
+    grailsBuildInfoFile.withOutputStream {
+      properties.store(it,null)
+    }
+
+    println("Assembled build properties ${properties}");
+  }
+
+  processResources.dependsOn generateDescriptors
+}
+
+eclipse {
+  autoBuildTasks ([':processResources'])
+  synchronizationTasks ([':processResources'])
+  
+  classpath {
+    defaultOutputDir = new File(project.buildDir.canonicalPath, 'main')
+    file {
+      
+      whenMerged { classpath ->
+        
+        Set<String> resources = sourceSets.main?.resources?.srcDirs?.collect { it.canonicalPath }
+        
+        entries.collect().each {
+          
+          if (it.path =='grails-app/conf' && it.output?.toLowerCase().endsWith('test')) {
+            classpath.entries.remove( it )
+            println "Removed ${it}"
+            return
+          }
+
+          if (it.hasProperty('output') && it.output.startsWith('bin/')) {
+            it.output = 'build/' + it.output.substring(4)
+          }
+          
+          // Eclude the output of the resources added to the source sets for grails.
+          // Instead we add the results of the 'processResources' tasks to the classpath later.
+          if (it.hasProperty('dir') && resources.find { res -> it.dir?.canonicalPath?.startsWith(res) } ) {
+            it.exported = false
+            it.excludes << '**/*'
+          }
+        }
+        def lib = new org.gradle.plugins.ide.eclipse.model.Library(fileReference(file("${tasks.processResources.destinationDir}")))
+        println "Adding: ${lib}"
+        entries << lib
+      }
+    }
+  }
+}
+
+tasks.named('bootJarMainClassName') { it.mustRunAfter(tasks.named('compileGsonViews')) }
+tasks.named('compileIntegrationTestGroovy') { it.mustRunAfter(tasks.named('compileGsonViews')) }
+tasks.named('test') { it.mustRunAfter(tasks.named('compileGsonViews')) }
+tasks.named('integrationTest') { it.mustRunAfter(tasks.named('compileGsonViews')) }
+tasks.named('mergeTestReports') { it.mustRunAfter(tasks.named('test')) }
+tasks.named('compileTestGroovy') { it.mustRunAfter(tasks.named('compileGsonViews')) }
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperty "geb.env", System.getProperty('geb.env')
+    systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
+    systemProperty "webdriver.chrome.driver", System.getProperty('webdriver.chrome.driver')
+    systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
+}
+
+jib {
+  from {
+    image = "gcr.io/distroless/java17:latest"
+  }
+  to {
+    image = "docker.libsdev.k-int.com/knowledgeintegration/mod-ill"
+    if ( appVersion.contains('SNAPSHOT') ) {
+      tags = [
+               'snapshot-latest',
+               "${appVersion}.${env.CI_PIPELINE_ID ? env.CI_PIPELINE_ID : 'local'}"
+             ]
+    }
+    else {
+      tags = ['latest', "${version_components[0]}", "${version_components[0]}.${version_components[1]}" ]
+    }
+  }
+  extraDirectories.paths {
+    tasks.compileGsonViews.outputs.files.each { fileEntry ->
+      path {
+        from = fileEntry
+
+        // Path in the container where we want to write the gson classes.
+        into = '/app/gson-classes'
+      }
+    }
+  }
+  container {
+    extraClasspath = ['/app/gson-classes']
+    ports = ['8080'] // This is the default grails port.
+  }
+}
+
+// Performing this will make the MD appear at curl https://folio-registry.k-int.com/_/proxy/modules
+task publishModuleDescriptor() {
+  group 'FOLIO Integration'
+
+  doLast {
+    File descriptor_file = new File('./build/resources/main/okapi/ModuleDescriptor.json');
+    // We only publish snapshot descriptors if they have a CI build number, otherwise things get crazy
+
+    println("checking for existence of ${descriptor_file} : ${descriptor_file.exists()}");
+    if ( descriptor_file.exists()
+         && env.KI_OKAPI_REG_USER != null
+         && env.KI_OKAPI_REG_PASS != null
+         && ( ( appVersion.contains('SNAPSHOT') && env.CI_PIPELINE_ID != null ) || ( ! appVersion.contains('SNAPSHOT') ) )
+      ) {
+
+      println("Configuration in place - publish it");
+
+      // TODO: The version and dockerimage name in the descriptor need to be updated to match the calculated_version property
+      String descriptor = descriptor_file.text;
+      HttpClient client = HttpClientBuilder.create().build();
+      HttpPost httpPost = new HttpPost('https://folio-registry-rw.k-int.com/_/proxy/modules');
+      final String auth = env.KI_OKAPI_REG_USER + ":" + env.KI_OKAPI_REG_PASS;
+      final byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes());
+      final String authHeader = "Basic " + new String(encodedAuth);
+      httpPost.setHeader("Authorization", authHeader);
+      httpPost.setHeader('Accept','application/json');
+      httpPost.setHeader('Content-Type','application/json');
+      StringEntity requestEntity = new StringEntity(descriptor, ContentType.APPLICATION_JSON);
+      httpPost.setEntity(requestEntity)
+      HttpResponse httpResponse = client.execute(httpPost);
+      String responseBody = EntityUtils.toString(httpResponse.getEntity());
+      println("Got response ${httpResponse} / ${responseBody}") 
+    }
+    else {
+      println("Unable to locate descriptor");
+    }
+  }
+}
+
+jacoco {
+  toolVersion = "0.8.10"
+  reportsDirectory = layout.buildDirectory.dir('jacocoReport')
+}
+
+jacocoTestReport {
+  executionData integrationTest, test
+  reports {
+    xml.required = true
+    csv.required = false
+    html.required = true
+    html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+  }
+  afterEvaluate {
+    classDirectories.setFrom(files(classDirectories.files.collect {
+      fileTree(dir: it,
+        exclude: [
+          '**/Application**',
+          '**/BootStrap**',
+          '**/**gson**',
+          '**/**closure**',
+          '**/UrlMappings**'
+        ]
+      )
+    }))
+  }
+  dependsOn test, integrationTest // tests are required to run before generating the report
+  finalizedBy jacocoToCobertura
+}
+
+jacocoToCobertura {
+  inputFile.set(layout.buildDirectory.file("jacocoReport/test/jacocoTestReport.xml"))
+  outputFile.set(layout.buildDirectory.file("reports/cobertura.xml"))
+  sourceDirectories.from(
+	layout.projectDirectory.dir("grails-app/controllers"),
+	layout.projectDirectory.dir("grails-app/domain"),
+	layout.projectDirectory.dir("grails-app/services"),
+	layout.projectDirectory.dir("src/main/groovy")
+  )
+  splitByPackage.set(false)
+}
+
+//codenarcMain {   
+//  includes = 'src/main/groovy/**/**.groovy,grails-app/controllers/**/**.groovy,grails-app/domain/**/**.groovy,grails-app/services/**/**.groovy'
+//}

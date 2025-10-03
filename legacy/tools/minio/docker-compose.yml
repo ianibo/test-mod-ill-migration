@@ -1,0 +1,58 @@
+version: "2.1"
+
+volumes:
+  minio_data:
+    driver: local
+
+services:
+  minio:
+    container_name: minio
+    hostname: minio
+    image:  docker.io/bitnami/minio:2023.3.24
+    environment:
+      - MINIO_ROOT_USER=DEVDEVDEV001
+      - MINIO_ROOT_PASSWORD=DEVDEVDEV001
+      - MINIO_DEFAULT_BUCKETS=
+      - MINIO_CONFIG_DIR=/minio_config
+    volumes:
+      - ./minio_data:/data
+      - ./minio_config:/minio_config
+    ports:
+      - 9000:9000
+      - 9001:9001
+
+  setup:
+    image: docker.io/bitnami/minio:2023.3.24
+    depends_on:
+      - minio
+    volumes:
+      - ./minio_config:/minio_config
+    entrypoint: >
+      /bin/sh -c "
+      echo sleeping;
+      sleep 20;
+      echo This command adds an alias to the mc config file so we can refer to the server as minio;
+      
+      /opt/bitnami/minio-client/bin/mc alias set minio http://minio:9000 DEVDEVDEV001 DEVDEVDEV001;
+      echo Added host http://minio:9000;
+      /opt/bitnami/minio-client/bin/mc admin policy create minio/ ill-readwrite /minio_config/ill-readwrite-policy.json;
+      echo Added policy ill-readwrite;
+      /opt/bitnami/minio-client/bin/mc admin user add minio ILL_AGG_ACCESS_KEY ILL_AGG_SECRET_KEY;
+      echo Added user ILL_AGG_ACCESS_KEY;
+      /opt/bitnami/minio-client/bin/mc admin policy attach minio ill-readwrite --user ILL_AGG_ACCESS_KEY;
+      echo Associated user ILL_AGG_ACCESS_KEY with policy ill-readwrite;
+      /opt/bitnami/minio-client/bin/mc mb minio/ill-general;
+      echo Mounted / created bucket minio/ill-general;
+      
+      echo List policies known;
+      /opt/bitnami/minio-client/bin/mc admin policy list minio/;
+      echo List users using json;
+      /opt/bitnami/minio-client/bin/mc admin user list --json minio/;
+      # /opt/bitnami/minio-client/bin/mc rm -r --force tn-ill/somebucketname;
+      # /opt/bitnami/minio-client/bin/mc mb tn-ill/somebucketname;
+      # /opt/bitnami/minio-client/bin/mc policy download tn-reshare/somebucketname;
+      # /opt/bitnami/minio-client/bin/mc admin config export
+      # echo Minio user creation: https://docs.min.io/docs/minio-multi-user-quickstart-guide.html
+      # echo https://github.com/minio/minio/issues/6811 - policy example
+      exit 0;
+      "

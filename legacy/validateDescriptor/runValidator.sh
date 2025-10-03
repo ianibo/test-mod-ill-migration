@@ -1,0 +1,1 @@
+mvn org.folio:folio-module-descriptor-validator:1.0.1:validate -DmoduleDescriptorFile=../service/build/resources/main/okapi/ModuleDescriptor.json
