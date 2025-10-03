@@ -24,4 +24,4 @@ The target project is micronaut 4 please follow the following rules
       - @io.micronaut.data.annotation.MappedEntity
       - @io.micronaut.data.jdbc.annotation.JdbcRepository
   - Prefer Lombok DTOs when creating POJOs
-
+  - The target database environment is postgres 16 - use testcontainers for integration and unit tests
