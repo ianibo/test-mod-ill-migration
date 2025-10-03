@@ -14,10 +14,13 @@ The target project is micronaut 4 please follow the following rules
   - @io.micronaut.data.annotation.MappedEntity
 - Created Repository classes should
   - extend the io.micronaut.data.repository.CrudRepository base
+- Update the grqaphql.schemas file with Query and Mutation entries for each generated domain class
+  - Geneate additional GraphQL Page and input objects for each domain resource 
+- Update mod-ill-mn/src/main/java/com/k_int/graphql/GraphQLFactory.java with factories for each domain class
 
 - Additional rules
-	- Use the lombok.Slf4j annotation to provide logging to any non pojo classes
-	  - Do not add Slf4j to 
+  - Use the lombok.Slf4j annotation to provide logging to any non pojo classes
+    - Do not add Slf4j to 
       - @io.micronaut.data.annotation.MappedEntity
       - @io.micronaut.data.jdbc.annotation.JdbcRepository
   - Prefer Lombok DTOs when creating POJOs

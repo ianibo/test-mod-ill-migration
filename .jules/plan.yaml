@@ -1,5 +1,5 @@
 This repository contains a legacy grails 6 application in the /legacy directory, and a target skeletal micronuat 4 application in the /mod-ill-mn directory. 
 
 Using the legacy directory as a specification, migrate the following: 
-  - grails domain classes found under /legacy/service/grails-app/domain/ to a micronaut data-jdbc @MappedEntity and a corresponding @JdbcRepository
-  - liquibase migrations found under /legacy/service/grails-app/migrations to an V1__initial_schema.sql migration suitable for use with flyway
+  - grails domain classes for EACH of the comain classes found under /legacy/service/grails-app/domain/ to a micronaut data-jdbc @MappedEntity and a corresponding @JdbcRepository
+  - liquibase migrations corresponding to all domain classes in the project found under /legacy/service/grails-app/migrations to an V1__initial_schema.sql migration suitable for use with flyway
