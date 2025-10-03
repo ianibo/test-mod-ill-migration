@@ -1,0 +1,8 @@
+scalar JSON
+
+type Query {
+}
+
+type Mutation {
+}
+

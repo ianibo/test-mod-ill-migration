@@ -1,0 +1,24 @@
+The target project is micronaut 4 please follow the following rules
+
+- Use micronaut-data-JDBC for persistence in the target repository
+- The target java version is JDK21
+- Use lombok for any POJOs that need serialisation
+- Created domain classes should use the following annotations
+  - @lombok.Builder
+  - @lombok.Data
+  - @lombok.NoArgsConstructor(onConstructor_ = @Creator())
+  - @lombok.AllArgsConstructor
+  - @lombok.experimental.Accessors(chain = true)
+  - @lombok.ToString
+  - @io.micronaut.serde.annotation.Serdeable
+  - @io.micronaut.data.annotation.MappedEntity
+- Created Repository classes should
+  - extend the io.micronaut.data.repository.CrudRepository base
+
+- Additional rules
+	- Use the lombok.Slf4j annotation to provide logging to any non pojo classes
+	  - Do not add Slf4j to 
+      - @io.micronaut.data.annotation.MappedEntity
+      - @io.micronaut.data.jdbc.annotation.JdbcRepository
+  - Prefer Lombok DTOs when creating POJOs
+
